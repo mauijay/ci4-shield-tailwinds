@@ -21,7 +21,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^4.12.20",
     "postcss": "^8.4.35",
-    "postcss-advanced-variables": "^4.0.0",
+    "postcss-advanced-variables": "^5.0.0",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^7.0.2",
