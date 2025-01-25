@@ -1,4 +1,4 @@
-<header class=" w-full h-[40vh] bg-[url('../images/background_home.jpg')] bg-center bg-cover bg-no-repeat
+<header class=" w-full h-[40vh] bg-[url('/images/background_home.jpg')] bg-center bg-cover bg-no-repeat
 flex flex-col justify-center items-center">
   <span class=" font-extrabold text-4xl text-zinc-100"><?php echo $title ?></span>
   <span class=" text-zinc-100 mt-2"><?= esc($heading) ?? env('app.name'); ?></span>

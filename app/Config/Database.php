@@ -43,6 +43,7 @@ class Database extends Config
     //     'failover'     => [],
     //     'port'         => 3306,
     //     'numberNative' => false,
+    //     'foundRows'    => false,
     //     'dateFormat'   => [
     //         'date'     => 'Y-m-d',
     //         'datetime' => 'Y-m-d H:i:s',
@@ -50,32 +51,27 @@ class Database extends Config
     //     ],
     // ];
 
-    //    /**
-    //     * Sample database connection for SQLite3.
-    //     *
-    //     * @var array<string, mixed>
-    // 
-
-        /**
-         * Sample database connection for SQLite3.
-         *
-         * @var array<string, mixed>
-         */
-        public array $default = [
-            'database'    => 'database.db',
-            'DBDriver'    => 'SQLite3',
-            'DBPrefix'    => '',
-            'DBDebug'     => true,
-            'swapPre'     => '',
-            'failover'    => [],
-            'foreignKeys' => true,
-            'busyTimeout' => 1000,
-            'dateFormat'  => [
-                'date'     => 'Y-m-d',
-                'datetime' => 'Y-m-d H:i:s',
-                'time'     => 'H:i:s',
-            ],
-        ];
+    /**
+     * Sample database connection for SQLite3.
+     *
+     * @var array<string, mixed>
+     */
+    public array $default = [
+        'database'    => 'database.db',
+        'DBDriver'    => 'SQLite3',
+        'DBPrefix'    => '',
+        'DBDebug'     => true,
+        'swapPre'     => '',
+        'failover'    => [],
+        'foreignKeys' => true,
+        'busyTimeout' => 1000,
+        'synchronous' => null,
+        'dateFormat'  => [
+            'date'     => 'Y-m-d',
+            'datetime' => 'Y-m-d H:i:s',
+            'time'     => 'H:i:s',
+        ],
+    ];
 
     //    /**
     //     * Sample database connection for Postgre.
