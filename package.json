@@ -14,7 +14,7 @@
   "devDependencies": {
     "@rollup/plugin-inject": "^5.0.5",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/forms": "^0.5.10",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
