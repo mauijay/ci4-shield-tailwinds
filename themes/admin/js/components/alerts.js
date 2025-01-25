@@ -8,12 +8,12 @@ export default (displayTime = 5) => ({
     this.startCountDown();
   },
   startCountDown() {
-    const totalSteps = (this.max / (this.stepInterval / 1000));
+    const totalSteps = this.max / (this.stepInterval / 1000);
     const stepWidth = 100 / totalSteps;
 
     this.timer = setInterval(() => {
       if (this.countdown < this.max) {
-        this.countdown += this.stepInterval / 1000
+        this.countdown += this.stepInterval / 1000;
         this.progress += stepWidth;
       } else {
         this.destroy();
@@ -28,6 +28,6 @@ export default (displayTime = 5) => ({
   },
   destroy() {
     clearInterval(this.timer);
-    this.$el.closest('.alert-component').remove();
+    this.$el.closest(".alert-component").remove();
   },
-})
+});

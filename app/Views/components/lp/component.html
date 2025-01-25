@@ -1,94 +1,100 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-</head>
-<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful & Advanced Website</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <style>
-        /* Reset CSS */
-        *,
-        *::before,
-        *::after {
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+  </head>
+  <body
+    class="h-screen overflow-hidden flex items-center justify-center"
+    style="background: #edf2f7"
+  >
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Colorful & Advanced Website</title>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        />
+        <style>
+          /* Reset CSS */
+          *,
+          *::before,
+          *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        /* Body styles */
-        body {
-            font-family: 'Roboto', sans-serif;
+          }
+
+          /* Body styles */
+          body {
+            font-family: "Roboto", sans-serif;
             line-height: 1.6;
             background-color: #f9f9f9;
             color: #333;
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-        
-        /* Header styles */
-        header {
-            background-color: #4CAF50; /* Green */
+          }
+
+          /* Header styles */
+          header {
+            background-color: #4caf50; /* Green */
             color: #fff;
             padding: 20px;
             text-align: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
-        }
-        
-        header h1 {
+          }
+
+          header h1 {
             margin: 0;
             font-size: 2.5em;
-        }
-        
-        nav {
+          }
+
+          nav {
             margin-top: 20px;
-        }
-        
-        nav ul {
+          }
+
+          nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-        }
-        
-        nav ul li {
+          }
+
+          nav ul li {
             display: inline;
             margin-right: 20px;
-        }
-        
-        nav ul li:last-child {
+          }
+
+          nav ul li:last-child {
             margin-right: 0;
-        }
-        
-        nav ul li a {
+          }
+
+          nav ul li a {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
-        }
-        
-        nav ul li a:hover {
+          }
+
+          nav ul li a:hover {
             color: #f0f0f0; /* Lighter shade of white */
-        }
-        
-        /* Main content styles */
-        .container {
+          }
+
+          /* Main content styles */
+          .container {
             max-width: 960px;
             margin: 0 auto;
             padding: 20px;
-        }
-        
-        section {
-            background-color: #2196F3; /* Blue */
+          }
+
+          section {
+            background-color: #2196f3; /* Blue */
             color: #fff;
             padding: 40px;
             margin-bottom: 40px;
@@ -97,217 +103,243 @@
             position: relative;
             overflow: hidden;
             transform: translateZ(0); /* Fix for flickering in Safari */
-        }
-        
-        section h2 {
+          }
+
+          section h2 {
             font-size: 2em;
             margin-bottom: 20px;
-        }
-        
-        section p {
+          }
+
+          section p {
             font-size: 1.1em;
             line-height: 1.8;
-        }
-        
-        /* Call to action button */
-        .cta-button {
-            background-color: #FF5722; /* Orange */
+          }
+
+          /* Call to action button */
+          .cta-button {
+            background-color: #ff5722; /* Orange */
             color: #fff;
             border: none;
             padding: 10px 20px;
             font-size: 1em;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition:
+              background-color 0.3s ease,
+              transform 0.2s ease;
             position: absolute;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1;
-        }
-        
-        .cta-button:hover {
-            background-color: #FF7043; /* Lighter shade of orange */
+          }
+
+          .cta-button:hover {
+            background-color: #ff7043; /* Lighter shade of orange */
             transform: translateY(-3px);
-        }
-        
-        /* Footer styles */
-        footer {
-            background-color: #FFC107; /* Yellow */
+          }
+
+          /* Footer styles */
+          footer {
+            background-color: #ffc107; /* Yellow */
             color: #333;
             padding: 20px;
             text-align: center;
             position: relative;
             margin-top: 100px; /* Adjusted for fixed header */
-        }
-        
-        /* Advanced animations */
-        @keyframes slideInFromLeft {
+          }
+
+          /* Advanced animations */
+          @keyframes slideInFromLeft {
             0% {
-                transform: translateX(-100%);
-                opacity: 0;
+              transform: translateX(-100%);
+              opacity: 0;
             }
             100% {
-                transform: translateX(0);
-                opacity: 1;
+              transform: translateX(0);
+              opacity: 1;
             }
-        }
-        
-        .animated-section {
+          }
+
+          .animated-section {
             animation: slideInFromLeft 1s ease;
-        }
-        
-        /* Parallax effect */
-        .parallax {
+          }
+
+          /* Parallax effect */
+          .parallax {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             height: 500px;
-        }
-        
-        /* Smooth scrolling */
-        html {
+          }
+
+          /* Smooth scrolling */
+          html {
             scroll-behavior: smooth;
-        }
-        
-        /* Hover effects */
-        .hover-effect {
+          }
+
+          /* Hover effects */
+          .hover-effect {
             transition: transform 0.3s ease;
-        }
-        
-        .hover-effect:hover {
+          }
+
+          .hover-effect:hover {
             transform: scale(1.05);
-        }
-        
-        /* Grid layout */
-        .grid-container {
+          }
+
+          /* Grid layout */
+          .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-gap: 20px;
-        }
-        
-        .grid-item {
+          }
+
+          .grid-item {
             background-color: #009688; /* Teal */
             color: #fff;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
-        }
-        
-        .grid-item:hover {
+          }
+
+          .grid-item:hover {
             transform: translateY(-5px);
-        }
-        
-        /* Slideshow */
-        .slideshow-container {
+          }
+
+          /* Slideshow */
+          .slideshow-container {
             max-width: 1000px;
             position: relative;
             margin: auto;
             overflow: hidden;
-        }
-        
-        .slides {
+          }
+
+          .slides {
             display: flex;
             transition: transform 0.5s ease;
-        }
-        
-        .slide {
+          }
+
+          .slide {
             min-width: 100%;
             overflow: hidden;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 768px) {
+          }
+
+          /* Responsive styles */
+          @media (max-width: 768px) {
             .container {
-                padding: 10px;
+              padding: 10px;
             }
             header h1 {
-                font-size: 2em;
+              font-size: 2em;
             }
             section {
-                padding: 30px;
+              padding: 30px;
             }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+          <div class="container">
             <h1>Colorful & Advanced Website</h1>
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
             </nav>
-        </div>
-    </header>
+          </div>
+        </header>
 
-    <main>
-        <section id="home" class="animated-section parallax" style="background-image: url('https://via.placeholder.com/1500x500');">
+        <main>
+          <section
+            id="home"
+            class="animated-section parallax"
+            style="
+              background-image: url(&quot;https://via.placeholder.com/1500x500&quot;);
+            "
+          >
             <div class="container">
-                <h2>Welcome to Our Website!</h2>
-                <p>This is a vibrant and advanced website designed to catch your attention. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor blandit velit eget ultrices.</p>
-                <p>Etiam aliquam, mi nec blandit venenatis, metus lectus gravida turpis, a laoreet erat tortor non est.</p>
-                <button class="cta-button hover-effect">Learn More</button>
+              <h2>Welcome to Our Website!</h2>
+              <p>
+                This is a vibrant and advanced website designed to catch your
+                attention. Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Nullam auctor blandit velit eget ultrices.
+              </p>
+              <p>
+                Etiam aliquam, mi nec blandit venenatis, metus lectus gravida
+                turpis, a laoreet erat tortor non est.
+              </p>
+              <button class="cta-button hover-effect">Learn More</button>
             </div>
-        </section>
+          </section>
 
-        <section id="about" class="animated-section">
+          <section id="about" class="animated-section">
             <div class="container">
-                <h2>About Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut dolor massa. Suspendisse potenti. Aliquam erat volutpat.</p>
-                <div class="grid-container">
-                    <div class="grid-item hover-effect">Mission</div>
-                    <div class="grid-item hover-effect">Vision</div>
-                    <div class="grid-item hover-effect">Values</div>
-                    <div class="grid-item hover-effect">Team</div>
-                </div>
+              <h2>About Us</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+                dolor massa. Suspendisse potenti. Aliquam erat volutpat.
+              </p>
+              <div class="grid-container">
+                <div class="grid-item hover-effect">Mission</div>
+                <div class="grid-item hover-effect">Vision</div>
+                <div class="grid-item hover-effect">Values</div>
+                <div class="grid-item hover-effect">Team</div>
+              </div>
             </div>
             <button class="cta-button hover-effect">Read More</button>
-        </section>
+          </section>
 
-        <section id="services" class="animated-section">
+          <section id="services" class="animated-section">
             <div class="container">
-                <h2>Our Services</h2>
-                <p>Check out our amazing services that we offer:</p>
-                <div class="grid-container">
-                    <div class="grid-item hover-effect">Web Design</div>
-                    <div class="grid-item hover-effect">Graphic Design</div>
-                    <div class="grid-item hover-effect">Digital Marketing</div>
-                    <div class="grid-item hover-effect">Content Creation</div>
-                </div>
+              <h2>Our Services</h2>
+              <p>Check out our amazing services that we offer:</p>
+              <div class="grid-container">
+                <div class="grid-item hover-effect">Web Design</div>
+                <div class="grid-item hover-effect">Graphic Design</div>
+                <div class="grid-item hover-effect">Digital Marketing</div>
+                <div class="grid-item hover-effect">Content Creation</div>
+              </div>
             </div>
             <button class="cta-button hover-effect">Explore Services</button>
-        </section>
-        
-        <section id="contact" class="animated-section">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <p>Feel free to get in touch with us:</p>
-                <form>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br>
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                    <button type="submit" class="cta-button hover-effect">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+          </section>
 
-    <footer>
-        <div class="container">
+          <section id="contact" class="animated-section">
+            <div class="container">
+              <h2>Contact Us</h2>
+              <p>Feel free to get in touch with us:</p>
+              <form>
+                <label for="name">Name:</label><br />
+                <input type="text" id="name" name="name" required /><br />
+                <label for="email">Email:</label><br />
+                <input type="email" id="email" name="email" required /><br />
+                <label for="message">Message:</label><br />
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea
+                ><br /><br />
+                <button type="submit" class="cta-button hover-effect">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </section>
+        </main>
+
+        <footer>
+          <div class="container">
             <p>&copy; 2024 Colorful & Advanced Website. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
-</body>
+          </div>
+        </footer>
+      </body>
+    </html>
+  </body>
 </html>

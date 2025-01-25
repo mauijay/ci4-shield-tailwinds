@@ -1,37 +1,36 @@
 {
-  "name": "ci4-shield-vite-vue-tw",
-  "version": "0.0.2-dev",
-  "description": "Car Sales Basic is an open-source template made for developers who want to get a jump start on thier next project.",
+  "name": "ci4bs",
+  "version": "0.1.0-dev",
+  "description": "Codeigniter starter kit for new projects.",
   "keywords": [],
   "author": " jay",
-  "private": true,  
+  "private": true,
+  "source": "src/index.js",
+  "main": "dist/main.js",
   "type": "module",
-   "scripts": {
-    "test": "echo \"Error: no test specified you big dummy\" && exit 1",
-    "start:css": "tailwindcss -i ./src/assets/input.css -o ./public/assets/css/styles.css --watch",
-    "build:css": "tailwindcss -i ./src/assets/input.css -o ./src/assets/jay.css -m",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
-    "commit": "cz"
-  },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.5",
+    "@tailwindcss/typography": "^0.5.9",
     "@tailwindcss/forms": "^0.5.9",
     "@vitejs/plugin-vue": "^5.2.1",
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "daisyui": "^4.12.14",
-    "postcss": "^8.4.49",
+    "daisyui": "^4.12.23",
+    "postcss": "^8.4.35",
+    "postcss-advanced-variables": "^5.0.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.71.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss": "^3.4.16",
-    "vite": "^6.0.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.6",
     "vite-plugin-pwa": "^0.21.1",
     "workbox-build": "^7.3.0",
     "workbox-core": "^7.1.0",
@@ -42,5 +41,16 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified you big dummy\" && exit 1",
+    "start:css": "tailwindcss -i ./src/assets/input.css -o ./public/assets/css/styles.css --watch",
+    "build:css": "tailwindcss -i ./src/assets/input.css -o ./src/assets/jay.css -m",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "commit": "cz"
   }
 }

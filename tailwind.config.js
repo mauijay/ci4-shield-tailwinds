@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./themes/**/*.{html,php,js,ts,jsx,tsx}",
     "./app/Views/**/*.{html,php,js,ts,jsx,tsx}",
+    "./app/Views/**/**/*.{html,php,js,ts,jsx,tsx}",
     "./modules/**/Views/**/*.php",
   ],
   safelist: [
@@ -68,5 +69,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
