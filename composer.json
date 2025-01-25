@@ -38,7 +38,6 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "version": "0.0.2",
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
@@ -46,5 +45,6 @@
     "allow-plugins": {
       "phpstan/extension-installer": true
     }
-  }
+  },
+  "version": "0.1.2"
 }
