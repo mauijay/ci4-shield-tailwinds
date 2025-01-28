@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import { VitePWA } from "vite-plugin-pwa";
 import vue from "@vitejs/plugin-vue";
 
@@ -6,6 +7,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig(() => {
   return {
     plugins: [
+      tailwindcss(),
       vue(),
       VitePWA({
         manifest: true,
