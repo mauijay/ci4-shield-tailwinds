@@ -98,7 +98,7 @@
                 <?= $table['pager']->links(); ?>
             </div>
         <?php else: ?>
-            <div class="mt-6 p-6 border rounded bg-base-200 border-base-300">
+            <div class="mt-6 p-6 border rounded-sm bg-base-200 border-base-300">
                 <p>Sorry, there are no users to display.</p>
             </div>
         <?php endif; ?>

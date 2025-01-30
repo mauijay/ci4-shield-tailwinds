@@ -7,7 +7,7 @@
 <div class="bg-white relative   flex items-center  n justify-center overflow-hidden z-50 ">
 
   <div
-    class="relative mx-auto h-full px-4  pb-20   md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+    class="relative mx-auto h-full px-4  pb-20   md:pb-10 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-(--breakpoint-xl) lg:px-8">
     <div class="flex flex-col items-center justify-between lg:flex-row py-16">
       <div class=" relative ">
         <div class=" absolute top-0 -left-48 z-0  opacity-50 ">
@@ -22,7 +22,7 @@
           <p class="text-base text-gray-700">We are a Hawaii registered agent service that helps out of state businesses register to do business in Hawaii, and helps keep local Hawaii businesses in good standing with the Hawaii Secretary of State by acting as your registered agent.</p>
           <div class="mt-10 flex flex-col items-center md:flex-row">
             <a href="/services"
-              class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-600 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
+              class="mb-3 inline-flex h-12 w-full items-center justify-center rounded-sm bg-green-600 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-hidden md:mr-4 md:mb-0 md:w-auto">
               View More</a>
 
             <a class="majik-button" href="#">
@@ -148,7 +148,7 @@
     <p class="mt-4 text-center text-gray-500 dark:text-gray-300">Save time managing your business Advertising &amp; Content.</p>    
     <!-- row -->
     <div class="flex flex-wrap flex-row -mx-4 text-center">
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
         <!-- service block -->
         <div
@@ -167,7 +167,7 @@
         </div>
         <!-- end service block -->
       </div>
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         data-wow-delay=".1s"
         style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
         <!-- service block -->
@@ -190,7 +190,7 @@
         </div>
         <!-- end service block -->
       </div>
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         data-wow-delay=".3s"
         style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
         <!-- service block -->
@@ -213,7 +213,7 @@
         </div>
         <!-- end service block -->
       </div>
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
         <!-- service block -->
         <div
@@ -235,7 +235,7 @@
         </div>
         <!-- end service block -->
       </div>
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         data-wow-delay=".1s"
         style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
         <!-- service block -->
@@ -255,7 +255,7 @@
         </div>
         <!-- end service block -->
       </div>
-      <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
+      <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"
         data-wow-delay=".3s"
         style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
         <!-- service block -->

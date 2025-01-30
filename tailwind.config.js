@@ -49,25 +49,5 @@ module.exports = {
       },
     },
   },
-  daisyui: {
-    themes: [
-      {
-        light: {
-          ...require("daisyui/src/theming/themes")["light"],
-          primary: "#DD4815",
-          "primary-content": "#fff",
-          "base-content": "#000000de",
-          "base-100": "rgb(249, 250, 251)",
-        },
-        dark: {
-          ...require("daisyui/src/theming/themes")["dark"],
-          primary: "#CD4417",
-          "primary-content": "#fff",
-          "base-content": "rgb(175, 176, 183)",
-          "base-100": "#242424",
-        },
-      },
-    ],
-  },
-  plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  plugins: [require("@tailwindcss/typography")],
 };

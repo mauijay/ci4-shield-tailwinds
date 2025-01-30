@@ -1,4 +1,4 @@
-<div class="post my-6 p-6 rounded bg-base-100 shadow-xl cursor-pointer"
+<div class="post my-6 p-6 rounded-sm bg-base-100 shadow-xl cursor-pointer"
      hx-get="<?= $thread->link(); ?>"
      hx-push-url="true"
      hx-target="body">
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Post Content -->
-    <div class="post-content prose !max-w-full mt-6">
+    <div class="post-content prose max-w-full! mt-6">
         <?= ellipsize(strip_tags($thread->render()), 150) ?>
     </div>
 </div>
