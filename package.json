@@ -19,7 +19,7 @@
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
-    "daisyui": "^4.12.23",
+    
     "postcss": "^8.4.35",
     "postcss-advanced-variables": "^5.0.0",
     "postcss-cli": "^11.0.0",
