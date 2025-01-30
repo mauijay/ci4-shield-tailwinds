@@ -12,7 +12,6 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@rollup/plugin-inject": "^5.0.5",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@vitejs/plugin-vue": "^5.2.1",
@@ -39,7 +38,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "scripts": {
@@ -48,8 +47,7 @@
     "build:css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/css/styles.min.css -m",
     "dev": "vite",
     "build": "vite build",
-    "dev": "vite",
-    "watch": "vite build --watch",
+    "build:watch": "vite build --watch",
     "serve": "vite preview",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
