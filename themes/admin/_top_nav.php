@@ -6,7 +6,7 @@
                 <label tabindex="0" class="btn btn-ghost lg:hidden text-primary-content">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-primary rounded-box w-52">
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow-sm bg-primary rounded-box w-52">
 
                     <?php if (auth()->loggedIn()): ?>
                         <?php if ($modThread = service('policy')->can('moderation.threads') || service('policy')->can('moderation.posts')): ?>
@@ -62,7 +62,7 @@
                 <label tabindex="0" class="btn btn-ghost btn-circle">
                     <?= auth()->user()->renderAvatar(40) ?>
                 </label>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 bg-primary shadow rounded-box rounded-lg w-36">
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-1 p-2 bg-primary shadow-sm rounded-box rounded-lg w-36">
                     <li>
                         <a href="<?= url_to('logout') ?>" hx-boost="false">
                             Logout

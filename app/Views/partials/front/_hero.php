@@ -3,7 +3,7 @@ flex flex-col justify-center items-center">
   <span class=" font-extrabold text-4xl text-zinc-100"><?php echo $title ?></span>
   <span class=" text-zinc-100 mt-2"><?= esc($heading) ?? env('app.name'); ?></span>
   <button
-    class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-none lg:mx-0 lg:w-auto">
+    class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-hidden lg:mx-0 lg:w-auto">
     Start 14-Day free trial
   </button>
   <p class="mt-3 text-sm text-gray-400">No credit card required</p>

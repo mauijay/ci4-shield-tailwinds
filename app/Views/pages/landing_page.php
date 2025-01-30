@@ -36,12 +36,12 @@
           <div class='text-center py-4 space-x-4'>
 
             <button
-              class="backdrop-blur-sm transition duration-500 ease-in-out bg-[#FF4F01] border border-[#E2E8F0] translate-y-1 text-white hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+              class="backdrop-blur-xs transition duration-500 ease-in-out bg-[#FF4F01] border border-[#E2E8F0] translate-y-1 text-white hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
               <span> Build Your Custom App</span>
             </button>
 
             <button
-              class="backdrop-blur-sm transition duration-500 ease-in-out bg-white border border-[#E2E8F0] translate-y-1 text-[#16161d] hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
+              class="backdrop-blur-xs transition duration-500 ease-in-out bg-white border border-[#E2E8F0] translate-y-1 text-[#16161d] hover:bg-neutral-200 text-lg font-semibold py-3 px-6 rounded-3xl inline-flex items-center">
               <span> Explore Apps</span>
             </button>
           </div>
@@ -71,7 +71,7 @@
                       </p>
                     </div>
                     <div class="flex justify-center gap-3 mt-10 lg:justify-start">
-                      <a class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-none focus-visible:outline-gray-600"
+                      <a class="inline-flex items-center justify-center text-sm font-semibold text-black duration-200 hover:text-blue-500 focus:outline-hidden focus-visible:outline-gray-600"
                         href="#">
                         <span> Read more &nbsp; → </span>
                       </a>
