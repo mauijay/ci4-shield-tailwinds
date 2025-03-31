@@ -3,21 +3,25 @@
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "license": "MIT",
   "type": "project",
+  "version": "0.2.1",
   "require": {
     "php": "^8.2",
-    "codeigniter4/framework": "^4.5.5",
-    "codeigniter4/shield": "dev-develop",
+    "codeigniter4/framework": "^4.6",
+    "codeigniter4/shield": "^1.1",
     "codeigniter4/queue": "dev-develop",
     "codeigniter4/tasks": "dev-develop",
-    "firebase/php-jwt": "^6.10"
+    "firebase/php-jwt": "^6.11"
   },
   "require-dev": {
-    "codeigniter/phpstan-codeigniter": "^1.4",
+    "codeigniter/phpstan-codeigniter": "^1.4.3",
     "codeigniter4/devkit": "^1.2",
     "rector/rector": "^1.2",
-    "fakerphp/faker": "^1.23",
+    "fakerphp/faker": "^1.24",
+    "friendsofphp/php-cs-fixer": "^3.68",
     "mikey179/vfsstream": "^1.6",
-    "phpunit/phpunit": "^10.5.16"
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "*",
+    "phpunit/phpunit": "^10.5.43"
   },
   "autoload": {
     "psr-4": {
@@ -33,9 +37,6 @@
       "Tests\\Support\\": "tests/_support"
     }
   },
-  "scripts": {
-    "test": "phpunit"
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
@@ -46,5 +47,30 @@
       "phpstan/extension-installer": true
     }
   },
-  "version": "0.1.2"
+  "scripts": {
+    "ci": [
+      "Composer\\Config::disableProcessTimeout",
+      "@cs",
+      "@deduplicate",
+      "@test"
+    ],
+    "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
+    "cs-fix": "php-cs-fixer fix  --verbose --ansi --using-cache=no --diff",
+    "deduplicate": "phpcpd src/",
+    "dev:8081": "php spark serve --port 8081",
+    "style:check": "vendor/bin/ecs check --ansi",
+    "style:fix": "vendor/bin/ecs check --fix --ansi",
+    "stan": "vendor/bin/phpstan analyse app tests",
+    "phpstan": "vendor/bin/phpstan analyse --ansi",
+    "rector": "rector process --config .config/rector.php --dry-run",
+    "rector-fix": "rector process --config .config/rector.php",
+    "test": [
+      "@putenv XDEBUG_MODE=coverage",
+      "vendor/bin/phpunit"
+    ],
+    "test2": "vendor/bin/phpunit --no-coverage",
+    "post-update-cmd": [
+      "@composer dump-autoload"
+    ]
+  }
 }
