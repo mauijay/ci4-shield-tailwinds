@@ -17,8 +17,6 @@ use CodeIgniter\Config\AutoloadConfig;
  *
  * NOTE: This class is required prior to Autoloader instantiation,
  *       and does not extend BaseConfig.
- *
- * @immutable
  */
 class Autoload extends AutoloadConfig
 {
@@ -41,9 +39,8 @@ class Autoload extends AutoloadConfig
      */
     public $psr4 = [
         APP_NAMESPACE => APPPATH,
-        'Config'      => APPPATH . 'Config',
-        'Themes'      => APPPATH . '../themes',
-    ];
+        'Themes'=>[APPPATH . '../themes'],
+      ];
 
     /**
      * -------------------------------------------------------------------
