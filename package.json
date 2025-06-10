@@ -27,7 +27,7 @@
     "postcss-nested": "^7.0.2",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "sass": "^1.89.2",
     "tailwindcss": "^4.1.8",
     "vite": "^6.3.5",
