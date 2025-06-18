@@ -20,7 +20,7 @@
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^5.0.43",
-    "postcss": "^8.5.5",
+    "postcss": "^8.5.6",
     "postcss-advanced-variables": "^5.0.0",
     "postcss-cli": "^11.0.1",
     "postcss-import": "^16.1.0",
