@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The environment testing is reserved for PHPUnit testing. It has special
  * conditions built into the framework at various places to assist with that.

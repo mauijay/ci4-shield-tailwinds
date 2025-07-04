@@ -1,24 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use App\Entities\Product;
 use CodeIgniter\Model;
 
 class ProductModel extends Model
 {
-    protected $table            = 'products';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = \App\Entities\Product::class;
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
-
+    protected $table                  = 'products';
+    protected $primaryKey             = 'id';
+    protected $useAutoIncrement       = true;
+    protected $returnType             = Product::class;
+    protected $useSoftDeletes         = false;
+    protected $protectFields          = true;
+    protected $allowedFields          = [];
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    protected array $casts = [];
-    protected array $castHandlers = [];
+    protected array $casts            = [];
+    protected array $castHandlers     = [];
 
     // Dates
     protected $useTimestamps = false;

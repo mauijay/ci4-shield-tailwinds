@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Controllers;
+declare(strict_types=1);
 
-use App\Controllers\BaseController;
-use App\Models\ProductModel;
-use CodeIgniter\HTTP\ResponseInterface;
+namespace App\Controllers;
 
 class Products extends BaseController
 {
-    public function index()
+    public function index(): void
     {
-        //
     }
 }

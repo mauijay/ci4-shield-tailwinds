@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Commands;
 
 use CodeIgniter\CLI\BaseCommand;
-use CodeIgniter\CLI\CLI;
 
 class Sample1 extends BaseCommand
 {
@@ -51,11 +52,8 @@ class Sample1 extends BaseCommand
 
     /**
      * Actually execute a command.
-     *
-     * @param array $params
      */
-    public function run(array $params)
+    public function run(array $params): void
     {
-        //
     }
 }

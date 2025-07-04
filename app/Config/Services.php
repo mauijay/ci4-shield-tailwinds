@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Config;
 
 use App\Libraries\Alerts;
@@ -38,16 +40,16 @@ class Services extends BaseService
      * }
      */
 
-     public static function policy($getShared = true): Policy
-     {
-         if ($getShared) {
-             return static::getSharedInstance('policy');
-         }
- 
-         return new Policy();
-     }
+    public static function policy($getShared = true): Policy
+    {
+        if ($getShared) {
+            return static::getSharedInstance('policy');
+        }
 
-     /**
+        return new Policy();
+    }
+
+    /**
      * Returns the Theme library.
      */
     public static function theme(bool $getShared = true)

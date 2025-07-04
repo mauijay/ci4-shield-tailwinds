@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Config;
 
 use CodeIgniter\Config\Filters as BaseFilters;
@@ -104,8 +106,8 @@ class Filters extends BaseFilters
      * @var array<string, array<string, list<string>>>
      */
     public array $filters = [
-      'session'                => ['before' => ['account*', 'admin*', 'reports*']],
-      'group:superadmin,admin' => ['before' => ['admin*']],
-      'signedurl'              => ['before' => ['thread-notifications/*', 'cancel-account-delete/*']],
+        'session'                => ['before' => ['account*', 'admin*', 'reports*']],
+        'group:superadmin,admin' => ['before' => ['admin*']],
+        'signedurl'              => ['before' => ['thread-notifications/*', 'cancel-account-delete/*']],
     ];
 }

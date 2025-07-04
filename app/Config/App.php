@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
@@ -24,7 +26,7 @@ class App extends BaseConfig
      * Displays in footer. Leave empty for no display.
      */
     public string $copyrightHolder = 'MyApp.com';
-    
+
     /**
      * --------------------------------------------------------------------------
      * Base Site URL

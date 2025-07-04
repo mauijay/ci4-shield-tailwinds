@@ -8,14 +8,15 @@ use App\Entities\User;
 
 /**
  * Summary of Policy
- * 
+ *
  * Policy will provide access authorization.
  */
-class Policy {
-  private array $policies = [];
-  private User $user;
+class Policy
+{
+    private array $policies = [];
+    private User $user;
 
-  /**
+    /**
      * Used within the controllers to determine if the current
      * user has the ability to perform the given action.
      *
@@ -92,8 +93,6 @@ class Policy {
 
         return $this;
     }
-
-
 
     /**
      * Attempts to find the appropriate policy for the given permission string.

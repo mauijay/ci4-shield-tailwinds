@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Controllers;
+declare(strict_types=1);
 
-use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
+namespace App\Controllers;
 
 class HelpController extends BaseController
 {
-    public function index()
+    public function index(): void
     {
-        //
     }
 }

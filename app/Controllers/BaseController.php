@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers;
 
 use App\Libraries\Policies\Policy;
@@ -20,67 +22,69 @@ use Psr\Log\LoggerInterface;
  *
  * For security be sure to declare any new methods as protected or private.
  */
-abstract class BaseController extends Controller {
-  /**
-   * The name of the current theme.
-   * Must be within /themes directory.
-   */
-  protected ?string $theme = null;
-  /**
-   * Instance of the main Request object.
-   *
-   * @var CLIRequest|IncomingRequest
-   */
-  protected $request;
+abstract class BaseController extends Controller
+{
+    /**
+     * The name of the current theme.
+     * Must be within /themes directory.
+     */
+    protected ?string $theme = null;
 
-  /**
-   * An array of helpers to be loaded automatically upon
-   * class instantiation. These helpers will be available
-   * to all other controllers that extend BaseController.
-   *
-   * @var list<string>
-   */
-  protected $helpers = [];
+    /**
+     * Instance of the main Request object.
+     *
+     * @var CLIRequest|IncomingRequest
+     */
+    protected $request;
 
-  /**
-   * Policy instance for additional authorization.
-   */
-  protected Policy $policy;
+    /**
+     * An array of helpers to be loaded automatically upon
+     * class instantiation. These helpers will be available
+     * to all other controllers that extend BaseController.
+     *
+     * @var list<string>
+     */
+    protected $helpers = [];
 
-  /**
-   * Be sure to declare properties for any property fetch you initialized.
-   * The creation of dynamic property is deprecated in PHP 8.2.
-   */
-  // protected $session;
+    /**
+     * Policy instance for additional authorization.
+     */
+    protected Policy $policy;
 
-  /**
-   * @return void
-   */
-  public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-  {
-    $this->helpers = [...$this->helpers, 'alerts', 'cookie', 'form'];
+    /**
+     * Be sure to declare properties for any property fetch you initialized.
+     * The creation of dynamic property is deprecated in PHP 8.2.
+     */
+    // protected $session;
 
-    // Do Not Edit This Line
-    parent::initController($request, $response, $logger);
+    /**
+     * @return void
+     */
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger): void
+    {
+        $this->helpers = [...$this->helpers, 'alerts', 'cookie', 'form'];
 
-    // Preload any models, libraries, etc, here.
+        // Do Not Edit This Line
+        parent::initController($request, $response, $logger);
 
-    // E.g.: $this->session = service('session');
+        // Preload any models, libraries, etc, here.
 
-    $this->policy = service('policy');
+        // E.g.: $this->session = service('session');
 
-    $this->theme ??= config('MyApp')->themeName;
-  }
+        $this->policy = service('policy');
 
-  /**
-   * Render a view file.
-   *
-   * Must be used in order to utilize the theme system.
-   */
-  protected function render(string $view, array $data = []): string
-  {
-    return service('theme')
-      ->setTheme($this->theme)
-      ->render($view, $data);
-  }
+        $this->theme ??= config('MyApp')->themeName;
+    }
+
+    /**
+     * Render a view file.
+     *
+     * Must be used in order to utilize the theme system.
+     */
+    protected function render(string $view, array $data = []): string
+    {
+        return service('theme')
+            ->setTheme($this->theme)
+            ->render($view, $data);
+    }
 }

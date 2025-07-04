@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
@@ -62,11 +64,11 @@ class Exceptions extends BaseConfig
      * --------------------------------------------------------------------------
      * WHETHER TO THROW AN EXCEPTION ON DEPRECATED ERRORS
      * --------------------------------------------------------------------------
-<<<<<<< HEAD
+     * <<<<<<< HEAD
      * If set to `true`, DEPRECATED errors are only logged and no exceptions are
-=======
+     * =======
      * * If set to `true`, DEPRECATED errors are only logged and no exceptions are
->>>>>>> jaydev
+     * >>>>>>> jaydev
      * thrown. This option also works for user deprecations.
      */
     public bool $logDeprecations = true;

@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers\Account;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class SecurityController extends BaseController
 {
-    public function index()
+    public function index(): void
     {
-        //
     }
 }

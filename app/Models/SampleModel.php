@@ -1,24 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use App\Entities\Sample;
 use CodeIgniter\Model;
 
 class SampleModel extends Model
 {
-    protected $table            = 'samples';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType       = \App\Entities\Sample::class;
-    protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = [];
-
+    protected $table                  = 'samples';
+    protected $primaryKey             = 'id';
+    protected $useAutoIncrement       = true;
+    protected $returnType             = Sample::class;
+    protected $useSoftDeletes         = false;
+    protected $protectFields          = true;
+    protected $allowedFields          = [];
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
-
-    protected array $casts = [];
-    protected array $castHandlers = [];
+    protected array $casts            = [];
+    protected array $castHandlers     = [];
 
     // Dates
     protected $useTimestamps = false;

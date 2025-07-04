@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers\Admin\Settings;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class UsersController extends BaseController
 {
-    public function index()
+    public function index(): void
     {
-        //
     }
 }

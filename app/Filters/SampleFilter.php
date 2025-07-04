@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filters;
 
 use CodeIgniter\Filters\FilterInterface;
@@ -18,14 +20,12 @@ class SampleFilter implements FilterInterface
      * sent back to the client, allowing for error pages,
      * redirects, etc.
      *
-     * @param RequestInterface $request
-     * @param array|null       $arguments
+     * @param array|null $arguments
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        //
     }
 
     /**
@@ -34,14 +34,11 @@ class SampleFilter implements FilterInterface
      * to stop execution of other after filters, short of
      * throwing an Exception or Error.
      *
-     * @param RequestInterface  $request
-     * @param ResponseInterface $response
-     * @param array|null        $arguments
+     * @param array|null $arguments
      *
      * @return ResponseInterface|void
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
     }
 }
