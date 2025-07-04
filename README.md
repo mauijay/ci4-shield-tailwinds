@@ -16,10 +16,10 @@ A work in progress! This repository provides a starter template for
 
 This repository includes:
 
-- CodeIgniter v4.6.0
+- CodeIgniter v4.6.1
 - CodeIgniter Shield v1.1.0
-- Tailwind v3.4.17
-- Vite v5.4.10
+- Tailwind v4.1.11
+- Vite v7.0.1
 
 ## Requirements
 
