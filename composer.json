@@ -7,7 +7,7 @@
   "require": {
     "php": "^8.2",
     "codeigniter4/framework": "^4.6",
-    "codeigniter4/shield": "^1.1",
+    "codeigniter4/shield": "^1.2",
     "codeigniter4/queue": "dev-develop",
     "codeigniter4/tasks": "dev-develop",
     "firebase/php-jwt": "^6.11"
