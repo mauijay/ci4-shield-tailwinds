@@ -1,6 +1,6 @@
 {
   "name": "ci4-shield-tailwinds",
-  "version": "0.2.1-dev",
+  "version": "0.2.2",
   "description": "Codeigniter4 starter kit for new projects.",
   "keywords": ["tailwindcss 4.0"],
   "author": " jay",

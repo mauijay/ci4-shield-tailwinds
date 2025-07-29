@@ -1040,16 +1040,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.84.0",
+            "version": "v3.85.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "38dad0767bf2a9b516b976852200ae722fe984ca"
+                "reference": "a1eb47641619e72d9d7c66b1fd0841225e40a037"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/38dad0767bf2a9b516b976852200ae722fe984ca",
-                "reference": "38dad0767bf2a9b516b976852200ae722fe984ca",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/a1eb47641619e72d9d7c66b1fd0841225e40a037",
+                "reference": "a1eb47641619e72d9d7c66b1fd0841225e40a037",
                 "shasum": ""
             },
             "require": {
@@ -1133,7 +1133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.84.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.85.0"
             },
             "funding": [
                 {
@@ -1141,7 +1141,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-15T18:21:57+00:00"
+            "time": "2025-07-29T21:26:01+00:00"
         },
         {
             "name": "mikey179/vfsstream",
