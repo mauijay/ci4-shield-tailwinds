@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Config;
 
 use CodeIgniter\Config\Filters as BaseFilters;
@@ -67,12 +65,15 @@ class Filters extends BaseFilters
      * List of filter aliases that are always
      * applied before and after every request.
      *
-     * @var array<string, array<string, array<string, string>>>|array<string, list<string>>
+     * @var array{
+     *     before: array<string, array{except: list<string>|string}>|list<string>,
+     *     after: array<string, array{except: list<string>|string}>|list<string>
+     * }
      */
     public array $globals = [
         'before' => [
             // 'honeypot',
-            'csrf',
+            // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
@@ -105,9 +106,5 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [
-        'session'                => ['before' => ['account*', 'admin*', 'reports*']],
-        'group:superadmin,admin' => ['before' => ['admin*']],
-        'signedurl'              => ['before' => ['thread-notifications/*', 'cancel-account-delete/*']],
-    ];
+    public array $filters = [];
 }
