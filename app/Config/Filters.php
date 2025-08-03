@@ -73,7 +73,7 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+            'csrf',
             // 'invalidchars',
         ],
         'after' => [
@@ -106,5 +106,9 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-    public array $filters = [];
+    public array $filters = [
+      'session'                => ['before' => ['account*', 'admin*', 'reports*']],
+      'group:superadmin,admin' => ['before' => ['admin*']],
+      'signedurl'              => ['before' => ['thread-notifications/*', 'cancel-account-delete/*']],
+    ];
 }
