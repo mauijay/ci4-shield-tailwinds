@@ -18,8 +18,8 @@ This repository includes:
 
 - CodeIgniter v4.6.3
 - CodeIgniter Shield v1.2.0
-- Tailwind v4.1.11
-- Vite v7.0.6
+- Tailwind v4.1.12
+- Vite v7.1.5
 
 ## Requirements
 
