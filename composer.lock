@@ -86,12 +86,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/queue.git",
-                "reference": "0f95012aa9671f4cfcc74af0f62c7e0c29dadd8e"
+                "reference": "e0cd27943903e26c8fa8004cd57f88115798fc60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/queue/zipball/0f95012aa9671f4cfcc74af0f62c7e0c29dadd8e",
-                "reference": "0f95012aa9671f4cfcc74af0f62c7e0c29dadd8e",
+                "url": "https://api.github.com/repos/codeigniter4/queue/zipball/e0cd27943903e26c8fa8004cd57f88115798fc60",
+                "reference": "e0cd27943903e26c8fa8004cd57f88115798fc60",
                 "shasum": ""
             },
             "require": {
@@ -100,11 +100,13 @@
             "require-dev": {
                 "codeigniter4/devkit": "^1.0",
                 "codeigniter4/framework": "^4.3",
+                "php-amqplib/php-amqplib": "^3.7",
                 "phpstan/phpstan-strict-rules": "^1.5",
                 "predis/predis": "^2.0"
             },
             "suggest": {
                 "ext-redis": "If you want to use RedisHandler",
+                "php-amqplib/php-amqplib": "If you want to use RabbitMQHandler",
                 "predis/predis": "If you want to use PredisHandler"
             },
             "default-branch": true,
@@ -142,7 +144,7 @@
                 "issues": "https://github.com/codeigniter4/queue/issues",
                 "source": "https://github.com/codeigniter4/queue/tree/develop"
             },
-            "time": "2025-08-19T17:42:31+00:00"
+            "time": "2025-09-15T07:03:57+00:00"
         },
         {
             "name": "codeigniter4/settings",
@@ -276,12 +278,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/tasks.git",
-                "reference": "04894af5f78b0c8652f87081ef75dd1a030e2972"
+                "reference": "e5aac87c3645e5173bb1c71f8fec0432f308b816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/tasks/zipball/04894af5f78b0c8652f87081ef75dd1a030e2972",
-                "reference": "04894af5f78b0c8652f87081ef75dd1a030e2972",
+                "url": "https://api.github.com/repos/codeigniter4/tasks/zipball/e5aac87c3645e5173bb1c71f8fec0432f308b816",
+                "reference": "e5aac87c3645e5173bb1c71f8fec0432f308b816",
                 "shasum": ""
             },
             "require": {
@@ -327,7 +329,7 @@
                 "issues": "https://github.com/codeigniter4/tasks/issues",
                 "source": "https://github.com/codeigniter4/tasks/tree/develop"
             },
-            "time": "2025-08-13T12:00:00+00:00"
+            "time": "2025-09-05T08:41:42+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -1855,16 +1857,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.53",
+            "version": "10.5.55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "32768472ebfb6969e6c7399f1c7b09009723f653"
+                "reference": "4b2d546b336876bd9562f24641b08a25335b06b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/32768472ebfb6969e6c7399f1c7b09009723f653",
-                "reference": "32768472ebfb6969e6c7399f1c7b09009723f653",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b2d546b336876bd9562f24641b08a25335b06b6",
+                "reference": "4b2d546b336876bd9562f24641b08a25335b06b6",
                 "shasum": ""
             },
             "require": {
@@ -1885,7 +1887,7 @@
                 "phpunit/php-timer": "^6.0.0",
                 "sebastian/cli-parser": "^2.0.1",
                 "sebastian/code-unit": "^2.0.0",
-                "sebastian/comparator": "^5.0.3",
+                "sebastian/comparator": "^5.0.4",
                 "sebastian/diff": "^5.1.1",
                 "sebastian/environment": "^6.1.0",
                 "sebastian/exporter": "^5.1.2",
@@ -1936,7 +1938,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.53"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.55"
             },
             "funding": [
                 {
@@ -1960,7 +1962,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-20T14:40:06+00:00"
+            "time": "2025-09-14T06:19:20+00:00"
         },
         {
             "name": "psr/container",
@@ -2821,16 +2823,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "5.0.3",
+            "version": "5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e"
+                "reference": "e8e53097718d2b53cfb2aa859b06a41abf58c62e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e",
-                "reference": "a18251eb0b7a2dcd2f7aa3d6078b18545ef0558e",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/e8e53097718d2b53cfb2aa859b06a41abf58c62e",
+                "reference": "e8e53097718d2b53cfb2aa859b06a41abf58c62e",
                 "shasum": ""
             },
             "require": {
@@ -2886,15 +2888,27 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.3"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/5.0.4"
             },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/sebastian/comparator",
+                    "type": "tidelift"
                 }
             ],
-            "time": "2024-10-18T14:56:07+00:00"
+            "time": "2025-09-07T05:25:07+00:00"
         },
         {
             "name": "sebastian/complexity",
