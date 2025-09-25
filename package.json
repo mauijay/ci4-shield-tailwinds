@@ -53,8 +53,8 @@
     "serve": "vite preview",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "php-cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
-    "php-cs-fix": "php-cs-fixer fix --verbose --ansi --using-cache=no --diff",
+    "php-cs": ".\\vendor\\bin\\php-cs-fixer fix --ansi --verbose --dry-run --diff --allow-risky=yes",
+    "php-cs-fix": ".\\vendor\\bin\\php-cs-fixer fix --verbose --ansi --using-cache=no --diff --allow-risky=yes",
     "format": "npm run prettier:fix && npm run php-cs-fix",
     "commit": "cz"
   }

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controllers\Admin\DashboardController;
 use App\Controllers\HelpController;
 use App\Controllers\HomeController;
 use App\Controllers\LegalController;
@@ -24,8 +25,7 @@ $routes->match(['get', 'post'], 'help/(:any)', [HelpController::class, 'show/$1'
 
 service('auth')->routes($routes);
 
-$routes->group('admin', function ($routes) {
-    $routes->get('dashboard', 'Admin\DashboardController::index', ['as' => 'admin.dashboard']);
-    // Add more admin routes here
+$routes->group('admin', ['filter' => ['session', 'group:admin']], function ($routes): void {
+  $routes->get('dashboard', [DashboardController::class, 'index'], ['as' => 'admin.dashboard']);
+  // Add more admin routes here
 });
-
