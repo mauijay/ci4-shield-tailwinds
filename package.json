@@ -1,6 +1,6 @@
 {
   "name": "ci4-shield-tailwinds",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Codeigniter4 starter kit for new projects.",
   "keywords": [
     "tailwindcss",
@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
     "commitizen": "^4.3.1",
+    "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^5.1.18",
     "postcss": "^8.5.6",
@@ -56,6 +57,11 @@
     "php-cs": ".\\vendor\\bin\\php-cs-fixer fix --ansi --verbose --dry-run --diff --allow-risky=yes",
     "php-cs-fix": ".\\vendor\\bin\\php-cs-fixer fix --verbose --ansi --using-cache=no --diff --allow-risky=yes",
     "format": "npm run prettier:fix && npm run php-cs-fix",
-    "commit": "cz"
+    "commit": "cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:first": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "version:patch": "npm version patch && npm run changelog",
+    "version:minor": "npm version minor && npm run changelog",
+    "version:major": "npm version major && npm run changelog"
   }
 }
