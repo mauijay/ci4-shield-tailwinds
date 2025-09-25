@@ -8,7 +8,7 @@
     <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
   </head>
   <body
-    class="h-screen overflow-hidden flex items-center justify-center"
+    class="flex h-screen items-center justify-center overflow-hidden"
     style="background: #edf2f7"
   >
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -21,7 +21,7 @@
           <div class="flex items-center justify-between">
             <div>
               <a
-                class="text-2xl font-bold text-gray-800 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl"
+                class="text-2xl font-bold text-gray-800 hover:text-gray-700 lg:text-3xl dark:text-white dark:hover:text-gray-300"
                 href="#"
                 >Brand</a
               >
@@ -74,35 +74,35 @@
           <div
             x-cloak
             :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-            class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out dark:bg-gray-900 lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent"
+            class="absolute inset-x-0 z-20 w-full bg-white px-6 py-4 shadow-md transition-all duration-300 ease-in-out lg:relative lg:top-0 lg:mt-0 lg:flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none dark:bg-gray-900 lg:dark:bg-transparent"
           >
             <div
               class="lg:-px-8 flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:space-y-0"
             >
               <a
-                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 lg:mx-8 dark:text-gray-200 dark:hover:text-blue-400"
                 href="#"
                 >Home</a
               >
               <a
-                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 lg:mx-8 dark:text-gray-200 dark:hover:text-blue-400"
                 href="#"
                 >Components</a
               >
               <a
-                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 lg:mx-8 dark:text-gray-200 dark:hover:text-blue-400"
                 href="#"
                 >Pricing</a
               >
               <a
-                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8"
+                class="transform text-gray-700 transition-colors duration-300 hover:text-blue-500 lg:mx-8 dark:text-gray-200 dark:hover:text-blue-400"
                 href="#"
                 >Contact</a
               >
             </div>
 
             <a
-              class="mt-4 block rounded-lg bg-blue-600 px-6 py-2.5 text-center font-medium capitalize leading-5 text-white hover:bg-blue-500 lg:mt-0 lg:w-auto"
+              class="mt-4 block rounded-lg bg-blue-600 px-6 py-2.5 text-center leading-5 font-medium text-white capitalize hover:bg-blue-500 lg:mt-0 lg:w-auto"
               href="#"
             >
               Get started
@@ -113,7 +113,7 @@
         <div class="container mx-auto px-6 py-16 text-center">
           <div class="mx-auto max-w-lg">
             <h1
-              class="text-3xl font-bold text-gray-800 dark:text-white lg:text-4xl"
+              class="text-3xl font-bold text-gray-800 lg:text-4xl dark:text-white"
             >
               Building Your Next App with our Awesome components
             </h1>
@@ -122,7 +122,7 @@
               similique obcaecati illum mollitia.
             </p>
             <button
-              class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-hidden lg:mx-0 lg:w-auto"
+              class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm leading-5 font-medium text-white capitalize hover:bg-blue-500 focus:outline-hidden lg:mx-0 lg:w-auto"
             >
               Start 14-Day free trial
             </button>
@@ -141,7 +141,7 @@
       <section class="bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6 py-10">
           <h1
-            class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+            class="text-center text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
           >
             Portfolio
           </h1>
@@ -161,12 +161,12 @@
                 alt=""
               />
               <h2
-                class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-800 capitalize dark:text-white"
               >
                 Best website collections
               </h2>
               <p
-                class="mt-2 text-lg uppercase tracking-wider text-blue-500 dark:text-blue-400"
+                class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400"
               >
                 Website
               </p>
@@ -179,12 +179,12 @@
                 alt=""
               />
               <h2
-                class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-800 capitalize dark:text-white"
               >
                 Block of Ui kit collections
               </h2>
               <p
-                class="mt-2 text-lg uppercase tracking-wider text-blue-500 dark:text-blue-400"
+                class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400"
               >
                 Ui kit
               </p>
@@ -197,12 +197,12 @@
                 alt=""
               />
               <h2
-                class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-800 capitalize dark:text-white"
               >
                 Ton’s of mobile mockup
               </h2>
               <p
-                class="mt-2 text-lg uppercase tracking-wider text-blue-500 dark:text-blue-400"
+                class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400"
               >
                 Mockups
               </p>
@@ -215,7 +215,7 @@
         <div class="h-[32rem] bg-gray-100 dark:bg-gray-800">
           <div class="container mx-auto px-6 py-10">
             <h1
-              class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+              class="text-center text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
             >
               The Executive Team
             </h1>
@@ -247,7 +247,7 @@
             class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-3"
           >
             <div
-              class="flex flex-col items-center rounded-xl border p-4 dark:border-gray-700 sm:p-6"
+              class="flex flex-col items-center rounded-xl border p-4 sm:p-6 dark:border-gray-700"
             >
               <img
                 class="aspect-square w-full rounded-xl object-cover"
@@ -256,12 +256,12 @@
               />
 
               <h1
-                class="mt-4 text-2xl font-semibold capitalize text-gray-700 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white"
               >
                 arthur melo
               </h1>
 
-              <p class="mt-2 capitalize text-gray-500 dark:text-gray-300">
+              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">
                 design director
               </p>
 
@@ -320,7 +320,7 @@
             </div>
 
             <div
-              class="flex flex-col items-center rounded-xl border p-4 dark:border-gray-700 sm:p-6"
+              class="flex flex-col items-center rounded-xl border p-4 sm:p-6 dark:border-gray-700"
             >
               <img
                 class="aspect-square w-full rounded-xl object-cover"
@@ -329,12 +329,12 @@
               />
 
               <h1
-                class="mt-4 text-2xl font-semibold capitalize text-gray-700 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white"
               >
                 Pamela Anderson
               </h1>
 
-              <p class="mt-2 capitalize text-gray-500 dark:text-gray-300">
+              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">
                 Lead Developer
               </p>
 
@@ -393,7 +393,7 @@
             </div>
 
             <div
-              class="flex flex-col items-center rounded-xl border p-4 dark:border-gray-700 sm:p-6"
+              class="flex flex-col items-center rounded-xl border p-4 sm:p-6 dark:border-gray-700"
             >
               <img
                 class="aspect-square w-full rounded-xl object-cover"
@@ -402,12 +402,12 @@
               />
 
               <h1
-                class="mt-4 text-2xl font-semibold capitalize text-gray-700 dark:text-white"
+                class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white"
               >
                 John Doe
               </h1>
 
-              <p class="mt-2 capitalize text-gray-500 dark:text-gray-300">
+              <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">
                 Full stack developer
               </p>
 
@@ -471,7 +471,7 @@
       <section class="bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6 py-10">
           <h1
-            class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+            class="text-center text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
           >
             What clients saying
           </h1>
@@ -486,7 +486,7 @@
 
           <div class="mx-auto mt-16 flex max-w-6xl items-start">
             <button
-              class="hidden rounded-full border p-2 text-gray-800 transition-colors duration-300 hover:bg-gray-100 rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block"
+              class="hidden rounded-full border p-2 text-gray-800 transition-colors duration-300 hover:bg-gray-100 lg:block rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -535,7 +535,7 @@
             </div>
 
             <button
-              class="hidden rounded-full border p-2 text-gray-800 transition-colors duration-300 hover:bg-gray-100 rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 lg:block"
+              class="hidden rounded-full border p-2 text-gray-800 transition-colors duration-300 hover:bg-gray-100 lg:block rtl:-scale-x-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -560,7 +560,7 @@
         <div class="container mx-auto px-6 py-10">
           <div class="text-center">
             <h1
-              class="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+              class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
             >
               From the blog
             </h1>
@@ -727,13 +727,13 @@
       <div class="bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6 py-8">
           <h1
-            class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl"
+            class="text-center text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
           >
             Pricing Plan
           </h1>
 
           <p
-            class="mx-auto mt-4 max-w-2xl text-center text-gray-500 dark:text-gray-300 xl:mt-6"
+            class="mx-auto mt-4 max-w-2xl text-center text-gray-500 xl:mt-6 dark:text-gray-300"
           >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias quas
             magni libero consequuntur voluptatum velit amet id repudiandae ea,
@@ -746,12 +746,12 @@
             <div
               class="w-full space-y-8 rounded-lg border border-gray-100 p-8 text-center dark:border-gray-700"
             >
-              <p class="font-medium uppercase text-gray-500 dark:text-gray-300">
+              <p class="font-medium text-gray-500 uppercase dark:text-gray-300">
                 Free
               </p>
 
               <h2
-                class="text-5xl font-bold uppercase text-gray-800 dark:text-gray-100"
+                class="text-5xl font-bold text-gray-800 uppercase dark:text-gray-100"
               >
                 $0
               </h2>
@@ -761,7 +761,7 @@
               </p>
 
               <button
-                class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:outline-hidden focus:ring-3 focus:ring-blue-300 focus:ring-opacity-80"
+                class="focus:ring-opacity-80 mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 tracking-wide text-white capitalize transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:ring-3 focus:ring-blue-300 focus:outline-hidden"
               >
                 Start Now
               </button>
@@ -770,10 +770,10 @@
             <div
               class="w-full space-y-8 rounded-lg bg-blue-600 p-8 text-center"
             >
-              <p class="font-medium uppercase text-gray-200">Premium</p>
+              <p class="font-medium text-gray-200 uppercase">Premium</p>
 
               <h2
-                class="text-5xl font-bold uppercase text-white dark:text-gray-100"
+                class="text-5xl font-bold text-white uppercase dark:text-gray-100"
               >
                 $40
               </h2>
@@ -781,7 +781,7 @@
               <p class="font-medium text-gray-200">Per month</p>
 
               <button
-                class="mt-10 w-full transform rounded-md bg-white px-4 py-2 capitalize tracking-wide text-blue-500 transition-colors duration-300 hover:bg-gray-100 focus:bg-gray-100 focus:outline-hidden focus:ring-3 focus:ring-gray-200 focus:ring-opacity-80"
+                class="focus:ring-opacity-80 mt-10 w-full transform rounded-md bg-white px-4 py-2 tracking-wide text-blue-500 capitalize transition-colors duration-300 hover:bg-gray-100 focus:bg-gray-100 focus:ring-3 focus:ring-gray-200 focus:outline-hidden"
               >
                 Start Now
               </button>
@@ -790,12 +790,12 @@
             <div
               class="w-full space-y-8 rounded-lg border border-gray-100 p-8 text-center dark:border-gray-700"
             >
-              <p class="font-medium uppercase text-gray-500 dark:text-gray-300">
+              <p class="font-medium text-gray-500 uppercase dark:text-gray-300">
                 Enterprise
               </p>
 
               <h2
-                class="text-5xl font-bold uppercase text-gray-800 dark:text-gray-100"
+                class="text-5xl font-bold text-gray-800 uppercase dark:text-gray-100"
               >
                 $100
               </h2>
@@ -805,7 +805,7 @@
               </p>
 
               <button
-                class="mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:outline-hidden focus:ring-3 focus:ring-blue-300 focus:ring-opacity-80"
+                class="focus:ring-opacity-80 mt-10 w-full transform rounded-md bg-blue-600 px-4 py-2 tracking-wide text-white capitalize transition-colors duration-300 hover:bg-blue-500 focus:bg-blue-500 focus:ring-3 focus:ring-blue-300 focus:outline-hidden"
               >
                 Start Now
               </button>
@@ -1139,7 +1139,7 @@
 
             <div class="mt-8 lg:mx-6 lg:w-1/2">
               <div
-                class="mx-auto w-full overflow-hidden rounded-xl bg-white px-8 py-10 shadow-2xl dark:bg-gray-900 lg:max-w-xl"
+                class="mx-auto w-full overflow-hidden rounded-xl bg-white px-8 py-10 shadow-2xl lg:max-w-xl dark:bg-gray-900"
               >
                 <h1
                   class="text-2xl font-medium text-gray-700 dark:text-gray-200"
@@ -1156,7 +1156,7 @@
                     <input
                       type="text"
                       placeholder="John Doe"
-                      class="mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 focus:border-blue-400 focus:outline-hidden focus:ring-3 focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
+                      class="focus:ring-opacity-40 mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 focus:border-blue-400 focus:ring-3 focus:ring-blue-300 focus:outline-hidden dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                     />
                   </div>
 
@@ -1168,7 +1168,7 @@
                     <input
                       type="email"
                       placeholder="johndoe@example.com"
-                      class="mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 focus:border-blue-400 focus:outline-hidden focus:ring-3 focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
+                      class="focus:ring-opacity-40 mt-2 block w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 focus:border-blue-400 focus:ring-3 focus:ring-blue-300 focus:outline-hidden dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                     />
                   </div>
 
@@ -1178,13 +1178,13 @@
                       >Message</label
                     >
                     <textarea
-                      class="mt-2 block h-32 w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:outline-hidden focus:ring-3 focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300 md:h-48"
+                      class="focus:ring-opacity-40 mt-2 block h-32 w-full rounded-md border border-gray-200 bg-white px-5 py-3 text-gray-700 placeholder-gray-400 focus:border-blue-400 focus:ring-3 focus:ring-blue-300 focus:outline-hidden md:h-48 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                       placeholder="Message"
                     ></textarea>
                   </div>
 
                   <button
-                    class="mt-6 w-full transform rounded-md bg-blue-600 px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 hover:bg-blue-500 focus:outline-hidden focus:ring-3 focus:ring-blue-400 focus:ring-opacity-50"
+                    class="focus:ring-opacity-50 mt-6 w-full transform rounded-md bg-blue-600 px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 hover:bg-blue-500 focus:ring-3 focus:ring-blue-400 focus:outline-hidden"
                   >
                     get in touch
                   </button>
@@ -1199,7 +1199,7 @@
         <div class="container mx-auto px-6 py-12">
           <div class="md:-mx-3 md:flex md:items-center md:justify-between">
             <h1
-              class="text-3xl font-semibold tracking-tight text-gray-800 dark:text-white md:mx-3 xl:text-4xl"
+              class="text-3xl font-semibold tracking-tight text-gray-800 md:mx-3 xl:text-4xl dark:text-white"
             >
               Subscribe our newsletter to get update.
             </h1>
@@ -1207,7 +1207,7 @@
             <div class="mt-6 shrink-0 md:mx-3 md:mt-0 md:w-auto">
               <a
                 href="#"
-                class="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2 text-sm text-white duration-300 hover:bg-gray-700 focus:ring-3 focus:ring-gray-300 focus:ring-opacity-80"
+                class="focus:ring-opacity-80 inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2 text-sm text-white duration-300 hover:bg-gray-700 focus:ring-3 focus:ring-gray-300"
               >
                 <span class="mx-2">Sign Up Now</span>
 
@@ -1229,7 +1229,7 @@
             </div>
           </div>
 
-          <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10" />
+          <hr class="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
           <div
             class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
@@ -1326,7 +1326,7 @@
             </div>
           </div>
 
-          <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10" />
+          <hr class="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
           <div class="flex flex-col items-center justify-between sm:flex-row">
             <a
@@ -1335,7 +1335,7 @@
               >Brand</a
             >
 
-            <p class="mt-4 text-sm text-gray-500 dark:text-gray-300 sm:mt-0">
+            <p class="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-300">
               © Copyright 2021. All Rights Reserved.
             </p>
           </div>

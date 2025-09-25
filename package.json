@@ -44,7 +44,7 @@
     }
   },
   "scripts": {
-    "test": "echo \"Error: no test specified you big dummy\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start:css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/css/styles.css --watch",
     "build:css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/css/styles.min.css -m",
     "dev": "vite",
@@ -53,6 +53,9 @@
     "serve": "vite preview",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
+    "php-cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
+    "php-cs-fix": "php-cs-fixer fix --verbose --ansi --using-cache=no --diff",
+    "format": "npm run prettier:fix && npm run php-cs-fix",
     "commit": "cz"
   }
 }

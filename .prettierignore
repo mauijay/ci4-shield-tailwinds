@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+public/assets/
+build/
+dist/
+
+# PHP files (use PHP-CS-Fixer instead)
+*.php
+*.phtml
+
+# Config files that don't need formatting
+.env*
+*.lock
+composer.lock
+package-lock.json
+
+# Cache
+.php-cs-fixer.cache

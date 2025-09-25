@@ -8,11 +8,11 @@
   "Scope": "/",
   "start_url": "/?start_url",
   "start_url_2": "/pwa?homescreen=1",
-  "id_2": "/pwa?homescreen=1",  
+  "id_2": "/pwa?homescreen=1",
   "splash_pages": null,
   "screenshots": [
     {
-     "src": "\/pwa\/images\/image1.png",
+      "src": "\/pwa\/images\/image1.png",
       "sizes": "640x320",
       "type": "image/png",
       "form_factor": "wide",
@@ -20,11 +20,11 @@
     },
     {
       "src": "\/pwa\/images\/a988c1bf6e66482d5292e2c0c52f2dde.gif",
-       "sizes": "320x640",
-       "type": "image/gif",
-       "form_factor": "narrow",
-       "label": "BS Mobile Widgets"
-     }
+      "sizes": "320x640",
+      "type": "image/gif",
+      "form_factor": "narrow",
+      "label": "BS Mobile Widgets"
+    }
   ],
   "icons": [
     {
@@ -72,12 +72,12 @@
       "sizes": "512x512",
       "type": "image\/png",
       "density": "4.0"
-     },
+    },
     {
       "src": "\/pwa\/icons\/maskable_icon.png",
       "sizes": "192x192",
       "type": "image\/png",
       "purpose": "any maskable"
-     }
+    }
   ]
 }

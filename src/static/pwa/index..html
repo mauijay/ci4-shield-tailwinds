@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Deferred Prompt</title>
@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <button id="promptButton" hidden>
-      Prompt user to install this PWA
-    </button>
+    <button id="promptButton" hidden>Prompt user to install this PWA</button>
     <pre id="pre">Waiting for beforeinstallprompt...<br/></pre>
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("./assets/js/sw.js");
       }
       window.addEventListener("beforeinstallprompt", e => {
-        pre.append(`> beforeinstallprompt fired with platforms: ${e.platforms.join(',')}\r\n`);
+        pre.append(
+          `> beforeinstallprompt fired with platforms: ${e.platforms.join(",")}\r\n`
+        );
         const showDefaultPrompt = new URLSearchParams(location.search).has(
           "showDefaultPrompt"
         );
@@ -31,9 +31,7 @@
           pre.append(`userChoice resolved with: ${JSON.stringify(result)}\r\n`)
         );
         promptButton.onclick = () => {
-          pre.append(
-            "Waiting for user choice...\r\n"
-          );
+          pre.append("Waiting for user choice...\r\n");
           e.prompt();
         };
       });

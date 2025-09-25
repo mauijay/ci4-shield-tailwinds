@@ -28,6 +28,6 @@ export default (displayTime = 5) => ({
   },
   destroy() {
     clearInterval(this.timer);
-    this.$el.closest(".alert-component").remove();
+    this.$el.closest('.alert-component').remove();
   },
 });

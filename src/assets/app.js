@@ -1,3 +1,3 @@
-let a = "My name is Mudd";
+let a = 'My name is Mudd';
 console.log(a);
-console.log("Hello World");
+console.log('Hello World');

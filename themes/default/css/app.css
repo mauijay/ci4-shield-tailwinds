@@ -27,27 +27,27 @@ body {
 }
 
 .dropdown ul li {
-  @apply hover:bg-white/20 hover:text-primary-content;
+  @apply hover:text-primary-content hover:bg-white/20;
 }
 .dropdown ul li.separator {
-  @apply border-t border-base-200;
+  @apply border-base-200 border-t;
 }
 .navbar .menu li a {
-  @apply text-orange-50 hover:bg-white/20 hover:text-primary-content;
+  @apply hover:text-primary-content text-orange-50 hover:bg-white/20;
 }
 
 // Header Row
 .header-row {
-  @apply flex justify-center p-6 bg-base-200 dark:bg-base-300 border border-l-0 border-r-0 border-base-300 shadow-inner;
+  @apply bg-base-200 dark:bg-base-300 border-base-300 flex justify-center border border-r-0 border-l-0 p-6 shadow-inner;
 
   & > div {
-    @apply container flex flex-col sm:flex-row w-auto;
+    @apply container flex w-auto flex-col sm:flex-row;
 
     h2 {
-      @apply text-xl text-slate-700 dark:text-neutral-300 font-bold;
+      @apply text-xl font-bold text-slate-700 dark:text-neutral-300;
 
       & span {
-        @apply text-neutral-500 font-normal hidden sm:inline;
+        @apply hidden font-normal text-neutral-500 sm:inline;
       }
     }
   }
@@ -66,9 +66,9 @@ body {
 }
 
 .action-bar {
-  @apply flex flex-col sm:flex-row justify-between mt-8 py-2;
+  @apply mt-8 flex flex-col justify-between py-2 sm:flex-row;
   @apply border-t border-b border-neutral-300 dark:border-neutral-600;
-  @apply opacity-60 hover:opacity-100 transition;
+  @apply opacity-60 transition hover:opacity-100;
 
   .action-btn {
     @apply btn btn-sm btn-ghost opacity-50 hover:opacity-100;
@@ -79,17 +79,17 @@ input.filter-select {
   @apply select select-bordered select-sm w-auto;
 }
 fieldset {
-  @apply pl-6 mb-8;
+  @apply mb-8 pl-6;
 
   legend {
-    @apply text-base-content -ml-6 mb-2 font-bold;
+    @apply text-base-content mb-2 -ml-6 font-bold;
   }
 }
 .form-control {
-  @apply w-full mb-4;
+  @apply mb-4 w-full;
 }
 label.error {
-  @apply text-xs text-error;
+  @apply text-error text-xs;
 }
 
 .input-tags {
@@ -98,10 +98,10 @@ label.error {
 
 .discussion-list-item {
   .discussion-stat {
-    @apply w-full text-neutral-600 text-sm sm:text-base;
+    @apply w-full text-sm text-neutral-600 sm:text-base;
   }
   .discussion-stat-label {
-    @apply w-full pl-1 sm:pl-0 text-neutral-400 text-sm;
+    @apply w-full pl-1 text-sm text-neutral-400 sm:pl-0;
   }
 
   &:hover {
@@ -115,15 +115,15 @@ label.error {
 }
 
 .post-answer {
-  @apply border rounded-2xl border-success;
+  @apply border-success rounded-2xl border;
 
   .answer-bar {
-    @apply flex justify-center items-center p-2 mb-6 -ml-6 -mr-6 bg-success text-white;
+    @apply bg-success -mr-6 mb-6 -ml-6 flex items-center justify-center p-2 text-white;
   }
 }
 
 .signature a {
-  @apply underline hover:text-primary;
+  @apply hover:text-primary underline;
 }
 
 // ensure vendor prefix for Chrome and masks
