@@ -11,7 +11,9 @@
 ## Overview
 
 A work in progress! This repository provides a starter template for
-**CodeIgniter 4**, configured to get your application up and running quickly
+**CodeIgniter 4**, configured to get your application up and running quickly.
+
+I am trying several ways and will leave options open to suite your needs.
 
 This repository includes:
 
