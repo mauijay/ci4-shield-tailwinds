@@ -10,5 +10,6 @@ class DashboardController extends BaseController
 {
     public function index(): void
     {
+        echo view('Admin/dashboard');
     }
 }

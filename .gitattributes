@@ -1,4 +1,36 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Force LF line endings for specific file types
+*.php text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# Language detection for GitHub
 *.css linguist-detectable=false
-# *.php linguist-language=PHP
+*.scss linguist-detectable=false
+*.php linguist-language=PHP
+*.js linguist-language=JavaScript
+*.vue linguist-language=Vue
+
+# Ignore generated files from language statistics
+/public/assets/* linguist-generated=true
+/vendor/* linguist-vendored=true
+/node_modules/* linguist-vendored=true

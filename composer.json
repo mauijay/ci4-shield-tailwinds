@@ -3,7 +3,7 @@
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "license": "MIT",
   "type": "project",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "require": {
     "php": "^8.2",
     "codeigniter4/framework": "^4.6",
@@ -25,7 +25,7 @@
   "autoload": {
     "psr-4": {
       "App\\": "app/",
-      "Config\\": "app/Config"
+      "Config\\": "app/Config/"
     },
     "exclude-from-classmap": [
       "**/Database/Migrations/**"
@@ -33,7 +33,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\Support\\": "tests/_support"
+      "Tests\\Support\\": "tests/_support/"
     }
   },
   "minimum-stability": "dev",
@@ -50,24 +50,20 @@
     "ci": [
       "Composer\\Config::disableProcessTimeout",
       "@cs",
-      "@deduplicate",
       "@test"
     ],
     "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
-    "cs-fix": "php-cs-fixer fix  --verbose --ansi --using-cache=no --diff",
-    "deduplicate": "phpcpd src/",
+    "cs-fix": "php-cs-fixer fix --verbose --ansi --using-cache=no --diff",
     "dev:8081": "php spark serve --port 8081",
-    "style:check": "vendor/bin/ecs check --ansi",
-    "style:fix": "vendor/bin/ecs check --fix --ansi",
     "stan": "vendor/bin/phpstan analyse app tests",
     "phpstan": "vendor/bin/phpstan analyse --ansi",
-    "rector": "rector process --config .config/rector.php --dry-run",
-    "rector-fix": "rector process --config .config/rector.php",
+    "rector": "rector process --dry-run",
+    "rector-fix": "rector process",
     "test": [
       "@putenv XDEBUG_MODE=coverage",
       "vendor/bin/phpunit"
     ],
-    "test2": "vendor/bin/phpunit --no-coverage",
+    "test:no-coverage": "vendor/bin/phpunit --no-coverage",
     "post-update-cmd": [
       "@composer dump-autoload"
     ]

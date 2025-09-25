@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use CodeIgniter\CodingStandard\CodeIgniter4;
-use Nexus\CsConfig\Factory;
+use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
 $finder = Finder::create()
@@ -16,22 +15,15 @@ $finder = Finder::create()
         'build',
         'Views',
     ])
-    ->append([
-        __FILE__,
-        __DIR__ . '/rector.php',
-        __DIR__ . '/psalm_autoload.php',
-    ]);
+    ->notPath('app/Config/Routes.php');
 
-$overrides = [
-    'declare_strict_types' => true,
-    'void_return'          => true,
-];
-
-$options = [
-    'finder'    => $finder,
-    'cacheFile' => 'build/.php-cs-fixer.cache',
-];
-
-// return Factory::create(new CodeIgniter4())->forProjects();
-
-return Factory::create(new CodeIgniter4(), $overrides, $options)->forProjects();
+return (new Config())
+    ->setFinder($finder)
+    ->setRules([
+        '@PSR12' => true,
+        'declare_strict_types' => true,
+        'void_return' => true,
+        'blank_line_after_opening_tag' => false,
+        'linebreak_after_opening_tag' => false,
+    ])
+    ->setCacheFile('build/.php-cs-fixer.cache');

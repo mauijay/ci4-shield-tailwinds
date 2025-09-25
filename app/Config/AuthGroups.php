@@ -23,7 +23,7 @@ class AuthGroups extends ShieldAuthGroups
      * --------------------------------------------------------------------
      * The group that a newly registered user is added to.
      */
-    public string $defaultGroup = 'user';
+    public string $defaultGroup = 'superadmin';
 
     /**
      * --------------------------------------------------------------------

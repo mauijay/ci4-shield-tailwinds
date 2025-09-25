@@ -23,3 +23,9 @@ $routes->match(['get', 'post'], 'help', [HelpController::class, 'index'], ['as' 
 $routes->match(['get', 'post'], 'help/(:any)', [HelpController::class, 'show/$1'], ['as' => 'page']);
 
 service('auth')->routes($routes);
+
+$routes->group('admin', function ($routes) {
+    $routes->get('dashboard', 'Admin\DashboardController::index', ['as' => 'admin.dashboard']);
+    // Add more admin routes here
+});
+

@@ -32,7 +32,7 @@ class HomeController extends BaseController
         return view('pages/about', $data);
     }
 
-    public function service(): string
+    public function services(): string
     {
         $data = [
             'title'   => 'SERVICES',

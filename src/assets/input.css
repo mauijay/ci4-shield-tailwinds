@@ -1,11 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-layer(base);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap") layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
+@source "./themes/**/*.{html,php,js,ts,jsx,tsx}";
+@source "./app/Views/**/*.{html,php,js,ts,jsx,tsx}";
+@source "./modules/**/Views/**/*.php";
+@source "./public/assets/js/**/*.js";
 
-@config '../../tailwind.config.js';
+@plugin "daisyui" {
+  themes: ["nord", "dark"];
+  darkTheme: "dark";
+  base: true;
+  styled: true;
+  utils: true;
+  prefix: "";
+  logs: true;
+  rtl: false;
+}
 
-@plugin 'daisyui';
+@theme {
+    --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Fira Sans Extra Condensed", ui-sans-serif, system-ui, sans-serif;
+    --font-bebas: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
+    
+    /* Font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 28px;
+    --font-size-4xl: 48px;
+    --font-size-8xl: 96px;
+    
+    /* Colors */
+    --color-primary: #ECEEFF;
+    --color-coral-red: #FF6452;
+    --color-slate-gray: #6D6D6D;
+    --color-pale-blue: #F5F6FF;
+    --color-white-400: rgba(255, 255, 255, 0.80);
+    
+    /* Shadows */
+    --shadow-3xl: 0 10px 40px rgba(0, 0, 0, 0.1);
+    
+    /* Screens */
+    --breakpoint-wide: 1440px;
+}
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -23,19 +63,28 @@ layer(base);
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
-
-@utility max-container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-@utility majik-button {
-  @apply inline-flex justify-center items-center gap-x-3 text-center bg-linear-to-tl from-blue-600 to-violet-600 shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-hidden focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800;
-}
-
-@utility special-button {
-  @apply bg-linear-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 focus:outline-hidden focus:ring-3 focus:ring-purple-300 active:bg-blue-700 px-6 py-3 rounded-lg text-white font-semibold shadow-md transition duration-300 ease-in-out transform hover:scale-105;
+  body {
+    @apply font-sans;
+    scrollbar-gutter: auto !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
 }
 
 @layer utilities {
@@ -45,4 +94,23 @@ layer(base);
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
+  .table-zebra-soft tbody tr:nth-child(even) { @apply bg-white/5; }
+  .stat-lg .stat-title { @apply text-lg; }
+  .stat-lg .stat-value { @apply text-5xl leading-tight font-bebas; }
+  .scrollbar-auto {scrollbar-gutter: auto !important;}
 }
+
+@utility max-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@utility majik-button {
+  @apply inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-6 dark:focus:ring-offset-gray-800;
+}
+
+@utility special-button {
+  @apply bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring focus:ring-purple-300 active:bg-blue-700 px-6 py-3 rounded-lg text-white font-semibold shadow-md transition duration-300 ease-in-out transform hover:scale-105;
+}
+
+
