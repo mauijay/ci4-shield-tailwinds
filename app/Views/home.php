@@ -3,7 +3,6 @@
 <?= $this->section('content'); ?>
 <?= $this->include('partials/front/_hero') ?>
 
-
 <div class="bg-white relative   flex items-center  n justify-center overflow-hidden z-50 ">
 
   <div
@@ -86,7 +85,6 @@
 
 </div>
 
-
 <section class="bg-gray-200 dark:bg-gray-900">
   <div class="container mx-auto px-6 py-10">
     <h2 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">Services
@@ -134,8 +132,6 @@
     </div>
   </div>
 </section>
-
-
 
 <section id="services" class="bg-white">
   <div class="container xl:max-w-6xl mx-auto px-6 py-10">
@@ -506,18 +502,6 @@
   </div>
 </section>
 
-
-
 <?= $this->include('partials/front/_cta') ?>
-
-
-
-
-
-
-
-
-
-
 
 <?= $this->endSection(); ?>

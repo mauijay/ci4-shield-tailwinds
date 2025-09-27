@@ -1,6 +1,6 @@
 {
   "name": "ci4-shield-tailwinds",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Codeigniter4 starter kit for new projects.",
   "keywords": [
     "tailwindcss",
@@ -21,7 +21,7 @@
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "daisyui": "^5.1.18",
+    "daisyui": "^5.1.23",
     "postcss": "^8.5.6",
     "postcss-advanced-variables": "^5.0.0",
     "postcss-cli": "^11.0.1",
@@ -47,6 +47,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/css/styles.css --watch",
+    "admin:css": "npx @tailwindcss/cli -i ./src/assets/admin.css -o ./public/assets/css/admin.css --watch",
     "build:css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/css/styles.min.css -m",
     "dev": "vite",
     "build": "vite build",

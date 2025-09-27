@@ -3,13 +3,18 @@
 declare(strict_types=1);
 
 namespace App\Controllers\Admin;
+use App\Controllers\Admin\BaseAdminController;
 
-use App\Controllers\BaseController;
 
-class DashboardController extends BaseController
+
+class DashboardController extends BaseAdminController
 {
-    public function index(): void
+    public function index(): string
     {
-        echo view('Admin/dashboard');
+      $data = [
+          'title' => 'Admin Dashboard',
+      ];
+
+      return $this->render('admin/dashboard', $data);
     }
 }

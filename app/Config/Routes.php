@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Controllers\Admin\DashboardController;
+use App\Controllers\Admin\Settings\SettingsController;
 use App\Controllers\HelpController;
 use App\Controllers\HomeController;
 use App\Controllers\LegalController;
@@ -25,7 +26,14 @@ $routes->match(['get', 'post'], 'help/(:any)', [HelpController::class, 'show/$1'
 
 service('auth')->routes($routes);
 
-$routes->group('admin', ['filter' => ['session', 'group:admin']], function ($routes): void {
-  $routes->get('dashboard', [DashboardController::class, 'index'], ['as' => 'admin.dashboard']);
-  // Add more admin routes here
+// Super admin only routes
+$routes->group('admin/super', ['filter' => ['session', 'group:superadmin']], function ($routes): void {
+    $routes->get('system-settings', [SettingsController::class, 'systemSettings']);
+});
+
+// Admin and super admin routes
+$routes->group('admin', ['filter' => ['session', 'group:superadmin,admin']], function ($routes): void {
+    $routes->get('/', [DashboardController::class, 'index'], ['as' => 'admin.dashboard']);
+    $routes->get('settings', [SettingsController::class, 'index'], ['as' => 'admin.settings']);
+    // Add more admin routes here
 });

@@ -6,7 +6,7 @@
   <section class=" w-full grid grid-cols-1 md:grid-cols-2 px-[10%] lg:px-[15%] py-8 gap-10 bg-zinc-100">
     <div class=" flex items-center justify-center">
       <div class=" card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Image"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Image"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal1" class="card-body items-center justify-center text-center cursor-pointer">
           <h2 class="card-title">Service 1</h2>
@@ -38,7 +38,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal2" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 2</h2>
@@ -74,7 +74,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal3" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 3</h2>
@@ -111,7 +111,7 @@
     </div>    
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal5" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 4</h2>
@@ -148,7 +148,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal6" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 5</h2>
@@ -186,7 +186,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" />
         </figure>
         <label for="modal7" class="card-body items-center justify-center text-center">
@@ -226,7 +226,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal8" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 7</h2>
@@ -263,7 +263,7 @@
     </div>
     <div class=" flex items-center justify-center">
       <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('images/400x200.png') ?>" alt="Shoes"
+        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
             class=" object-cover w-full h-full" /></figure>
         <label for="modal9" class="card-body items-center justify-center text-center">
           <h2 class="card-title">Service 8</h2>
