@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Models;
 
@@ -54,7 +54,7 @@ class MessageModel extends Model
                    ->orderBy('created_at', 'DESC')
                    ->findAll();
     }
-    
+
     /**
      * Count unread messages for a specific recipient
      */

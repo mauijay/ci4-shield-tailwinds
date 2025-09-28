@@ -34,24 +34,16 @@ export default defineConfig(() => {
       }),
     ],
     build: {
-      // generate manifest.json in outDir
       manifest: true,
       rollupOptions: {
-        // overwrite default .html entry
         input: {
           // Tailwind CSS
           'css/app': './src/assets/input.css',
-          'css/about': './src/assets/about.css',
-          // Theme CSS
-          'css/default': './themes/default/css/app.css',
           'css/admin': './themes/admin/css/admin.css',
-          'css/auth': './themes/auth/css/auth.css',
+          'css/default': './themes/default/css/app.css',
           // JavaScript
           'js/main': './src/assets/main.js',
-          'js/map': './src/assets/map.js',
-          // Theme JS
           'js/admin': './themes/admin/js/admin.js',
-          'js/auth': './themes/auth/js/auth.js',
         },
       },
       outDir: './public/assets',

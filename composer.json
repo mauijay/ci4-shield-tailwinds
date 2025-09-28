@@ -5,7 +5,7 @@
   "type": "project",
   "version": "0.2.7",
   "require": {
-    "php": "^8.2",
+    "php": "^8.2 || ^8.4",
     "codeigniter4/framework": "^4.6",
     "codeigniter4/shield": "^1.2",
     "codeigniter4/queue": "dev-develop",
@@ -14,12 +14,11 @@
   },
   "require-dev": {
     "codeigniter/phpstan-codeigniter": "^1.5.4",
-    "rector/rector": "^2.1",
     "fakerphp/faker": "^1.24",
     "friendsofphp/php-cs-fixer": "^3.88",
     "mikey179/vfsstream": "^1.6",
     "phpstan/extension-installer": "^1.4",
-    "phpstan/phpstan": "*",
+    "phpstan/phpstan": "^2.0",
     "phpunit/phpunit": "^10.5.43"
   },
   "autoload": {
@@ -50,20 +49,19 @@
     "ci": [
       "Composer\\Config::disableProcessTimeout",
       "@cs",
-      "@test"
+      "@test:no-coverage",
+      "@stan"
     ],
-    "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff",
-    "cs-fix": "php-cs-fixer fix --verbose --ansi --using-cache=no --diff",
-    "dev:8081": "php spark serve --port 8081",
-    "stan": "vendor/bin/phpstan analyse app tests",
-    "phpstan": "vendor/bin/phpstan analyse --ansi",
-    "rector": "rector process --dry-run",
-    "rector-fix": "rector process",
-    "test": [
+    "stan": ".\\vendor\\bin\\phpstan analyse app tests --level=5",
+    "cs": ".\\vendor\\bin\\php-cs-fixer fix --dry-run --diff --verbose --allow-risky=yes",
+    "cs-fix": ".\\vendor\\bin\\php-cs-fixer fix --verbose --ansi --using-cache=no --diff --allow-risky=yes",
+    "test": ".\\vendor\\bin\\phpunit --no-coverage",
+    "test:coverage": [
       "@putenv XDEBUG_MODE=coverage",
-      "vendor/bin/phpunit"
+      ".\\vendor\\bin\\phpunit"
     ],
-    "test:no-coverage": "vendor/bin/phpunit --no-coverage",
+    "dev:8081": "php spark serve --port 8081",
+    "test:no-coverage": ".\\vendor\\bin\\phpunit --no-coverage",
     "post-update-cmd": [
       "@composer dump-autoload"
     ]

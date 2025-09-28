@@ -1,0 +1,19 @@
+includes:
+    - vendor/codeigniter/phpstan-codeigniter/extension.neon
+
+parameters:
+    paths:
+        - app
+        - tests
+    level: 5
+    excludePaths:
+        - app/Views/*
+        - app/Config/Routes.php
+    universalObjectCratesClasses:
+        - CodeIgniter\Entity\Entity
+        - CodeIgniter\Validation\Validation
+    bootstrapFiles:
+        - vendor/codeigniter4/framework/system/Test/bootstrap.php
+    ignoreErrors:
+        - '#Call to an undefined method CodeIgniter\\Database\\BaseBuilder::#'
+        - '#Access to an undefined property CodeIgniter\\Entity\\Entity::#'

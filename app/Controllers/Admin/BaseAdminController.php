@@ -57,14 +57,14 @@ abstract class BaseAdminController extends Controller
         // Preload any models, libraries, etc, here.
 
         //$this->session = service('session');
-        $this->navData = $this->nav();        
+        $this->navData = $this->nav();
     }
 
     private function nav(): array
     {
         $user_id = auth()->id();
         $data = [];
-        
+
         // Handle MessageModel safely
         try {
             $messageModel = model('MessageModel');
@@ -77,9 +77,9 @@ abstract class BaseAdminController extends Controller
             log_message('error', 'MessageModel error: ' . $e->getMessage());
             $data['unreadMessages'] = [];
         }
-        
+
         $data['qteUnreadMessages'] = count($data['unreadMessages']);
-        
+
         // Handle TaskModel safely
         try {
             $taskModel = model('TaskModel');
@@ -90,9 +90,9 @@ abstract class BaseAdminController extends Controller
             log_message('error', 'TaskModel error: ' . $e->getMessage());
             $data['userTasks'] = [];
         }
-        
+
         $data['qteTasks'] = count($data['userTasks']);
-        
+
         // Handle ExpenseModel safely
         try {
             $expenseModel = model('Finances/ExpenseModel');
@@ -105,7 +105,7 @@ abstract class BaseAdminController extends Controller
             log_message('error', 'ExpenseModel error: ' . $e->getMessage());
             $data['qteUnpaidExpenses'] = 0;
         }
-        
+
         $data['notifications'] = $data['qteUnreadMessages'] + $data['qteTasks'] + $data['qteUnpaidExpenses'];
         return $data;
     }
