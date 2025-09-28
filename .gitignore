@@ -11,6 +11,15 @@ Homestead.yaml
 vendor/
 
 #-------------------------
+# Private Assets
+#-------------------------
+1.DoNotUpload/
+app/Database/Migrations/*
+!app/Database/Migrations/.gitkeep
+app/Database/Seeds/*
+!app/Database/Seeds/.gitkeep
+
+#-------------------------
 # Public Generated Assets
 #-------------------------
 1.DoNotUpload/
