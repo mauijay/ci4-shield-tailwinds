@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Models\ServiceModel;
+
 class HomeController extends BaseController
 {
+    protected ServiceModel $serviceModel;
+    
     public function index(): string
     {
         $data = [
@@ -34,11 +38,13 @@ class HomeController extends BaseController
 
     public function services(): string
     {
+        $this->serviceModel = new ServiceModel();
         $data = [
             'title'   => 'SERVICES',
             'heading' => 'Services for Hawaii Business Development',
             'keyword' => 'products and services',
             'desc'    => 'our services for small business development.',
+            'services' => $this->serviceModel->orderBy('created_at', 'DESC')->findAll(),
         ];
 
         // session()->remove('step');

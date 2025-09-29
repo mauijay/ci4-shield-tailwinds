@@ -4,271 +4,32 @@
 <?= $this->include('partials/front/_header') ?>
 <main>
   <section class=" w-full grid grid-cols-1 md:grid-cols-2 px-[10%] lg:px-[15%] py-8 gap-10 bg-zinc-100">
-    <div class=" flex items-center justify-center">
-      <div class=" card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Image"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal1" class="card-body items-center justify-center text-center cursor-pointer">
-          <h2 class="card-title text-4xl text-blue-500">Service 1</h2>
-          <span class="text-blue-600 text-2xl">Subtitle</span>
-        </label>
-        <?= view_cell('\App\Cells\ServiceModalCell::render', [
-          'id' => 'modal1',
-          'title' => 'Service 1',
-          'section1Content' => '1. xxx<br>2. xxx<br>3. xxx<br>4. xxx<br>5. xxx',
-          'section2Content' => '- xxx<br>- xxx<br>- xxx<br>- xxx',
-          'schedule' => '- Monday - Friday 8am - 4pm',
-          'section1Title' => 'Stipulations',
-          'section2Title' => 'Documents',
-        ]) ?>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal2" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 2</h2>
-          <span>Subtitle</span>
-        </label>
-        <?= view_cell('\App\Cells\ServiceModalCell::render', [
-          'id' => 'modal2',
-          'title' => 'Service 2',
-          'section1Content' => '1. QQQ<br>2. QQQ<br>3. QQQ<br>4. QQQ<br>5. QQQ',
-          'section2Content' => '- XYZ<br>- XYZ<br>- XYZ<br>- XYZ',
-          'schedule' => '- Monday - Friday 9am - 2pm',
-          'section1Title' => 'Requirements',
-          'section2Title' => 'Notes',
-        ]) ?>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal3" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 3</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal3" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900"></h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong>Schedule:</strong>Service 3</span>
-              <span>- Wednesdays (10:00 AM and 2:00 PM)</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Requirements:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - xxx
-              - xxx
-              - xxx
-              - xxx
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal3" class="btn btn-outline btn-error">Close</label>
-            </div>
+    <?php if (isset($services) && count($services)) : ?>
+      <?php foreach ($services as $s): ?>
+        <div class=" flex items-center justify-center">
+          <div class=" card bg-base-100 shadow-xl image-full w-full aspect-video">
+            <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Image"
+                class=" object-cover w-full h-full" /></figure>
+            <label for="modal<?= esc($s['id']) ?>" class="card-body items-center justify-center text-center cursor-pointer">
+              <h2 class="card-title text-4xl text-blue-500"><?= esc($s['title']) ?></h2>
+              <span class="text-blue-600 text-2xl"><?= esc($s['subtitle']) ?></span>
+            </label>
+            <?= view_cell('ServiceModalCell', [
+              'id' => 'modal' . esc($s['id']),
+              'title' => esc($s['title']),
+              'section1Title' => esc($s['section1Title']),
+              'section1Content' => nl2br(esc($s['section1Content'])),
+              'section2Title' => esc($s['section2Title']),
+              'section2Content' => nl2br(esc($s['section2Content'])),
+              'schedule' => esc($s['schedule'])
+            ]) ?>
           </div>
         </div>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal5" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 4</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal5" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900">Service 4</h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong>Schedule:</strong></span>
-              <span>- To be announced</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Requirements:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - xxx
-              - xxx
-              - xxx
-              - xxx
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal5" class="btn btn-outline btn-error">Close</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal6" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 5</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal6" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900">Service 5</h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong>Schedule:</strong></span>
-              <span>- Tuesday to Saturday (8:00 AM, 1:00 PM)</span>
-              <span>- Friday (1:00 PM)</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Requirements:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - xxx
-              - xxx
-              - xxx
-              - xxx
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal6" class="btn btn-outline btn-error">Close</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" />
-        </figure>
-        <label for="modal7" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 6</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal7" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900">Service 6</h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong class="text-gray-900">Schedule:</strong></span>
-              <span>- Monday - Friday:</span>
-              <span>> 9:00 AM - 4:00 PM</span>
-              <span>- Saturday:</span>
-              <span>> 10:00 AM - 4:00 PM</span>
-              <span>- Sunday: </span>
-              <span>> Closed</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Purposes:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - Bring a bag Lunch
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal7" class="btn btn-outline btn-error">Close</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal8" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 7</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal8" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900">Service 7</h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong>Schedule:</strong></span>
-              <span>- Tuesday to Saturday (8:00 AM - 5:00 PM)</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Types:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - xxx
-              - xxx
-              - xxx
-              - xxx
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal8" class="btn btn-outline btn-error">Close</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class=" flex items-center justify-center">
-      <div class="card bg-base-100 shadow-xl image-full w-full aspect-video">
-        <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Shoes"
-            class=" object-cover w-full h-full" /></figure>
-        <label for="modal9" class="card-body items-center justify-center text-center">
-          <h2 class="card-title">Service 8</h2>
-          <span>Subtitle</span>
-        </label>
-        <input type="checkbox" id="modal9" class="modal-toggle" />
-        <div class="modal" role="dialog">
-          <div class="modal-box max-w-[50rem] bg-white text-gray-800">
-            <h3 class="font-bold text-lg text-center text-gray-900">Service 8</h3>
-            <div class=" text-justify flex flex-col">
-              <span><strong>Schedule:</strong></span>
-              <span>- Tuesday to Saturday (8:00 AM - 11:30 AM, 1:30 PM - 5:00 PM)</span>
-              <span>- Sunday (8:00 AM - 12:00 NN)</span>
-            </div>
-            <div class="flex flex-col text-justify whitespace-pre-line text-gray-700">
-              <strong class="text-gray-900">Types and Fees:</strong>
-              1. xxx
-              2. xxx
-              3. xxx
-              4. xxx
-              5. xxx
-
-              <strong class="text-gray-900">Notes:</strong>
-              - xxx
-              - xxx
-              - xxx
-              - xxx
-            </div>
-            <div class="modal-action justify-center">
-              <label for="modal9" class="btn btn-outline btn-error">Close</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <?php endforeach; ?>                
+      <?php else : ?>
+          <h3>No Services</h3>
+          <p>Unable to find any Services to offer you.</p>
+      <?php endif ?>    
   </section>
 
   <div class="bg-white dark:bg-gray-900">

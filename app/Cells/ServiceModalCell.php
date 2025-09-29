@@ -8,7 +8,7 @@ class ServiceModalCell {
     // No parameters required
   }
 
-  public function render($id, $title, $section1Content, $section2Content, $schedule = null, $section1Title = 'Requirements', $section2Title = 'Notes')
+  public function render($id, $title, $section1Content, $section2Content, $schedule = null, $section1Title = 'Requirements', $section2Title = 'Notes'): string
   {
     return view('cells/service_modal', [
       'id' => $id,
