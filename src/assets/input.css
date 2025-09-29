@@ -2,9 +2,7 @@
 layer(base);
 
 @import "tailwindcss";
-@source "./themes/**/*.{html,php,js,ts,jsx,tsx}";
 @source "./app/Views/**/*.{html,php,js,ts,jsx,tsx}";
-@source "./modules/**/Views/**/*.php";
 @source "./public/assets/js/**/*.js";
 
 @plugin "daisyui" {

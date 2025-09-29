@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controllers\Admin;
 
+use App\Models\Finances\ExpenseModel;
+use App\Models\TaskModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -82,7 +84,7 @@ abstract class BaseAdminController extends Controller
 
         // Handle TaskModel safely
         try {
-            $taskModel = model('TaskModel');
+            $taskModel = model(TaskModel::class);
             $data['userTasks'] = $taskModel->where('responsible', $user_id)
                                            ->whereNotIn('status', [4,5])
                                            ->get()->getResultArray() ?: [];
@@ -95,7 +97,7 @@ abstract class BaseAdminController extends Controller
 
         // Handle ExpenseModel safely
         try {
-            $expenseModel = model('Finances/ExpenseModel');
+            $expenseModel = model(ExpenseModel::class);
             if (method_exists($expenseModel, 'countUnpaidExpenses')) {
                 $data['qteUnpaidExpenses'] = $expenseModel->countUnpaidExpenses();
             } else {

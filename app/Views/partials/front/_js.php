@@ -6,4 +6,4 @@
  */
 
 echo
-'<script src="assets/js/app.js"></script>';
+'<script src="assets/js/app.js?v=<?= asset_version() ?>"></script>';

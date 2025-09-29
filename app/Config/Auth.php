@@ -25,7 +25,8 @@ use CodeIgniter\Shield\Authentication\Passwords\NothingPersonalValidator;
 use CodeIgniter\Shield\Authentication\Passwords\PwnedValidator;
 use CodeIgniter\Shield\Authentication\Passwords\ValidatorInterface;
 use CodeIgniter\Shield\Config\Auth as ShieldAuth;
-use CodeIgniter\Shield\Models\UserModel;
+use App\Models\UserModel;
+use Override;
 
 class Auth extends ShieldAuth
 {
@@ -75,7 +76,7 @@ class Auth extends ShieldAuth
      */
     public array $redirects = [
         'register'          => '/',
-        'login'             => '/',
+        'login'             => '/admin',
         'logout'            => 'login',
         'force_reset'       => '/',
         'permission_denied' => '/',
@@ -269,7 +270,7 @@ class Auth extends ShieldAuth
         CompositionValidator::class,
         NothingPersonalValidator::class,
         DictionaryValidator::class,
-        // PwnedValidator::class,
+        PwnedValidator::class,
     ];
 
     /**

@@ -15,7 +15,9 @@ class ProductModel extends Model
     protected $returnType             = Product::class;
     protected $useSoftDeletes         = false;
     protected $protectFields          = true;
-    protected $allowedFields          = [];
+    protected $allowedFields          = [
+        'name', 'description', 'price', 'stock', 'category_id'
+    ];
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
     protected array $casts            = [];

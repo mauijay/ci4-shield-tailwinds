@@ -43,4 +43,9 @@ class ExpenseModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function countUnpaidExpenses(): int
+    {
+        return $this->where('paid', 0)->countAllResults();
+    }
 }

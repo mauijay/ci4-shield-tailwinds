@@ -3,13 +3,14 @@
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "license": "MIT",
   "type": "project",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "require": {
     "php": "^8.2 || ^8.4",
     "codeigniter4/framework": "^4.6",
     "codeigniter4/shield": "^1.2",
     "codeigniter4/queue": "dev-develop",
     "codeigniter4/tasks": "dev-develop",
+    "datamweb/shield-oauth": "dev-develop",
     "firebase/php-jwt": "^6.11"
   },
   "require-dev": {
@@ -42,31 +43,22 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "discard-changes": true,
-    "cafile": "./cacert.pem",
-    "secure-http": true,
+    "disable-tls": true,
+    "secure-http": false,
     "allow-plugins": {
       "phpstan/extension-installer": true
     }
   },
   "scripts": {
     "ci": [
-      "Composer\\Config::disableProcessTimeout",
       "@cs",
-      "@test:no-coverage",
+      "@test",
       "@stan"
     ],
-    "stan": ".\\vendor\\bin\\phpstan analyse app tests --level=5",
-    "cs": ".\\vendor\\bin\\php-cs-fixer fix --dry-run --diff --verbose --allow-risky=yes",
-    "cs-fix": ".\\vendor\\bin\\php-cs-fixer fix --verbose --ansi --using-cache=no --diff --allow-risky=yes",
-    "test": ".\\vendor\\bin\\phpunit --no-coverage",
-    "test:coverage": [
-      "@putenv XDEBUG_MODE=coverage",
-      ".\\vendor\\bin\\phpunit"
-    ],
-    "dev:8081": "php spark serve --port 8081",
-    "test:no-coverage": ".\\vendor\\bin\\phpunit --no-coverage",
-    "post-update-cmd": [
-      "@composer dump-autoload"
-    ]
+    "stan": "phpstan analyse",
+    "stan:level2": "phpstan analyse --level=2",
+    "cs": "php-cs-fixer fix --dry-run --diff --allow-risky=yes",
+    "cs-fix": "php-cs-fixer fix --verbose --ansi --allow-risky=yes",
+    "dev:8081": "php spark serve --port 8081"
   }
 }

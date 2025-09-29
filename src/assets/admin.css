@@ -1,61 +1,41 @@
+
+@source "./app/Views/**/*.php";
+@source "./public/assets/js/**/*.js";
+
+
 @import "tailwindcss";
 @source "./app/Views/**/*.php";
 @source "./public/assets/js/**/*.js";
-@plugin "daisyui" {
-  themes:
-    nord --default,
-    dark --prefersdark,
-    nord;
-}
-@plugin "@tailwindcss/typography";
 
-@theme {
-  --font-sans: "Arimo", ui-sans-serif, system-ui, sans-serif;
-  --font-heading:
-    "Fira Sans Extra Condensed", ui-sans-serif, system-ui, sans-serif;
-  --font-bebas: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
-}
+.side-nav {
+  p.side-nav-title {
+    @apply flex cursor-pointer justify-between text-base font-normal;
 
-@layer base {
-  body {
-    @apply font-sans;
-    scrollbar-gutter: auto !important;
+    span {
+      @apply text-xl font-normal;
+    }
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading;
-  }
-  h1,
-  h2,
-  h3 {
-    font-weight: 700;
-  }
-  h4,
-  h5,
-  h6 {
-    font-weight: 500;
+  menu {
+    @apply mt-1 border-l pl-2;
+    li {
+      @apply mb-1;
+      a {
+        @apply hover:bg-base-200 block px-2 py-1 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900;
+      }
+    }
   }
 }
 
-@layer utilities {
-  .table-zebra-soft tbody tr:nth-child(even) {
-    @apply bg-white/5;
+form {
+  fieldset {
+    @apply mb-4 border-b pb-4;
+
+    legend {
+      @apply text-base-content mb-2 text-2xl font-normal;
+    }
   }
-  .stat-lg .stat-title {
-    @apply text-lg;
-  }
-  .stat-lg .stat-value {
-    @apply font-bebas text-5xl leading-tight;
-  }
-  .scrollbar-auto {
-    scrollbar-gutter: auto !important;
-  } /* Add this via JS to HTML in a modal */
-  /* .modal {
-        border: none;
-        outline: none;
-    } */
+}
+
+.text-muted {
+  @apply opacity-50;
 }

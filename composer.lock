@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44c7f31319e554a3756279a8c2bde547",
+    "content-hash": "b74b161df9dd67f63561de2567caed35",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -330,6 +330,71 @@
                 "source": "https://github.com/codeigniter4/tasks/tree/develop"
             },
             "time": "2025-09-05T08:41:42+00:00"
+        },
+        {
+            "name": "datamweb/shield-oauth",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/datamweb/shield-oauth.git",
+                "reference": "82f07b6c8811479d3e97e6c40008c37778ebd428"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/datamweb/shield-oauth/zipball/82f07b6c8811479d3e97e6c40008c37778ebd428",
+                "reference": "82f07b6c8811479d3e97e6c40008c37778ebd428",
+                "shasum": ""
+            },
+            "require": {
+                "codeigniter4/shield": "^1.0",
+                "ext-curl": "*",
+                "php": "^7.4.3 || ^8.0 || ^8.1 || ^8.2"
+            },
+            "require-dev": {
+                "codeigniter4/devkit": "^1.0",
+                "codeigniter4/framework": "^4.3.5",
+                "codeigniter4/shield": "^1.0",
+                "rector/rector": "1.2.10"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Datamweb\\ShieldOAuth\\": "src"
+                },
+                "exclude-from-classmap": [
+                    "**/Database/Migrations/**"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pooya Parsa Dadashi",
+                    "email": "pooya_parsa_dadashi@yahoo.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth for CodeIgniter Shield",
+            "homepage": "https://github.com/datamweb/shield-oauth",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "codeigniter4",
+                "githubOauth",
+                "googleoauth",
+                "oauth",
+                "shield"
+            ],
+            "support": {
+                "docs": "https://www.shield-oauth.codeigniter4.ir",
+                "forum": "https://github.com/datamweb/shield-oauth/discussions",
+                "issues": "https://github.com/datamweb/shield-oauth/issues",
+                "source": "https://github.com/datamweb/shield-oauth"
+            },
+            "time": "2025-01-22T09:11:51+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -1857,16 +1922,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.57",
+            "version": "10.5.58",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8e7598bbb17bb5cd80728f4831d3f83223d3a6b3"
+                "reference": "e24fb46da450d8e6a5788670513c1af1424f16ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e7598bbb17bb5cd80728f4831d3f83223d3a6b3",
-                "reference": "8e7598bbb17bb5cd80728f4831d3f83223d3a6b3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e24fb46da450d8e6a5788670513c1af1424f16ca",
+                "reference": "e24fb46da450d8e6a5788670513c1af1424f16ca",
                 "shasum": ""
             },
             "require": {
@@ -1938,7 +2003,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.57"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.58"
             },
             "funding": [
                 {
@@ -1962,7 +2027,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-24T06:30:38+00:00"
+            "time": "2025-09-28T12:04:46+00:00"
         },
         {
             "name": "psr/container",
@@ -5014,7 +5079,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "codeigniter4/queue": 20,
-        "codeigniter4/tasks": 20
+        "codeigniter4/tasks": 20,
+        "datamweb/shield-oauth": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

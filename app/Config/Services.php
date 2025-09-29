@@ -10,6 +10,7 @@ use App\Libraries\Theme;
 use App\Libraries\View;
 use App\Libraries\Vite;
 use CodeIgniter\Config\BaseService;
+use CodeIgniter\Settings\Settings;
 use CodeIgniter\Shield\Authentication\Passwords;
 use CodeIgniter\Shield\Config\Auth;
 use Config\View as ViewConfig;
@@ -112,6 +113,21 @@ class Services extends BaseService
         $config ??= config(ViewConfig::class);
 
         return new View($config, $viewPath, service('locator'), CI_DEBUG, service('logger'));
+    }
+
+    /**
+     * Fix the settings service to work with our custom Config\Settings class
+     */
+    public static function settings(bool $getShared = true)
+    {
+        if ($getShared) {
+            return static::getSharedInstance('settings');
+        }
+        
+        // Create the config object with the correct namespace
+        $config = new \Config\Settings();
+        
+        return new Settings($config);
     }
 
     public static function vite($getShared = true): Vite
