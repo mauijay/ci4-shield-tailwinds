@@ -38,12 +38,13 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           // Tailwind CSS
-          'css/app': './src/assets/input.css',
-          'css/admin': './themes/admin/css/admin.css',
-          'css/default': './themes/default/css/app.css',
+          'css/app': './src/assets/css/app.css',
+          'css/admin': './src/assets/css/admin.css',
           // JavaScript
-          'js/main': './src/assets/main.js',
-          'js/admin': './themes/admin/js/admin.js',
+          'js/app': './src/assets/js/app.js',
+          'js/admin': './src/assets/js/admin.js',
+          'js/sw': './src/assets/js/sw.js',
+          'js/maps': './src/assets/js/maps.js',
         },
       },
       outDir: './public/assets',

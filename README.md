@@ -1,354 +1,300 @@
-# Codeigniter4-Shield-Tailwind Template
+# CI4 Shield Tailwind CSS
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url] 
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![Unlicense License][license-shield]][license-url]
-![Quick Start](https://img.shields.io/badge/Quick%20Start-5%20minutes-green?style=for-the-badge)
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Official Website][mywebsite-shield]][mywebsite-url]
-[![You Tube Channel][subscribe-shield]][subscribe-url]
-
-## Overview
-
-A work in progress! This repository provides a starter template for
-**CodeIgniter 4**, configured to get your application up and running quickly.
-
-I am trying several ways and will leave options open to suit your needs.
-
-This repository includes:
-
-- CodeIgniter v4.6.3
-- CodeIgniter Shield v1.2.0
-- Tailwind v4.1.13
-- Vite v7.1.7
-
-## Requirements
-
-Ensure you have the following installed before starting:
-
-- **PHP 8.2** or later
-- **Node.js 18** or later
-- **Composer** command (See
-  [Composer Installation](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos))
-- **Git**
-
-## How to Use
-
-### (A.) Clone the Project
-
-Choose one of the following methods to clone the project into your desired
-folder:
-
-**Using Composer:**
-
-```bash
-composer create-project mauijay/ci4-shield-tailwinds my-new-ci4-project --stability dev
-```
-
-**Or using Git:**
-
-```bash
-git clone https://github.com/mauijay/ci4-shield-tailwinds.git my-new-ci4-project
-```
-
-**Navigate to the project folder:**
-
-```bash
-cd my-new-ci4-project
-composer install
-cp env .env
-php spark migrate --all
-php spark serve --port 8081
-```
-
-The application should now be accessible at <http://localhost:8081>
-
-## (B.) Setup fresh install
-
-### Step 1: Install Dependencies
-
-```bash
-# ✅ Install CodeIgniter4
-composer create-project codeigniter4/appstarter my-new-ci4-project
-cd my-new-ci4-project
-
-# ✅ Install Dependencies
-composer install
-
-# ✅ Copy environment file
-cp env .env
-# Configure your database and other settings in .env
-
-# ✅ Install Shield Authentication
-composer require codeigniter4/shield
-
-# ✅ Publish Shield configuration
-php spark shield:setup
-
-# ✅ Run migrations
-php spark migrate --all
-
-# ✅ Install Node dependencies
-npm install -D @tailwindcss/vite tailwindcss@latest vite daisyui prettier prettier-plugin-tailwindcss
-```
-
-### Step 2: Create input.css with Tailwind v4 syntax
-
-Create `src/assets/input.css`:
-
-```css
-@import "tailwindcss";
-@source "./app/Views/**/*.php";
-@source "./themes/**/*.{html,php,js}";
-
-/* DaisyUI Plugin Configuration */
-@plugin "daisyui" {
-  themes: ["nord", "dark"];
-  darkTheme: "dark";
-  base: true;
-  styled: true;
-  utils: true;
-}
-
-@theme {
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-}
-```
-
-### Step 3: Configure Vite (vite.config.js)
-
-```javascript
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
-
-export default defineConfig(() => {
-  return {
-    plugins: [
-      tailwindcss(),
-      VitePWA({
-        registerType: "autoUpdate",
-        workbox: {
-          globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-        },
-        manifest: {
-          name: "CI4 Shield Tailwind",
-          short_name: "CI4App",
-          description: "CodeIgniter4 starter with Shield Auth & Tailwind",
-          theme_color: "#5e81ac",
-          icons: [
-            {
-              src: 'pwa-192x192.png',
-              sizes: '192x192',
-              type: 'image/png'
-            },
-            {
-              src: 'pwa-512x512.png',
-              sizes: '512x512',
-              type: 'image/png'
-            }
-          ]
-        },
-        outDir: "./public",
-      }),
-    ],
-    build: {
-      manifest: true,
-      rollupOptions: {
-        input: {
-          "css/app": "./src/assets/input.css",
-          "css/admin": "./themes/admin/css/admin.css",
-          "css/default": "./themes/default/css/app.css",
-          "js/main": "./src/assets/main.js",
-          "js/admin": "./themes/admin/js/admin.js",
-        },
-      },
-      outDir: "./public/assets",
-      assetsDir: ".",
-      copyPublicDir: false,
-    },
-  };
-});
-```
-
-### Step 4: Build Commands (Updated)
-
-#### Development Commands
-
-```bash
-# CSS Development (Tailwind CLI - Faster for CSS-only changes)
-npm run start:css         # Tailwind CLI watch mode - outputs to public/assets/css/styles.css
-npm run admin:css         # Watch admin theme CSS - outputs to public/assets/css/admin.css
-
-# Full Development (Vite - Complete asset pipeline with HMR)
-npm run dev              # Vite dev server with hot reload, JS bundling, etc.
-```
-
-#### Production Commands
-
-```bash
-# CSS Production (Tailwind CLI)
-npm run build:css        # Minified CSS build via Tailwind CLI
-
-# Full Production (Vite)
-npm run build           # Complete Vite production build with asset optimization
-npm run serve           # Preview production build
-```
-
-#### Build Method Comparison
-
-| Command             | Tool Used              | Output                               | Use Case                               |
-| ------------------- | ---------------------- | ------------------------------------ | -------------------------------------- |
-| `npm run start:css` | Tailwind CLI           | `./public/assets/css/styles.css`     | Quick CSS-only development             |
-| `npm run dev`       | Vite + Tailwind plugin | Multiple assets via `vite.config.js` | Full development with HMR, JS bundling |
-| `npm run build:css` | Tailwind CLI           | Minified CSS file                    | CSS-only production build              |
-| `npm run build`     | Vite                   | Complete asset pipeline              | Full production build                  |
-
-#### When to Use Each Command
-
-**Use `npm run start:css` when:**
-
-- Making only CSS/Tailwind changes
-- Want faster compilation (no JS bundling overhead)
-- Working on styling without JavaScript modifications
-
-**Use `npm run dev` when:**
-
-- Developing full-stack features
-- Need hot module replacement (HMR)
-- Working with JavaScript, images, and other assets
-- Want the complete development experience
-
-#### Development Workflow Examples
-
-**CSS-focused development:**
-
-```bash
-# Terminal 1: Start PHP server
-php spark serve --port 8081
-
-# Terminal 2: Watch CSS changes
-npm run start:css
-```
-
-**Full-stack development:**
-
-```bash
-# Terminal 1: Start PHP server
-php spark serve --port 8081
-
-# Terminal 2: Start complete asset pipeline
-npm run dev
-```
-
-## Available Scripts
-
-```bash
-# Development
-npm run dev                # Start Vite dev server
-npm run start:css         # Watch Tailwind CSS compilation (CLI)
-npm run admin:css         # Watch admin theme CSS
-
-# Production
-npm run build             # Build for production (Vite)
-npm run build:css         # Build minified CSS (Tailwind CLI)
-npm run serve             # Preview production build
-
-# Code Quality
-npm run prettier          # Check code formatting
-npm run prettier:fix      # Fix code formatting
-npm run php-cs            # Check PHP code style
-npm run php-cs-fix        # Fix PHP code style
-npm run format            # Run both prettier and PHP-CS-Fixer
-
-# Version Management
-npm run commit            # Conventional commits with Commitizen
-npm run changelog         # Generate changelog
-npm run changelog:first   # Generate initial changelog
-npm run version:patch     # Bump patch version + changelog
-npm run version:minor     # Bump minor version + changelog
-npm run version:major     # Bump major version + changelog
-```
-
-## Project Structure
-
-```
-ci4-shield-tailwinds/
-├── app/
-│   ├── Controllers/
-│   │   └── Admin/           # Admin controllers
-│   ├── Views/
-│   │   ├── admin/          # Admin views
-│   │   ├── auth/           # Authentication views
-│   │   ├── layouts/        # Layout templates
-│   │   └── pages/          # Public pages
-├── public/
-│   └── assets/
-│       ├── css/            # Compiled CSS files
-│       └── js/             # JavaScript files
-├── src/
-│   └── assets/
-│       ├── input.css       # Main Tailwind CSS file
-│       └── main.js         # Main JavaScript file
-├── themes/
-│   ├── admin/              # Admin theme assets
-│   ├── auth/               # Auth theme assets
-│   └── default/            # Default theme assets
-├── vite.config.js          # Vite configuration
-└── package.json            # NPM dependencies and scripts
-```
+A modern CodeIgniter 4 starter template with Shield Authentication, Tailwind CSS, and Vite build system.
 
 ## Features
 
-- ✅ **CodeIgniter 4.6.3** - Latest stable version
-- ✅ **Shield Authentication** - Complete auth system with groups/permissions
-- ✅ **Tailwind CSS v4** - Latest version with new CSS-first approach
-- ✅ **DaisyUI Components** - Beautiful UI components
-- ✅ **Vite Integration** - Fast development and optimized builds
-- ✅ **PWA Ready** - Service worker and offline support
-- ✅ **Admin Panel** - Pre-built admin interface
-- ✅ **Theme System** - Multiple theme support
-- ✅ **Code Quality Tools** - PHP-CS-Fixer, Prettier, Commitizen
-- ✅ **Automated Changelog** - Conventional commits and versioning
+- 🔐 **CodeIgniter Shield** - Complete authentication system
+- 🎨 **Tailwind CSS** - Utility-first CSS framework
+- ⚡ **Vite** - Fast build tool with HMR
+- 📱 **PWA Ready** - Progressive Web App capabilities
+- 🌙 **Dark Mode** - Built-in dark/light theme support
+- 🔧 **Development Tools** - PHPStan, PHP CS Fixer, PHPUnit
+- 🏗️ **Modern Architecture** - View Cells, Helpers, and clean structure
 
-**Note:** Make sure to add PWA icon files (`pwa-192x192.png` and `pwa-512x512.png`) to your `public` directory for the PWA manifest to work properly.
+## Requirements
+
+- PHP 8.2 or higher
+- Composer
+- Node.js 18+ and npm
+- MySQL/MariaDB
+
+## Quick Start
+
+### 1. Clone and Install Dependencies
+
+```bash
+git clone https://github.com/yourusername/ci4-shield-tailwinds.git
+cd ci4-shield-tailwinds
+
+# Install PHP dependencies
+composer install
+
+# Install Node.js dependencies
+npm install
+```
+
+### 2. Environment Setup
+
+```bash
+# Copy environment file
+cp env .env
+
+# Generate app key (if needed)
+php spark key:generate
+```
+
+### 3. Database Configuration
+
+Update your `.env` file with database credentials:
+
+```env
+database.default.hostname = localhost
+database.default.database = your_database
+database.default.username = your_username
+database.default.password = your_password
+database.default.DBDriver = MySQLi
+```
+
+### 4. Run Migrations
+
+```bash
+# Run CodeIgniter migrations
+php spark migrate --all
+
+# Seed the database (optional)
+php spark db:seed DatabaseSeeder
+```
+
+### 5. Development Workflow
+
+```bash
+# Terminal 1: Start Vite development server (for assets)
+npm run dev
+
+# Terminal 2: Start CodeIgniter development server
+php spark serve
+
+# Your app is now running at:
+# - CodeIgniter: http://localhost:8080
+# - Vite Dev Server: http://localhost:5173 (assets only)
+```
+
+## Build System
+
+### Asset Structure
+
+```
+src/
+├── assets/
+│   ├── css/
+│   │   ├── app.css        # Main site styles
+│   │   └── admin.css      # Admin panel styles
+│   └── js/
+│       ├── app.js         # Main site JavaScript
+│       ├── admin.js       # Admin panel JavaScript
+│       ├── sw.js          # Service Worker
+│       └── maps.js        # Maps functionality
+```
+
+### Available Scripts
+
+```bash
+# Development
+npm run dev          # Start Vite dev server with HMR
+php spark serve      # Start CodeIgniter server
+
+# Production Build
+npm run build        # Build optimized assets for production
+npm run preview      # Preview production build
+
+# Code Quality
+composer run ci      # Run all quality checks
+composer run cs      # Check code style
+composer run cs-fix  # Fix code style issues
+composer run stan    # Run PHPStan analysis
+composer run test    # Run PHPUnit tests
+```
+
+## Authentication
+
+This project uses **CodeIgniter Shield** for authentication:
+
+- **Registration**: `/register`
+- **Login**: `/login`
+- **Dashboard**: `/admin` (requires authentication)
+- **Password Reset**: Built-in email-based reset
+
+### Default Users
+
+After running seeders, you can use:
+- Email: `admin@example.com`
+- Password: `password123`
+
+## Styling
+
+### Tailwind CSS
+
+The project uses Tailwind CSS with custom components:
+
+```php
+<!-- Example usage in views -->
+<button class="btn-primary">Primary Button</button>
+<div class="card">Card Content</div>
+```
+
+### Theme System
+
+Built-in theme helper for consistent styling:
+
+```php
+<!-- In your views -->
+<?= theme()->render('components/button', ['text' => 'Click Me']) ?>
+```
+
+### Dark Mode
+
+Toggle between light and dark themes:
+
+```html
+<button data-theme-toggle>🌙 Toggle Theme</button>
+```
+
+## Progressive Web App (PWA)
+
+The app includes PWA capabilities:
+
+- **Service Worker**: Automatic caching and offline support
+- **App Manifest**: Install prompt on mobile devices
+- **Icons**: 192x192 and 512x512 app icons included
+
+### PWA Configuration
+
+Update PWA settings in `vite.config.js`:
+
+```javascript
+VitePWA({
+  manifest: {
+    name: 'Your App Name',
+    short_name: 'AppName',
+    description: 'Your app description',
+    theme_color: '#5e81ac',
+  }
+})
+```
+
+## Development Tools
+
+### Code Quality
+
+```bash
+# Run PHPStan (static analysis)
+composer run stan
+
+# Fix code style with PHP CS Fixer
+composer run cs-fix
+
+# Run PHPUnit tests
+composer run test
+
+# Run all quality checks
+composer run ci
+```
+
+### View Cells
+
+Create reusable components with View Cells:
+
+```php
+// Example: ServiceModalCell
+<?= view_cell('\App\Cells\ServiceModalCell::render', [
+    'id' => 'modal1',
+    'title' => 'Service Title',
+    'content' => 'Service content...'
+]) ?>
+```
+
+## Directory Structure
+
+```
+├── app/
+│   ├── Cells/              # View Cells for reusable components
+│   ├── Controllers/        # Application controllers
+│   ├── Entities/          # Data entities
+│   ├── Helpers/           # Custom helpers
+│   ├── Libraries/         # Custom libraries
+│   ├── Models/            # Data models
+│   └── Views/             # View templates
+│       ├── layouts/       # Layout templates
+│       ├── partials/      # Partial views
+│       └── pages/         # Page views
+├── public/
+│   └── assets/            # Built assets (generated)
+├── src/
+│   └── assets/            # Source assets
+└── vendor/                # Composer dependencies
+```
+
+## Deployment
+
+### Production Build
+
+```bash
+# Build assets for production
+npm run build
+
+# Set environment to production
+# Update .env: CI_ENVIRONMENT = production
+
+# Optimize Composer autoloader
+composer install --no-dev --optimize-autoloader
+
+# Set proper file permissions
+chmod -R 755 writable/
+```
+
+### Environment Variables
+
+Key environment variables for production:
+
+```env
+CI_ENVIRONMENT = production
+app.baseURL = 'https://yourdomain.com'
+database.default.hostname = your_production_host
+database.default.database = your_production_db
+```
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Run quality checks (`composer run ci`)
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`)
+6. Open a Pull Request
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`npm run commit`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## License
 
-<!-- MARKDOWN LINKS & IMAGES -->
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-[contributors-shield]:
-  https://img.shields.io/github/contributors/mauijay/ci4-shield-tailwinds.svg?style=for-the-badge
-[contributors-url]:
-  https://github.com/mauijay/ci4-shield-tailwinds/graphs/contributors
-[forks-shield]:
-  https://img.shields.io/github/forks/mauijay/ci4-shield-tailwinds.svg?style=for-the-badge
-[forks-url]: https://github.com/mauijay/ci4-shield-tailwinds/network/members
-[stars-shield]:
-  https://img.shields.io/github/stars/mauijay/ci4-shield-tailwinds.svg?style=for-the-badge
-[stars-url]: https://github.com/mauijay/ci4-shield-tailwinds/stargazers
-[issues-shield]:
-  https://img.shields.io/github/issues/mauijay/ci4-shield-tailwinds.svg?style=for-the-badge
-[issues-url]: https://github.com/mauijay/ci4-shield-tailwinds/issues
-[license-shield]:
-  https://img.shields.io/github/license/mauijay/ci4-shield-tailwinds.svg?style=for-the-badge
-[license-url]: https://github.com/mauijay/ci4-shield-tailwinds/blob/main/LICENSE
-[linkedin-shield]:
-  https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/jlamping
-[mywebsite-shield]:
-  https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white
-[mywebsite-url]: https://808.biz
-[subscribe-shield]:
-  https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white
-[subscribe-url]: https://youtube.com/@808biz
+## Support
+
+- **Documentation**: [CodeIgniter 4 Docs](https://codeigniter.com/user_guide/)
+- **Shield Auth**: [Shield Documentation](https://shield.codeigniter.com/)
+- **Tailwind CSS**: [Tailwind Docs](https://tailwindcss.com/docs)
+- **Issues**: [GitHub Issues](https://github.com/yourusername/ci4-shield-tailwinds/issues)
+
+## Changelog
+
+### v0.2.8
+
+- ✅ Removed Vue.js dependency
+- ✅ Configured Vite with Tailwind CSS
+- ✅ Added PWA support with service worker
+- ✅ Implemented View Cells for reusable components
+- ✅ Added development tools (PHPStan, PHP CS Fixer)
+- ✅ Enhanced theme system
+
+---
+
+### Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite

@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= (esc($title) ?? '808bs') . ' - ' . env('app.name', 'HawaiiBusinessSolutions.') ?></title>
   <link rel="stylesheet" href="<?= base_url('assets/css/styles.css?v=' . asset_version()) ?>">
+  <!-- vite stuff -->
+  <?= vite_assets('main') ?>
   <!--    Custom  js  -->
   <?= $this->renderSection('custom-top-js') ?>
   <?= $this->renderSection('meta_seo'); ?>

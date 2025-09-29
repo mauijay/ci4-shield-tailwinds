@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 if (!function_exists('app_version')) {
     /**
@@ -7,10 +7,10 @@ if (!function_exists('app_version')) {
     function app_version(): string
     {
         static $version = null;
-        
+
         if ($version === null) {
             $composerFile = ROOTPATH . 'composer.json';
-            
+
             if (file_exists($composerFile)) {
                 $composerData = json_decode(file_get_contents($composerFile), true);
                 $version = $composerData['version'] ?? '0.0.0';
@@ -18,7 +18,7 @@ if (!function_exists('app_version')) {
                 $version = '0.0.0';
             }
         }
-        
+
         return $version;
     }
 }

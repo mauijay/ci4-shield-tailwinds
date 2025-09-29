@@ -6,7 +6,8 @@
   <meta name="description" content="This is the <?= $title ?> page." />
   <meta name="author" content="jaycadla@gmail.com">
   <?= $this->include('partials/back/_favicon') ?>
-  <?= vite(['themes/admin/js/admin.js', 'themes/admin/css/admin.scss']) ?>
+  <!-- Other head content -->
+  <?= vite_assets('admin') ?>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="<?= base_url('assets/css/admin.css?v=' . asset_version()) ?>">
   <?= $this->renderSection('custom-top-js') ?>

@@ -123,10 +123,10 @@ class Services extends BaseService
         if ($getShared) {
             return static::getSharedInstance('settings');
         }
-        
+
         // Create the config object with the correct namespace
         $config = new \Config\Settings();
-        
+
         return new Settings($config);
     }
 

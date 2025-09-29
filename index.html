@@ -4,10 +4,54 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <title>Vite Development Server</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="container mx-auto mt-10">
+      <h1 class="text-4xl font-bold text-blue-600">
+        Vite + CodeIgniter + Tailwind CSS
+      </h1>
+      <p class="mt-4 text-gray-600">
+        This is a simple setup to demonstrate Vite with CodeIgniter and Tailwind
+        CSS.
+      </p>
+      <p class="mt-2 text-sm text-gray-500">
+        Edit <code>src/assets/js/app.js</code> and
+        <code>src/assets/css/app.css</code> to see changes.
+      </p>
+
+      <div class="logos flex justify-center space-x-6 mt-6">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+          <img src="./vite.svg" class="logo" alt="Vite logo" />
+        </a>
+        <a href="https://codeigniter.com" target="_blank" rel="noreferrer">
+          <img
+            src="https://codeigniter.com/assets/images/ci-logo.svg"
+            class="logo ci"
+            alt="CodeIgniter logo"
+          />
+        </a>
+        <a href="https://tailwindcss.com" target="_blank" rel="noreferrer">
+          <img
+            src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype.8b3f0d5b.svg"
+            class="logo tailwind"
+            alt="Tailwind CSS logo"
+          />
+        </a>
+      </div>
+      <div id="app">
+        <h1 class="text-4xl font-bold text-blue-600">
+          Vite Development Server
+        </h1>
+        <p class="mt-4 text-gray-600">
+          This is only visible in development mode.
+        </p>
+        <p class="mt-2 text-sm text-gray-500">
+          Your CodeIgniter app runs separately on a different port.
+        </p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/assets/js/app.js"></script>
   </body>
 </html>

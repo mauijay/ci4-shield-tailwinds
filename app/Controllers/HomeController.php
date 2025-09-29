@@ -9,7 +9,7 @@ use App\Models\ServiceModel;
 class HomeController extends BaseController
 {
     protected ServiceModel $serviceModel;
-    
+
     public function index(): string
     {
         $data = [

@@ -1,7 +1,5 @@
-
 @source "./app/Views/**/*.php";
 @source "./public/assets/js/**/*.js";
-
 
 @import "tailwindcss";
 @source "./app/Views/**/*.php";
