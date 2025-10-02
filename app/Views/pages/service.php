@@ -8,7 +8,7 @@
       <?php foreach ($services as $s): ?>
         <div class=" flex items-center justify-center">
           <div class=" card bg-base-100 shadow-xl image-full w-full aspect-video">
-            <figure><img src="<?= base_url('uploads/images/400x200.png') ?>" alt="Image"
+            <figure><img src="<?= base_url('assets//images/400x200.png') ?>" alt="Image"
                 class=" object-cover w-full h-full" /></figure>
             <label for="modal<?= esc($s['id']) ?>" class="card-body items-center justify-center text-center cursor-pointer">
               <h2 class="card-title text-4xl text-blue-500"><?= esc($s['title']) ?></h2>

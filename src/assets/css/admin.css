@@ -5,6 +5,8 @@
 @source "./app/Views/**/*.php";
 @source "./public/assets/js/**/*.js";
 
+@plugin "daisyui";
+
 .side-nav {
   p.side-nav-title {
     @apply flex cursor-pointer justify-between text-base font-normal;

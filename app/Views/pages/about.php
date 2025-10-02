@@ -5,7 +5,7 @@
 <main class="w-full">
   <section role="about_us1" class="grid grid-cols-1 md:grid-cols-2 gap-2 text-blue-950 bg-white py-2">
     <div class="flex justify-center items-center">
-      <img class="block w-1/2" src="<?= base_url('uploads/images/400x200.png') ?>" alt="image" srcset="">
+      <img class="block w-1/2" src="<?= base_url('assets//images/400x200.png') ?>" alt="image" srcset="">
     </div>
     <div class="flex flex-col justify-around px-4 items-center md:items-end gap-4 md:gap-0">
       <div class="flex flex-col gap-4 items-center md:items-start py-3 md:p-0">
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="flex justify-center items-center">
-      <img class="block w-1/2" src="<?= base_url('uploads/images/400x200.png') ?>" alt="image" srcset="">
+      <img class="block w-1/2" src="<?= base_url('assets//images/400x200.png') ?>" alt="image" srcset="">
     </div>
   </section>
   <section class="bg-white">
@@ -55,7 +55,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
         <div class="card w-96 bg-blue-100">
           <figure class="px-10 pt-10">
-            <img class="block w-6/12" src="<?= base_url('uploads/images/profiles/avatar.png') ?>" alt="image" srcset="">
+            <img class="block w-6/12" src="<?= base_url('assets//images/profiles/avatar.png') ?>" alt="image" srcset="">
           </figure>
           <div class="card-body items-center text-center">
             <h2 class="card-title align-middle">Staff 1</h2>
@@ -63,7 +63,7 @@
         </div>
         <div class="card w-96 bg-blue-100">
           <figure class="px-10 pt-10">
-            <img class="block w-6/12" src="<?= base_url('uploads/images/profiles/avatar.png') ?>" alt="image" srcset="">
+            <img class="block w-6/12" src="<?= base_url('assets//images/profiles/avatar.png') ?>" alt="image" srcset="">
           </figure>
           <div class="card-body items-center text-center">
             <h2 class="card-title align-middle">Staff 2</h2>
@@ -71,7 +71,7 @@
         </div>
         <div class="card w-96 bg-blue-100">
           <figure class="px-10 pt-10">
-            <img class="block w-6/12" src="<?= base_url('uploads/images/profiles/avatar.png') ?>" alt="image" srcset="">
+            <img class="block w-6/12" src="<?= base_url('assets//images/profiles/avatar.png') ?>" alt="image" srcset="">
           </figure>
           <div class="card-body items-center text-center">
             <h2 class="card-title align-middle">Staff 3</h2>
@@ -79,7 +79,7 @@
         </div>
         <div class="card w-96 bg-blue-100">
           <figure class="px-10 pt-10">
-            <img class="block w-6/12" src="<?= base_url('uploads/images/profiles/avatar.png') ?>" alt="image" srcset="">
+            <img class="block w-6/12" src="<?= base_url('assets//images/profiles/avatar.png') ?>" alt="image" srcset="">
           </figure>
           <div class="card-body items-center text-center">
             <h2 class="card-title align-middle">Staff 4</h2>

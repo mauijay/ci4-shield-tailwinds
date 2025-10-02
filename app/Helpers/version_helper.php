@@ -24,8 +24,37 @@ if (!function_exists('app_version')) {
 }
 
 if (!function_exists('asset_version')) {
+    /**
+     * Get asset version for cache busting
+     */
     function asset_version(): string
     {
-        return app_version() . '.' . substr(md5(filemtime(ROOTPATH . 'composer.json')), 0, 8);
+        static $assetVersion = null;
+
+        if ($assetVersion === null) {
+            $composerFile = ROOTPATH . 'composer.json';
+            $baseVersion = app_version();
+
+            if (file_exists($composerFile)) {
+                // Convert filemtime() result to string before hashing
+                $timestamp = filemtime($composerFile);
+                $hash = substr(md5((string)$timestamp), 0, 8);
+                $assetVersion = $baseVersion . '.' . $hash;
+            } else {
+                $assetVersion = $baseVersion;
+            }
+        }
+
+        return $assetVersion;
+    }
+}
+
+if (!function_exists('cache_buster')) {
+    /**
+     * Simple cache buster using app version
+     */
+    function cache_buster(): string
+    {
+        return '?v=' . app_version();
     }
 }

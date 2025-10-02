@@ -12,7 +12,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.13"
+    "@tailwindcss/vite": "^4.1.14"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
@@ -21,23 +21,13 @@
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
-    "daisyui": "^5.1.23",
+    "daisyui": "^5.1.26",
     "postcss": "^8.5.6",
-    "postcss-advanced-variables": "^5.0.0",
-    "postcss-cli": "^11.0.1",
-    "postcss-import": "^16.1.1",
-    "postcss-nested": "^7.0.2",
-    "postcss-scss": "^4.0.9",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sass": "^1.93.2",
-    "tailwindcss": "^4.1.13",
-    "vite": "^7.1.7",
-    "vite-plugin-pwa": "^1.0.3",
-    "workbox-build": "^7.3.0",
-    "workbox-core": "^7.3.0",
-    "workbox-routing": "^7.3.0",
-    "workbox-strategies": "^7.3.0"
+    "tailwindcss": "^4.1.14",
+    "vite": "^7.1.7"
   },
   "config": {
     "commitizen": {
@@ -51,8 +41,9 @@
     "build:css": "npx @tailwindcss/cli -i ./src/assets/css/app.css -o ./public/assets/css/styles.min.css -m",
     "dev": "vite",
     "build": "vite build",
+    "build:dev": "vite build --mode development",
     "build:watch": "vite build --watch",
-    "serve": "vite preview",
+    "preview": "vite preview",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "php-cs": ".\\vendor\\bin\\php-cs-fixer fix --ansi --verbose --dry-run --diff --allow-risky=yes",
@@ -61,8 +52,8 @@
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog:first": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "version:patch": "npm version patch && npm run changelog",
-    "version:minor": "npm version minor && npm run changelog",
-    "version:major": "npm version major && npm run changelog"
+    "version:patch": "npm version patch && composer bump-version",
+    "version:minor": "npm version minor && composer bump-version",
+    "version:major": "npm version major && composer bump-version"
   }
 }

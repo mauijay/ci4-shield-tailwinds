@@ -1,6 +1,7 @@
 # CI4 Shield Tailwind CSS
 
-A modern CodeIgniter 4 starter template with Shield Authentication, Tailwind CSS, and Vite build system.
+A modern CodeIgniter 4 starter template with Shield Authentication, Tailwind
+CSS, and Vite build system.
 
 ## Features
 
@@ -66,19 +67,84 @@ php spark migrate --all
 php spark db:seed DatabaseSeeder
 ```
 
-### 5. Development Workflow
+## Development Workflows
+
+This project supports **two different development workflows** depending on your
+preference:
+
+### Workflow 1: Vite Development Server (Recommended)
+
+For modern development with Hot Module Replacement (HMR):
 
 ```bash
-# Terminal 1: Start Vite development server (for assets)
+# Terminal 1: Start Vite development server (for asset compilation & HMR)
 npm run dev
 
 # Terminal 2: Start CodeIgniter development server
 php spark serve
 
-# Your app is now running at:
-# - CodeIgniter: http://localhost:8080
-# - Vite Dev Server: http://localhost:5173 (assets only)
+# Your app runs at:
+# - CodeIgniter: http://localhost:8080 (main application)
+# - Vite Dev Server: http://localhost:5173 (asset compilation only)
 ```
+
+**Benefits:**
+
+- ⚡ Hot Module Replacement (instant CSS/JS updates)
+- 🔄 Live reload on file changes
+- 🚀 Faster asset compilation
+- 🛠️ Modern development tools
+
+### Workflow 2: CLI Build Process
+
+For traditional development or when you prefer manual builds:
+
+```bash
+# Terminal 1: Watch and rebuild assets on changes
+npm run build:watch
+
+# Terminal 2: Start CodeIgniter development server
+php spark serve
+
+# Your app runs at:
+# - CodeIgniter: http://localhost:8080 (serves both app and built assets)
+```
+
+**Alternative CLI commands:**
+
+```bash
+# Build once (for production or testing)
+npm run build
+
+# Build and watch for changes
+npm run build:watch
+
+# Development build with source maps
+npm run build:dev
+```
+
+**Benefits:**
+
+- 📁 All assets served from CodeIgniter
+- 🎯 Single server setup
+- 💾 Pre-built assets for offline work
+- 🔧 More control over build process
+
+### Choosing Your Workflow
+
+**Use Vite Dev Server when:**
+
+- You're actively developing frontend features
+- You want instant feedback on CSS/JS changes
+- You're working with complex Tailwind configurations
+- You prefer modern development tools
+
+**Use CLI Build Process when:**
+
+- You're primarily working on backend PHP code
+- You have limited system resources
+- You're working in environments where multiple ports are restricted
+- You prefer traditional build workflows
 
 ## Build System
 
@@ -100,13 +166,18 @@ src/
 ### Available Scripts
 
 ```bash
-# Development
+# Development - Vite Workflow
 npm run dev          # Start Vite dev server with HMR
-php spark serve      # Start CodeIgniter server
-
-# Production Build
-npm run build        # Build optimized assets for production
 npm run preview      # Preview production build
+
+# Development - CLI Workflow
+npm run build        # Build once for production
+npm run build:dev    # Build once with dev settings
+npm run build:watch  # Build and watch for changes
+
+# CodeIgniter Server
+php spark serve      # Start CodeIgniter development server
+php spark serve --port 8081  # Use different port if needed
 
 # Code Quality
 composer run ci      # Run all quality checks
@@ -128,6 +199,7 @@ This project uses **CodeIgniter Shield** for authentication:
 ### Default Users
 
 After running seeders, you can use:
+
 - Email: `admin@example.com`
 - Password: `password123`
 
@@ -175,12 +247,12 @@ Update PWA settings in `vite.config.js`:
 ```javascript
 VitePWA({
   manifest: {
-    name: 'Your App Name',
-    short_name: 'AppName',
-    description: 'Your app description',
-    theme_color: '#5e81ac',
-  }
-})
+    name: "Your App Name",
+    short_name: "AppName",
+    description: "Your app description",
+    theme_color: "#5e81ac",
+  },
+});
 ```
 
 ## Development Tools
@@ -264,6 +336,39 @@ database.default.hostname = your_production_host
 database.default.database = your_production_db
 ```
 
+## Troubleshooting
+
+### Common Issues
+
+**Assets not loading:**
+
+```bash
+# Clear CodeIgniter cache
+php spark cache:clear
+
+# Rebuild assets
+npm run build
+
+# Check if Vite dev server is running (Workflow 1)
+curl http://localhost:5173
+```
+
+**Port conflicts:**
+
+```bash
+# Use different ports if needed
+npm run dev -- --port 5174
+php spark serve --port 8081
+```
+
+**Permission issues:**
+
+```bash
+# Fix file permissions (Linux/Mac)
+chmod -R 755 writable/
+chmod -R 755 public/assets/
+```
+
 ## Contributing
 
 1. Fork the repository
@@ -275,16 +380,25 @@ database.default.database = your_production_db
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
+for details.
 
 ## Support
 
 - **Documentation**: [CodeIgniter 4 Docs](https://codeigniter.com/user_guide/)
 - **Shield Auth**: [Shield Documentation](https://shield.codeigniter.com/)
 - **Tailwind CSS**: [Tailwind Docs](https://tailwindcss.com/docs)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ci4-shield-tailwinds/issues)
+- **Issues**:
+  [GitHub Issues](https://github.com/yourusername/ci4-shield-tailwinds/issues)
 
 ## Changelog
+
+### v0.2.9
+
+- ✅ Added dual development workflow support (Vite + CLI)
+- ✅ Enhanced vite_helper with better asset detection
+- ✅ Improved error handling and fallbacks
+- ✅ Added troubleshooting section to README
 
 ### v0.2.8
 
@@ -297,4 +411,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-### Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite
+**Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite**

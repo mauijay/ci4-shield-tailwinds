@@ -45,6 +45,7 @@ abstract class BaseController extends Controller
      * @var list<string>
      */
     protected $helpers = [];
+    // protected $helpers = ['version', 'vite'];
 
     /**
      * Policy instance for additional authorization.
@@ -70,6 +71,9 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+
+        // Load helpers
+        // helper(['version', 'vite']);
 
         $this->policy = service('policy');
 
