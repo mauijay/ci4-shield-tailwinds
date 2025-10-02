@@ -412,3 +412,5 @@ for details.
 ---
 
 **Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite**
+
+try to run auto version sync
