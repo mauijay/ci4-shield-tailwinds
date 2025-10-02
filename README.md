@@ -12,6 +12,7 @@ CSS, and Vite build system.
 - 🌙 **Dark Mode** - Built-in dark/light theme support
 - 🔧 **Development Tools** - PHPStan, PHP CS Fixer, PHPUnit
 - 🏗️ **Modern Architecture** - View Cells, Helpers, and clean structure
+- 🔄 **Auto Version Sync** - Synchronized versioning across package.json, composer.json, and .env
 
 ## Requirements
 
@@ -150,7 +151,7 @@ npm run build:dev
 
 ### Asset Structure
 
-```
+```bash
 src/
 ├── assets/
 │   ├── css/
@@ -170,21 +171,42 @@ src/
 npm run dev          # Start Vite dev server with HMR
 npm run preview      # Preview production build
 
-# Development - CLI Workflow
+# Development - CLI Workflow  
 npm run build        # Build once for production
 npm run build:dev    # Build once with dev settings
 npm run build:watch  # Build and watch for changes
+
+# CSS-Only Workflow (Alternative)
+npm run start:css    # Watch and build main CSS only
+npm run admin:css    # Watch and build admin CSS only
+npm run build:css    # Build minified CSS for production
 
 # CodeIgniter Server
 php spark serve      # Start CodeIgniter development server
 php spark serve --port 8081  # Use different port if needed
 
-# Code Quality
+# Version Management
+npm run version:patch # Bump patch version and sync all files
+npm run version:minor # Bump minor version and sync all files
+npm run version:major # Bump major version and sync all files
+npm run sync-version  # Sync current version across all files
+
+# Code Quality & Formatting
 composer run ci      # Run all quality checks
 composer run cs      # Check code style
 composer run cs-fix  # Fix code style issues
 composer run stan    # Run PHPStan analysis
 composer run test    # Run PHPUnit tests
+
+# Frontend Code Quality
+npm run prettier     # Check code formatting
+npm run prettier:fix # Fix code formatting
+npm run format       # Fix both PHP and frontend formatting
+
+# Git & Changelog
+npm run commit       # Interactive commit with conventional changelog
+npm run changelog    # Generate changelog
+npm run changelog:first # Generate initial changelog
 ```
 
 ## Authentication
@@ -288,7 +310,7 @@ Create reusable components with View Cells:
 
 ## Directory Structure
 
-```
+```bash
 ├── app/
 │   ├── Cells/              # View Cells for reusable components
 │   ├── Controllers/        # Application controllers
@@ -393,6 +415,13 @@ for details.
 
 ## Changelog
 
+### v0.3.1
+- ✅ Added automatic version synchronization across package.json, composer.json, and .env
+- ✅ Created version management scripts with Git integration
+- ✅ Enhanced version_helper with .env fallback support
+- ✅ Improved postversion workflow to include all modified files
+- ✅ Added comprehensive version management documentation
+
 ### v0.3.0
 - ✅ Setup Vite build system with Tailwind CSS v4
 - ✅ Added DaisyUI integration for enhanced UI components
@@ -400,7 +429,6 @@ for details.
 - ✅ Created vite_helper for intelligent asset loading (CLI vs Vite workflows)
 - ✅ Fixed dynamic require errors in Vite configuration
 - ✅ Updated development workflows documentation
-- ✅ Added version management scripts with Git integration
 - ✅ Enhanced build system with manifest generation
 
 ### v0.2.9
@@ -420,3 +448,126 @@ for details.
 ---
 
 **Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite**
+
+## Version Management
+
+This project includes automatic version synchronization across multiple files to ensure consistency.
+
+### Synchronized Files
+
+The version sync system keeps these files in sync:
+- **package.json** - Node.js package version
+- **composer.json** - PHP package version  
+- **.env** - Application version (`app.version`)
+
+### Version Commands
+
+```bash
+# Bump patch version (0.3.0 → 0.3.1)
+npm run version:patch
+
+# Bump minor version (0.3.1 → 0.4.0)
+npm run version:minor
+
+# Bump major version (0.4.0 → 1.0.0)
+npm run version:major
+
+# Manual sync (sync current package.json version to other files)
+npm run sync-version
+```
+
+### What Happens During Version Bump
+
+1. **Updates package.json** with new version
+2. **Syncs composer.json** to match
+3. **Updates .env** `app.version` setting
+4. **Creates Git tag** (e.g., v0.3.1)
+5. **Commits changes** to Git
+6. **Pushes to remote** with tags
+
+### Using App Version in Code
+
+Access the synchronized version in your PHP code:
+
+```php
+// Get version from .env (preferred)
+$version = env('app.version', '0.0.0');
+
+// Or use the helper function
+$version = app_version();
+
+// Add version to assets for cache busting
+echo "styles.css" . cache_buster(); // styles.css?v=0.3.1
+```
+
+### Version Helper
+
+The `version_helper.php` provides convenient functions:
+
+```php
+// Get application version
+echo app_version(); // "0.3.1"
+
+// Cache buster for assets
+echo cache_buster(); // "?v=0.3.1"
+```
+
+### Environment-Specific Versioning
+
+Versions are consistent across all environments:
+- **Development**: Uses exact version from package.json
+- **Testing**: Same version for consistency
+- **Production**: Same version for traceability
+
+### Manual Version Update
+
+If you need to manually update versions:
+
+1. **Edit package.json** version
+2. **Run sync command**:
+   ```bash
+   npm run sync-version
+   ```
+3. **Commit changes**:
+   ```bash
+   git add .
+   git commit -m "chore: update version to X.X.X"
+   git tag vX.X.X
+   git push && git push --tags
+   ```
+
+### Version Sync Issues
+
+**Version mismatch between files:**
+```bash
+# Manually sync versions
+npm run sync-version
+
+# Check current versions
+grep '"version"' package.json
+grep '"version"' composer.json  
+grep 'app.version' .env
+```
+
+**Git tag conflicts:**
+```bash
+# List existing tags
+git tag -l
+
+# Delete local tag
+git tag -d v0.3.1
+
+# Delete remote tag
+git push origin --delete v0.3.1
+```
+
+**Version bump fails:**
+```bash
+# Ensure clean working directory
+git status
+git add .
+git commit -m "commit message"
+
+# Then try version bump
+npm run version:patch
+```
