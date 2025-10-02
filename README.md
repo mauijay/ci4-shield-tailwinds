@@ -393,15 +393,23 @@ for details.
 
 ## Changelog
 
-### v0.2.9
+### v0.3.0
+- ✅ Setup Vite build system with Tailwind CSS v4
+- ✅ Added DaisyUI integration for enhanced UI components
+- ✅ Configured static asset copying from src/static to public/assets
+- ✅ Created vite_helper for intelligent asset loading (CLI vs Vite workflows)
+- ✅ Fixed dynamic require errors in Vite configuration
+- ✅ Updated development workflows documentation
+- ✅ Added version management scripts with Git integration
+- ✅ Enhanced build system with manifest generation
 
+### v0.2.9
 - ✅ Added dual development workflow support (Vite + CLI)
 - ✅ Enhanced vite_helper with better asset detection
 - ✅ Improved error handling and fallbacks
 - ✅ Added troubleshooting section to README
 
 ### v0.2.8
-
 - ✅ Removed Vue.js dependency
 - ✅ Configured Vite with Tailwind CSS
 - ✅ Added PWA support with service worker
@@ -412,5 +420,3 @@ for details.
 ---
 
 **Built with ❤️ using CodeIgniter 4, Shield, Tailwind CSS, and Vite**
-
-try to run auto version sync
