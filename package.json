@@ -1,6 +1,6 @@
 {
   "name": "ci4-shield-tailwinds",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Codeigniter4 starter kit for new projects.",
   "keywords": [
     "tailwindcss",
@@ -56,6 +56,6 @@
     "version:patch": "npm version patch && npm run sync-version",
     "version:minor": "npm version minor && npm run sync-version",
     "version:major": "npm version major && npm run sync-version",
-    "postversion": "git add composer.json .env && git commit --amend --no-edit && git push && git push --tags"
+    "postversion": "git add composer.json .env.example && git commit --amend --no-edit && git push && git push --tags"
   }
 }
