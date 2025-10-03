@@ -39,6 +39,5 @@ $routes->group('admin', ['filter' => ['session', 'group:superadmin,admin']], fun
 });
 
 // Add this for testing
-$routes->get('/test', function () {
-    return view('test_page', [], ['layout' => 'layouts/test']);
-});
+$routes->get('/test', 'TestController::index');
+$routes->get('/test/layout', 'TestController::layout');
