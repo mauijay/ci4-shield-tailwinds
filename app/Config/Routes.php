@@ -37,3 +37,8 @@ $routes->group('admin', ['filter' => ['session', 'group:superadmin,admin']], fun
     $routes->get('settings', [SettingsController::class, 'index'], ['as' => 'admin.settings']);
     // Add more admin routes here
 });
+
+// Add this for testing
+$routes->get('/test', function() {
+    return view('test_page', [], ['layout' => 'layouts/test']);
+});

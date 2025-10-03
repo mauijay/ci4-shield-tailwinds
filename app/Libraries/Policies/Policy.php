@@ -61,13 +61,6 @@ class Policy
      */
     public function deny(string $message, int $status = 403)
     {
-        if (service('request')->is('htmx')) {
-            return redirect()
-                ->with('message', $message)
-                ->with('status', (string) $status)
-                ->hxLocation(route_to('general-error'));
-        }
-
         return redirect()
             ->with('message', $message)
             ->with('status', (string) $status)

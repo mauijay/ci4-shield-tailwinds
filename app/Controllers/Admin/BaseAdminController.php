@@ -87,7 +87,7 @@ abstract class BaseAdminController extends Controller
             $taskModel = model(TaskModel::class);
             $data['userTasks'] = $taskModel->where('responsible', $user_id)
                                            ->whereNotIn('status', [4,5])
-                                           ->get()->getResultArray() ?: [];
+                                           ->findAll();
         } catch (\Exception $e) {
             log_message('error', 'TaskModel error: ' . $e->getMessage());
             $data['userTasks'] = [];

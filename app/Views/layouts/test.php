@@ -3,8 +3,6 @@
 <?= $this->include('partials/front/_head') ?>
 
 <body class="flex items-center justify-center bg-slate-200">
-  
-
   <main>
     <?= $this->include('partials/front/_navbar') ?>
     <?= $this->renderSection('content') ?>

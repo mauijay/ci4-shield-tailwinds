@@ -123,9 +123,12 @@ dist-ssr
 /results/
 
 # Don't save phpunit under version control.
+build/
+coverage/
 phpunit
-/phpunit*.xml
-/.phpunit.*.cache
+phpunit.xml
+.phpunit.cache/
+*.cache
 
 
 # CS Fixer
@@ -134,3 +137,5 @@ phpunit
 
 
 .qodo
+
+# PHPUnit local configuration

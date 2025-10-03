@@ -562,6 +562,7 @@ git push origin --delete v0.3.1
 ```
 
 **Version bump fails:**
+
 ```bash
 # Ensure clean working directory
 git status
@@ -569,5 +570,32 @@ git add .
 git commit -m "commit message"
 
 # Then try version bump
+npm run version:patch
+```
+
+### Clean Approach: Reset and Try Again
+
+#### If you want to be extra careful:
+
+
+```bash
+# See current branch status
+git status
+
+# Stage all changes
+git add -A
+
+# Check what's about to be committed
+git status
+
+# Commit everything
+git commit -m "feat: add a couple tests"
+
+- Basic Feature Test
+- Home Page Test
+- Layout Test
+- Version Helper Test
+
+# Now try the version bump
 npm run version:patch
 ```
