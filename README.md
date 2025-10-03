@@ -592,6 +592,10 @@ npm run version:patch
 # See current branch status
 git status
 
+# See detailed changes
+git diff
+git diff --cached
+
 # Stage all changes
 git add -A
 
@@ -609,3 +613,5 @@ git commit -m "feat: add a couple tests
 # Now try the version bump
 npm run version:patch
 ```
+
+#### this works now

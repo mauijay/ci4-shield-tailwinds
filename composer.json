@@ -45,9 +45,8 @@
     "platform-check": false
   },
   "scripts": {
-    "bump-version": [
-      "@php -r \"$package = json_decode(file_get_contents('package.json'), true); $composer = json_decode(file_get_contents('composer.json'), true); $composer['version'] = $package['version']; file_put_contents('composer.json', json_encode($composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));\""
-    ],
+    "bump-version": "node scripts/sync-version.js",
+    "sync-version": "node scripts/sync-version.js",
     "ci": [
       "@cs",
       "@stan:ci",
