@@ -528,23 +528,6 @@ Versions are consistent across all environments:
 - **Testing**: Same version for consistency
 - **Production**: Same version for traceability
 
-### Manual Version Update
-
-If you need to manually update versions:
-
-1. **Edit package.json** version
-2. **Run sync command**:
-   ```bash
-   npm run sync-version
-   ```
-3. **Commit changes**:
-   ```bash
-   git add .
-   git commit -m "chore: update version to X.X.X"
-   git tag vX.X.X
-   git push && git push --tags
-   ```
-
 ### Version Sync Issues
 
 **Version mismatch between files:**
@@ -572,24 +555,10 @@ git tag -d v0.3.1
 git push origin --delete v0.3.1
 ```
 
-**Version bump fails:**
+**Version bump after add and commit:**
 
 ```bash
 # Ensure clean working directory
-git status
-git add .
-git commit -m "commit message"
-
-# Then try version bump
-npm run version:patch
-```
-
-### Clean Approach: Reset and Try Again
-
-#### If you want to be extra careful:
-
-```bash
-# See current branch status
 git status
 
 # See detailed changes
@@ -597,21 +566,54 @@ git diff
 git diff --cached
 
 # Stage all changes
-git add -A
+git add .
 
 # Check what's about to be committed
 git status
 
-# Commit everything
-git commit -m "feat: add a couple tests
+# Use conventional commits for better changelog generation
+npm run commit
 
-- Basic Feature Test
-- Home Page Test
-- Layout Test
-- Version Helper Test"
+# This will prompt you to create a conventional commit:
+# ? Select the type of change: feat
+# ? What is the scope of this change: tests
+# ? Write a short description: add comprehensive test suite
+# ? Provide a longer description: (optional)
+# ? Are there any breaking changes? No
+# ? Does this change affect any open issues? No
 
-# Now try the version bump
+# Generate/update changelog based on conventional commits
+npm run changelog
+
+# Stage the updated changelog
+git add CHANGELOG.md
+
+# Commit the changelog update
+git commit -m "docs: update changelog for upcoming release"
+
+# Now run the version bump workflow
 npm run version:patch
-```
 
-#### this works now
+# This should:
+# 1. Increment package.json from 0.3.5 → 0.3.6
+# 2. Run your sync-version.js script  
+# 3. Update composer.json, .env, .env.example
+# 4. Git add, commit, and push with tags
+
+# Expected output:
+# npm version 0.3.6
+# ✅ Updated package.json version to 0.3.6
+# ✅ Updated composer.json version to 0.3.6
+# ✅ Updated .env app.version to 0.3.6 (local only)
+# ✅ Updated .env.example app.version to 0.3.6 (tracked)
+# 📦 All versions are now in sync!
+# [Git operations...]
+
+# Alternative: Generate changelog after version bump
+# If you prefer to generate changelog after the version bump:
+# npm run version:patch
+# npm run changelog
+# git add CHANGELOG.md
+# git commit -m "docs: update changelog for v0.3.6"
+# git push
+```
