@@ -1,6 +1,6 @@
 {
   "name": "mauijay-shieldtailwindcss",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "keywords": [
     "tailwindcss",
