@@ -589,12 +589,12 @@ git add -A
 git status
 
 # Commit everything
-git commit -m "feat: add a couple tests"
+git commit -m "feat: add a couple tests
 
 - Basic Feature Test
 - Home Page Test
 - Layout Test
-- Version Helper Test
+- Version Helper Test"
 
 # Now try the version bump
 npm run version:patch
