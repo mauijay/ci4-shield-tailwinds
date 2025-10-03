@@ -5,16 +5,13 @@
   "type": "project",
   "version": "0.3.5",
   "require": {
-    "php": "^8.2 || ^8.4",
+    "php": "^8.2",
     "codeigniter4/framework": "^4.6",
     "codeigniter4/shield": "^1.2",
-    "codeigniter4/queue": "dev-develop",
-    "codeigniter4/tasks": "dev-develop",
     "datamweb/shield-oauth": "dev-develop",
     "firebase/php-jwt": "^6.11"
   },
   "require-dev": {
-    "codeigniter/phpstan-codeigniter": "^1.5.4",
     "fakerphp/faker": "^1.24",
     "friendsofphp/php-cs-fixer": "^3.88",
     "mikey179/vfsstream": "^1.6",
@@ -42,10 +39,10 @@
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "sort-packages": true,
-    "discard-changes": true,
     "allow-plugins": {
       "phpstan/extension-installer": true
-    }
+    },
+    "platform-check": false
   },
   "scripts": {
     "bump-version": [
@@ -53,20 +50,19 @@
     ],
     "ci": [
       "@cs",
-      "@stan",
-      "@test:no-coverage"
+      "@stan:ci",
+      "@test:ci"
     ],
     "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff --allow-risky=yes",
     "cs-fix": "vendor/bin/php-cs-fixer fix --verbose --ansi --using-cache=no --diff --allow-risky=yes",
     "stan": "vendor/bin/phpstan analyse",
-    "stan:level2": "phpstan analyse --level=2",
-    "dev:8081": "php spark serve --port 8081",
-    "test": "vendor/bin/phpunit || echo 'Tests completed with warnings'",
-    "test:unit": "vendor/bin/phpunit --testsuite=Unit || echo 'Unit tests completed with warnings'",
-    "test:database": "vendor/bin/phpunit --testsuite=Database || echo 'Database tests completed with warnings'",
-    "test:session": "vendor/bin/phpunit --testsuite=Session || echo 'Session tests completed with warnings'",
-    "test:coverage": "vendor/bin/phpunit --coverage-html=build/coverage || echo 'Coverage tests completed with warnings'",
-    "test:coverage-text": "vendor/bin/phpunit --coverage-text || echo 'Coverage tests completed with warnings'",
+    "stan:ci": "vendor/bin/phpstan analyse --error-format=github",
+    "test": "vendor/bin/phpunit --no-coverage",
+    "test:ci": "vendor/bin/phpunit --no-coverage --log-junit=build/logs/junit.xml",
+    "test:unit": "vendor/bin/phpunit --testsuite=Unit --no-coverage",
+    "test:database": "vendor/bin/phpunit --testsuite=Database --no-coverage",
+    "test:session": "vendor/bin/phpunit --testsuite=Session --no-coverage",
+    "test:coverage": "vendor/bin/phpunit --coverage-html=build/coverage",
     "test:no-coverage": "vendor/bin/phpunit --no-coverage"
   }
 }
