@@ -3,7 +3,7 @@
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "license": "MIT",
   "type": "project",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "require": {
     "php": "^8.2 || ^8.4",
     "codeigniter4/framework": "^4.6",
@@ -43,8 +43,6 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "discard-changes": true,
-    "disable-tls": true,
-    "secure-http": false,
     "allow-plugins": {
       "phpstan/extension-installer": true
     }
