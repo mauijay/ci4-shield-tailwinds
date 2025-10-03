@@ -12,7 +12,8 @@ CSS, and Vite build system.
 - 🌙 **Dark Mode** - Built-in dark/light theme support
 - 🔧 **Development Tools** - PHPStan, PHP CS Fixer, PHPUnit
 - 🏗️ **Modern Architecture** - View Cells, Helpers, and clean structure
-- 🔄 **Auto Version Sync** - Synchronized versioning across package.json, composer.json, and .env
+- 🔄 **Auto Version Sync** - Synchronized versioning across package.json,
+  composer.json, and .env
 
 ## Requirements
 
@@ -171,7 +172,7 @@ src/
 npm run dev          # Start Vite dev server with HMR
 npm run preview      # Preview production build
 
-# Development - CLI Workflow  
+# Development - CLI Workflow
 npm run build        # Build once for production
 npm run build:dev    # Build once with dev settings
 npm run build:watch  # Build and watch for changes
@@ -416,13 +417,16 @@ for details.
 ## Changelog
 
 ### v0.3.1
-- ✅ Added automatic version synchronization across package.json, composer.json, and .env
+
+- ✅ Added automatic version synchronization across package.json, composer.json,
+  and .env
 - ✅ Created version management scripts with Git integration
 - ✅ Enhanced version_helper with .env fallback support
 - ✅ Improved postversion workflow to include all modified files
 - ✅ Added comprehensive version management documentation
 
 ### v0.3.0
+
 - ✅ Setup Vite build system with Tailwind CSS v4
 - ✅ Added DaisyUI integration for enhanced UI components
 - ✅ Configured static asset copying from src/static to public/assets
@@ -432,12 +436,14 @@ for details.
 - ✅ Enhanced build system with manifest generation
 
 ### v0.2.9
+
 - ✅ Added dual development workflow support (Vite + CLI)
 - ✅ Enhanced vite_helper with better asset detection
 - ✅ Improved error handling and fallbacks
 - ✅ Added troubleshooting section to README
 
 ### v0.2.8
+
 - ✅ Removed Vue.js dependency
 - ✅ Configured Vite with Tailwind CSS
 - ✅ Added PWA support with service worker
@@ -451,13 +457,15 @@ for details.
 
 ## Version Management
 
-This project includes automatic version synchronization across multiple files to ensure consistency.
+This project includes automatic version synchronization across multiple files to
+ensure consistency.
 
 ### Synchronized Files
 
 The version sync system keeps these files in sync:
+
 - **package.json** - Node.js package version
-- **composer.json** - PHP package version  
+- **composer.json** - PHP package version
 - **.env** - Application version (`app.version`)
 
 ### Version Commands
@@ -515,6 +523,7 @@ echo cache_buster(); // "?v=0.3.1"
 ### Environment-Specific Versioning
 
 Versions are consistent across all environments:
+
 - **Development**: Uses exact version from package.json
 - **Testing**: Same version for consistency
 - **Production**: Same version for traceability
@@ -539,17 +548,19 @@ If you need to manually update versions:
 ### Version Sync Issues
 
 **Version mismatch between files:**
+
 ```bash
 # Manually sync versions
 npm run sync-version
 
 # Check current versions
 grep '"version"' package.json
-grep '"version"' composer.json  
+grep '"version"' composer.json
 grep 'app.version' .env
 ```
 
 **Git tag conflicts:**
+
 ```bash
 # List existing tags
 git tag -l
@@ -576,7 +587,6 @@ npm run version:patch
 ### Clean Approach: Reset and Try Again
 
 #### If you want to be extra careful:
-
 
 ```bash
 # See current branch status
