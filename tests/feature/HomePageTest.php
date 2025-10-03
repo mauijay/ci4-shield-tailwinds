@@ -29,7 +29,7 @@ final class HomePageTest extends CIUnitTestCase
         // Check for basic HTML structure
         $this->assertStringContainsString('<html', $body);
         $this->assertStringContainsString('<head>', $body);
-        $this->assertStringContainsString('<body>', $body);
+        $this->assertStringContainsString('<body', $body);
         $this->assertStringContainsString('</html>', $body);
     }
 

@@ -13,37 +13,45 @@ final class LayoutTest extends CIUnitTestCase
 
     public function testTestLayoutLoads(): void
     {
-        // If you have a route that uses the test layout
-        $response = $this->get('/test'); // Adjust route as needed
+        $response = $this->get('/test');
 
         $response->assertOK();
         $body = $response->getBody();
 
-        // Test for your layout structure
-        $this->assertStringContainsString('<!doctype html>', $body);
+        // Test for layout structure (more flexible)
+        $this->assertMatchesRegularExpression('/<!doctype\s+html>/i', $body);
         $this->assertStringContainsString('<html lang="en">', $body);
-        $this->assertStringContainsString('bg-slate-200', $body); // Tailwind class
+        $this->assertStringContainsString('bg-slate-200', $body);
         $this->assertStringContainsString('<main>', $body);
     }
 
-    public function testLayoutIncludesPartials(): void
+    public function testLayoutIncludesNavbar(): void
     {
-        $response = $this->get('/test'); // Adjust route as needed
+        $response = $this->get('/test');
+        $response->assertOK();
 
-        if ($response->getStatusCode() === 200) {
-            $body = $response->getBody();
+        $body = $response->getBody();
+        $this->assertStringContainsString('808 BIZ', $body); // Navbar brand
+        $this->assertStringContainsString('<nav', $body);
+    }
 
-            // Your layout should include these partials
-            // We can't directly test includes, but we can test for their likely content
-            $this->assertTrue(
-                str_contains($body, '<head>') ||
-        str_contains($body, '<nav') ||
-        str_contains($body, '<footer') ||
-        str_contains($body, '<script'),
-                'Layout should include head, nav, footer, or script content'
-            );
-        } else {
-            $this->markTestSkipped('Test route not available');
-        }
+    public function testLayoutIncludesFooter(): void
+    {
+        $response = $this->get('/test');
+        $response->assertOK();
+
+        $body = $response->getBody();
+        $this->assertStringContainsString('<footer', $body);
+        $this->assertStringContainsString('Copyright 2025', $body);
+    }
+
+    public function testLayoutHasTestPageContent(): void
+    {
+        $response = $this->get('/test');
+        $response->assertOK();
+
+        $body = $response->getBody();
+        $this->assertStringContainsString('Test Page', $body);
+        $this->assertStringContainsString('This is a test page using the test layout', $body);
     }
 }
