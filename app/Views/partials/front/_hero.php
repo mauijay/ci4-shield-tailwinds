@@ -2,7 +2,7 @@
 flex flex-col justify-center items-center">
   <span class=" font-extrabold text-4xl text-zinc-100"><?php echo $title ?>-v<?= app_version() ?></span>
   <span class=" text-zinc-100 mt-2"><?= esc($heading) ?? env('app.name'); ?></span>
-  <h3><?= isset($title) ? esc($title) : 'Default Title' ?> - HawaiiBusinessSolutions - v<?= config('app')->version ?? '0.0.0' ?></h3>
+  <h3><?= isset($title) ? esc($title) : 'Default Title' ?> - HawaiiBusinessSolutions - v<?= env('app.version') ?? '0.0.0' ?></h3>
   <button
     class="mt-6 rounded-lg bg-blue-600 px-6 py-2.5 text-center text-sm font-medium capitalize leading-5 text-white hover:bg-blue-500 focus:outline-hidden lg:mx-0 lg:w-auto">
     Start 14-Day free trial

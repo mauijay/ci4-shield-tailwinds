@@ -15,7 +15,7 @@ class App extends BaseConfig
      *
      * The name of your site.
      */
-    public string $siteName = 'MyApp';
+    public string $siteName = 'MyTW4App';
 
     /**
      * --------------------------------------------------------------------------

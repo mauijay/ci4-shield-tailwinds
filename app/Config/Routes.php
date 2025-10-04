@@ -7,6 +7,7 @@ use App\Controllers\Admin\Settings\SettingsController;
 use App\Controllers\HelpController;
 use App\Controllers\HomeController;
 use App\Controllers\LegalController;
+use App\Controllers\Account\AccountController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -25,6 +26,14 @@ $routes->match(['get', 'post'], 'help', [HelpController::class, 'index'], ['as' 
 $routes->match(['get', 'post'], 'help/(:any)', [HelpController::class, 'show/$1'], ['as' => 'page']);
 
 service('auth')->routes($routes);
+
+//Account routes
+$routes->group('account', ['filter' => ['session', 'group:superadmin,admin,user']], function ($routes): void {
+    $routes->get('/', [AccountController::class, 'index'], ['as' => 'account.dashboard']);
+    $routes->get('profile', [AccountController::class, 'profile'], ['as' => 'account.profile']);
+    $routes->get('profile/edit', [AccountController::class, 'edit'], ['as' => 'account.profile.edit']);
+    $routes->post('profile/update', [AccountController::class, 'update'], ['as' => 'account.profile.update']);
+});
 
 // Super admin only routes
 $routes->group('admin/super', ['filter' => ['session', 'group:superadmin']], function ($routes): void {

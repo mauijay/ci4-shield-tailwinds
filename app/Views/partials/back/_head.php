@@ -11,5 +11,6 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!--<link rel="stylesheet" href="<?= base_url('assets/css/admin.css' . cache_buster()) ?>">-->
   <?= $this->renderSection('custom-top-js') ?>
-  <script src="https://kit.fontawesome.com/9ce245a629.js" crossorigin="anonymous"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
