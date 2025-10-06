@@ -1,3 +1,13 @@
+## [0.3.9](https://github.com/mauijay/ci4-shield-tailwinds/compare/v0.3.8...v0.3.9) (2025-10-06)
+
+
+### Features
+
+* **admin dashboard:** add a basic admin dashboard ([5091b6d](https://github.com/mauijay/ci4-shield-tailwinds/commit/5091b6d6acf27d7651f31f0036d5f6373e71ddd1))
+* **tailwindcss in admin and app:** write a better css entry point ([dac0f59](https://github.com/mauijay/ci4-shield-tailwinds/commit/dac0f5912006a4a0f31f26e816f856cc5eec8faf))
+
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
