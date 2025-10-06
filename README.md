@@ -582,6 +582,9 @@ npm run commit
 # ? Are there any breaking changes? No
 # ? Does this change affect any open issues? No
 
+# Now run the version bump workflow
+npm run version:patch
+
 # Generate/update changelog based on conventional commits
 npm run changelog
 
@@ -591,8 +594,10 @@ git add CHANGELOG.md
 # Commit the changelog update
 git commit -m "docs: update changelog for upcoming release"
 
-# Now run the version bump workflow
-npm run version:patch
+# push it
+git push
+
+
 
 # This should:
 # 1. Increment package.json from 0.3.5 → 0.3.6

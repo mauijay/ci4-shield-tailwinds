@@ -1,42 +1,146 @@
+/* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-@source "./app/Views/**/*.php";
-@source "./public/assets/js/**/*.js";
 
+/* Import Tailwind CSS */
 @import "tailwindcss";
-@source "./app/Views/**/*.php";
-@source "./public/assets/js/**/*.js";
 
+/* Theme configuration */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Font sizes */
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 28px;
-  --font-size-4xl: 48px;
-  --font-size-8xl: 96px;
+  /* Font sizes (use rem for v4) */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 3rem;
+  --font-size-8xl: 6rem;
 
-  /* Colors */
-  --color-primary: #2563eb; /* Tailwind's blue-600 */
-  --color-secondary: #10b981; /* Tailwind's emerald-500 */
-  --color-accent: #f59e0b; /* Tailwind's amber-500 */
-  --color-background: #f9fafb; /* Tailwind's gray-50 */
-  --color-surface: #ffffff; /* White surface */
-  --color-error: #ef4444; /* Tailwind's red-500 */
-  --color-on-primary: #ffffff; /* Text on primary color */
-  --color-on-secondary: #ffffff; /* Text on secondary color */
-  --color-on-accent: #000000; /* Text on accent color */
-  --color-on-background: #111827; /* Tailwind's gray-900 */
-  --color-on-surface: #111827; /* Text on surface color */
-  --color-on-error: #ffffff; /* Text on error color */
+  /* Custom colors */
+  --color-primary: #2563eb;
+  --color-secondary: #10b981;
+  --color-accent: #f59e0b;
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-error: #ef4444;
+  --color-on-primary: #ffffff;
+  --color-on-secondary: #ffffff;
+  --color-on-accent: #000000;
+  --color-on-background: #111827;
+  --color-on-surface: #111827;
+  --color-on-error: #ffffff;
 
-  /* Shadows */
+  /* Custom shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: var(--color-on-surface);
+  }
+}
+
+/* Admin-specific components */
+@layer components {
+  .admin-card {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    box-shadow: var(--shadow-md);
+    @apply rounded-lg border border-gray-200 p-6;
+  }
+
+  .admin-button {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    @apply focus:ring-primary rounded-md px-4 py-2 font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none;
+  }
+
+  .admin-button:hover {
+    background-color: #1d4ed8; /* Darker blue */
+  }
+
+  .admin-button-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    @apply focus:ring-secondary rounded-md px-4 py-2 font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none;
+  }
+
+  .admin-button-secondary:hover {
+    background-color: #059669; /* Darker green */
+  }
+
+  .admin-input {
+    background-color: var(--color-surface);
+    border-color: #d1d5db; /* gray-300 */
+    color: var(--color-on-surface);
+    @apply focus:ring-primary w-full rounded-md border px-3 py-2 focus:border-transparent focus:ring-2 focus:outline-none;
+  }
+
+  .admin-sidebar {
+    background-color: var(--color-surface);
+    @apply fixed top-0 left-0 h-full w-64 border-r border-gray-200 shadow-lg;
+  }
+
+  .admin-main-content {
+    background-color: var(--color-background);
+    @apply ml-64 min-h-screen p-6;
+  }
+}
+
+/* Admin utilities */
+@layer utilities {
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .shadow-admin {
+    box-shadow: var(--shadow-md);
+  }
 }

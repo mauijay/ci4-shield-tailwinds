@@ -2,13 +2,13 @@
 <html lang="en-US" data-theme="light">
 <?= $this->include('partials/back/_head') ?>
 
-<body class="relative min-h-screen bg-gray-50 font-sans antialiased">  
+<body class="relative min-h-screen bg-gray-50 font-sans antialiased">
   <!--  Mobile sidebar overlay  -->
   <div class="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden hidden" id="sidebar-overlay"></div>
-  
+
   <!--  Fixed sidebar  -->
   <?= $this->include('partials/back/_sidebar') ?>
-  
+
   <!--  Main content area with responsive layout  -->
   <div class="lg:ml-64">
     <!--  Mobile header with menu button  -->
@@ -30,12 +30,12 @@
       <main class="flex-grow">
         <?= $this->renderSection('content') ?>
       </main>
-      
+
       <!--  Footer  -->
       <?= $this->include('partials/back/_footer') ?>
     </div>
   </div>
-  
+
   <?= $this->renderSection('modals') ?>
   <?= $this->include('partials/back/_js') ?>
   <?= $this->renderSection('pageScripts') ?>

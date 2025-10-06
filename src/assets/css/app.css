@@ -1,10 +1,10 @@
+/* Import fonts with correct layer syntax */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap")
 layer(base);
 
 @import "tailwindcss";
-@source "./app/Views/**/*.{html,php,js,ts,jsx,tsx}";
-@source "./public/assets/js/**/*.js";
 
+/* DaisyUI plugin configuration */
 @plugin "daisyui" {
   themes:
     [ "nord",
@@ -18,45 +18,39 @@ layer(base);
   rtl: false;
 }
 
+/* Theme configuration */
 @theme {
-  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-heading:
+  --font-family-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-family-heading:
     "Fira Sans Extra Condensed", ui-sans-serif, system-ui, sans-serif;
-  --font-bebas: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
+  --font-family-bebas: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
 
   /* Font sizes */
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 28px;
-  --font-size-4xl: 48px;
-  --font-size-8xl: 96px;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 3rem;
+  --font-size-8xl: 6rem;
 
-  /* Colors */
+  /* Custom colors */
   --color-primary: #eceeff;
   --color-coral-red: #ff6452;
   --color-slate-gray: #6d6d6d;
   --color-pale-blue: #f5f6ff;
   --color-white-400: rgba(255, 255, 255, 0.8);
 
-  /* Shadows */
+  /* Custom shadows */
   --shadow-3xl: 0 10px 40px rgba(0, 0, 0, 0.1);
 
-  /* Screens */
+  /* Custom breakpoints */
   --breakpoint-wide: 1440px;
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
+/* v4 Border compatibility */
 @layer base {
   *,
   ::after,
@@ -65,23 +59,27 @@ layer(base);
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
   body {
-    @apply font-sans;
+    font-family: var(--font-family-sans);
     scrollbar-gutter: auto !important;
   }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-heading;
+    font-family: var(--font-family-heading);
   }
+
   h1,
   h2,
   h3 {
     font-weight: 700;
   }
+
   h4,
   h5,
   h6 {
@@ -89,36 +87,87 @@ layer(base);
   }
 }
 
+/* Component layer */
+@layer components {
+  .btn {
+    @apply rounded px-4 py-2 font-medium;
+  }
+
+  .btn-primary {
+    background-color: #3b82f6;
+    color: #ffffff;
+    @apply rounded px-4 py-3 font-bold transition-colors;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .btn-secondary {
+    background-color: #10b981;
+    color: #ffffff;
+    @apply rounded px-4 py-3 font-bold transition-colors;
+  }
+
+  .majik-button {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    @apply inline-flex items-center justify-center gap-x-3 rounded-full border border-transparent px-6 py-3 text-center text-sm font-medium text-white shadow-lg focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white focus:outline-none dark:focus:ring-offset-gray-800;
+  }
+
+  .majik-button:hover {
+    box-shadow: 0 10px 15px -3px rgba(29, 78, 216, 0.5);
+  }
+
+  .special-button {
+    background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 100%);
+    @apply transform rounded-lg px-6 py-3 font-semibold text-white shadow-md transition duration-300 ease-in-out focus:ring focus:ring-purple-300 focus:outline-none;
+  }
+
+  .special-button:hover {
+    transform: scale(1.05);
+  }
+
+  .special-button:active {
+    background-color: #1d4ed8;
+  }
+
+  .card-style {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    @apply rounded-lg p-6;
+    box-shadow: var(--shadow-3xl);
+  }
+}
+
+/* Utility layer */
 @layer utilities {
-  * {
+  .reset-all {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
   }
+
   .table-zebra-soft tbody tr:nth-child(even) {
     @apply bg-white/5;
   }
+
   .stat-lg .stat-title {
     @apply text-lg;
   }
+
   .stat-lg .stat-value {
-    @apply font-bebas text-5xl leading-tight;
+    font-family: var(--font-family-bebas);
+    @apply text-5xl leading-tight;
   }
+
   .scrollbar-auto {
     scrollbar-gutter: auto !important;
   }
 }
 
+/* Simple utility without pseudo-classes */
 @utility max-container {
   max-width: 1440px;
   margin: 0 auto;
-}
-
-@utility majik-button {
-  @apply inline-flex items-center justify-center gap-x-3 rounded-full border border-transparent bg-gradient-to-tl from-blue-600 to-violet-600 px-6 py-3 text-center text-sm font-medium text-white shadow-lg shadow-transparent hover:shadow-blue-700/50 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white focus:outline-none dark:focus:ring-offset-gray-800;
-}
-
-@utility special-button {
-  @apply transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 font-semibold text-white shadow-md transition duration-300 ease-in-out hover:scale-105 hover:from-purple-600 hover:to-blue-600 focus:ring focus:ring-purple-300 focus:outline-none active:bg-blue-700;
 }

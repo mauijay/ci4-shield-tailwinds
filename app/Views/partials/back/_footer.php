@@ -9,10 +9,10 @@
 <footer class="bg-white border-t border-gray-100 py-4 px-6 mt-auto">
   <div class="flex items-center justify-between">
     <p class="text-sm text-gray-600">
-      © <?= date('Y') ?> TW4 Admin. All rights reserved.
+      © <?= date('Y') ?> <?= config('app')->siteName ?? 'Test Dummy' ?>. All rights reserved.
     </p>
     <p class="text-sm text-gray-500">
-      Version <?= config('app')->version ?? '1.0.0' ?>
+      Version <?= app_version() ?>
     </p>
   </div>
 </footer>

@@ -1,36 +1,23 @@
 {
   "tailwindCSS.includeLanguages": {
-    "php": "html",
-    "blade": "html",
-    "vue": "html",
-    "javascript": "html",
-    "typescript": "html"
+    "php": "html"
   },
   "tailwindCSS.experimental.classRegex": [
-    ["class\\s*=\\s*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*)[\"'`]"],
-    ["className\\s*=\\s*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*)[\"'`]"],
-    ["\\$.*class.*=.*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*)[\"'`]"],
-    ["@apply\\s+([^;\\n]+)", "([^\\s;\\n]+)"],
-    ["(?:enter|leave)(?:From|To)?=\\s*(?:\"|')([^\"']*)(?:\"|')", "([^\"'\\s]+)"]
+    ["class\\s*=\\s*[\"']([^\"']*)[\"']", "[\"'`]([^\"'`]*)[\"'`]"]
   ],
-  "tailwindCSS.files.exclude": [
-    "**/.git/**",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/build/**",
-    "**/vendor/**"
-  ],
-  "emmet.includeLanguages": {
-    "php": "html",
-    "blade": "html"
-  },
-  "files.associations": {
-    "*.php": "php"
-  },
   "editor.quickSuggestions": {
     "strings": true
   },
-  "css.validate": false,
-  "scss.validate": false,
-  "postcss.validate": false
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.suggestions": true,
+  "tailwindCSS.validate": true,
+  "tailwindCSS.colorDecorators": true,
+  "tailwindCSS.showPixelEquivalents": true,
+  "editor.colorDecorators": true,
+  "files.associations": {
+    "*.php": "php"
+  },
+  "css.colorDecorators.enable": true,
+  "editor.colorDecoratorsActivatedOn": ["editor", "colorPicker"],
+  "tailwindCSS.experimental.configFile": "./tailwind.config.js"
 }

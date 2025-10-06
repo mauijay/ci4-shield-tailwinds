@@ -15,7 +15,7 @@ class App extends BaseConfig
      *
      * The name of your site.
      */
-    public string $siteName = 'MyTW4App';
+    public string $siteName = 'Ci4-Shield-TailwindCSS';
 
     /**
      * --------------------------------------------------------------------------
@@ -25,7 +25,7 @@ class App extends BaseConfig
      * Who should be listed as the copyright holder.
      * Displays in footer. Leave empty for no display.
      */
-    public string $copyrightHolder = 'MyApp.com';
+    public string $copyrightHolder = '808Biz';
 
     /**
      * --------------------------------------------------------------------------

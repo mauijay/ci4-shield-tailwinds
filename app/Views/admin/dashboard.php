@@ -30,7 +30,7 @@
     <div class="bg-white rounded-lg shadow border border-gray-100 p-4 lg:p-6">
       <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
       <div class="space-y-3">
-        <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition-colors">
+        <button class="w-full btn-primary">
           <span class="text-sm font-medium">Primary Action</span>
         </button>
         <button class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-3 px-4 rounded transition-colors">
@@ -48,7 +48,9 @@
           <div class="flex-shrink-0">
             <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z">
+                </path>
               </svg>
             </div>
           </div>
@@ -70,7 +72,9 @@
           <div class="flex-shrink-0">
             <div class="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                </path>
               </svg>
             </div>
           </div>
@@ -92,7 +96,8 @@
           <div class="flex-shrink-0">
             <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
               </svg>
             </div>
           </div>
@@ -116,7 +121,7 @@
       <div class="p-4 lg:p-6">
         <div class="space-y-3">
           <div class="flex items-center text-sm">
-            <div class="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+            <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
             <span class="text-gray-600">System backup completed</span>
             <span class="ml-auto text-gray-400 text-xs">2 min ago</span>
           </div>
@@ -137,3 +142,4 @@
 </div>
 
 <?= $this->endSection(); ?>
+
