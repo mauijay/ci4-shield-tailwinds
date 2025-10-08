@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
@@ -12,7 +14,9 @@ try {
   const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
   const version = packageJson.version;
 
-  // Update composer.json version
+  console.log(`Syncing version: ${version}`);
+
+  // Update composer.json
   const composerJsonPath = join(rootDir, 'composer.json');
   const composerJson = JSON.parse(readFileSync(composerJsonPath, 'utf8'));
   composerJson.version = version;

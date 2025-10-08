@@ -1,30 +1,36 @@
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
-    plugins: [tailwindcss()],
+    // No Tailwind plugin needed - PostCSS handles it
+    plugins: [],
+
+    css: {
+      postcss: './postcss.config.js', // PostCSS handles Tailwind v4
+    },
+
     root: './',
-    publicDir: './src/static', // Point to your static assets directory
+    publicDir: './src/static',
+
     build: {
       emptyOutDir: true,
       manifest: true,
       rollupOptions: {
         input: {
-          // Tailwind CSS
+          // CSS files
           'css/app': './src/assets/css/app.css',
           'css/admin': './src/assets/css/admin.css',
-          // JavaScript
+          // JavaScript files
           'js/app': './src/assets/js/app.js',
           'js/admin': './src/assets/js/admin.js',
         },
       },
       outDir: './public/assets',
       assetsDir: '.',
-      copyPublicDir: true, // Changed to true to copy static files
+      copyPublicDir: true,
     },
+
     server: {
       port: 5173,
       strictPort: true,

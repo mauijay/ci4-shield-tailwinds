@@ -3,7 +3,7 @@
   "description": "CodeIgniter4 starter template with Shield Auth, Vite, Tailwind",
   "license": "MIT",
   "type": "project",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "require": {
     "php": "^8.2",
     "codeigniter4/framework": "^4.6",
@@ -46,7 +46,6 @@
   },
   "scripts": {
     "bump-version": "node scripts/sync-version.js",
-    "sync-version": "node scripts/sync-version.js",
     "ci": [
       "@cs",
       "@stan:ci",

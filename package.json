@@ -11,13 +11,8 @@
   "author": "jay",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.14"
-  },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.19",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.16",
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
     "cross-env": "^10.1.0",
@@ -49,9 +44,6 @@
     "cs-fix": "composer run cs-fix",
     "stan": "composer run stan",
     "stan:level2": "composer run stan:level2",
-    "start:css": "npx @tailwindcss/cli -i ./src/assets/css/app.css -o ./public/assets/css/styles.css --watch",
-    "admin:css": "npx @tailwindcss/cli -i ./src/assets/css/admin.css -o ./public/assets/css/admin.css --watch",
-    "build:css": "npx @tailwindcss/cli -i ./src/assets/css/app.css -o ./public/assets/css/styles.min.css -m",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
@@ -64,9 +56,10 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "changelog:first": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "sync-version": "node scripts/sync-version.js",
-    "version:patch": "npm version patch && npm run sync-version",
-    "version:minor": "npm version minor && npm run sync-version",
-    "version:major": "npm version major && npm run sync-version",
-    "postversion": "git add composer.json .env.example && git commit --amend --no-edit && git push && git push --tags"
+    "bump:patch": "npm version patch && npm run sync-version && composer bump-version",
+    "bump:minor": "npm version minor && npm run sync-version && composer bump-version",
+    "bump:major": "npm version major && npm run sync-version && composer bump-version",
+    "version": "npm run sync-version && git add composer.json",
+    "postversion": "git push && git push --tags"
   }
 }
