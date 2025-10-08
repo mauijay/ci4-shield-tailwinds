@@ -583,7 +583,17 @@ npm run commit
 # ? Does this change affect any open issues? No
 
 # Now run the version bump workflow
-npm run version:patch
+# Patch version (0.3.9 → 0.3.10)
+npm run bump:patch
+
+# Minor version (0.3.9 → 0.4.0)
+npm run bump:minor
+
+# Major version (0.3.9 → 1.0.0)
+npm run bump:major
+
+# Just sync existing versions
+npm run sync-version
 
 # Generate/update changelog based on conventional commits
 npm run changelog
@@ -601,7 +611,7 @@ git push
 
 # This should:
 # 1. Increment package.json from 0.3.5 → 0.3.6
-# 2. Run your sync-version.js script  
+# 2. Run your sync-version.js script
 # 3. Update composer.json, .env, .env.example
 # 4. Git add, commit, and push with tags
 
