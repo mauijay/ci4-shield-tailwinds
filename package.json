@@ -23,7 +23,7 @@
     "prettier-plugin-tailwindcss": "^0.7.1",
     "sass": "^1.94.0",
     "tailwindcss": "^4.1.17",
-    "vite": "^7.2.2"
+    "vite": "^7.2.4"
   },
   "config": {
     "commitizen": {
