@@ -9,7 +9,7 @@
     "codeigniter4/framework": "^4.6",
     "codeigniter4/shield": "^1.2",
     "datamweb/shield-oauth": "dev-develop",
-    "firebase/php-jwt": "^6.11"
+    "firebase/php-jwt": "^7.0"
   },
   "require-dev": {
     "fakerphp/faker": "^1.24",
