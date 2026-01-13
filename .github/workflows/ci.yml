@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: CI
 
 on:
   push:
@@ -6,14 +6,22 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  test:
+  backend:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        php-version: ["8.2", "8.3"]
+        php-version: ["8.4"]
 
-    name: PHP ${{ matrix.php-version }} Tests
+    name: Backend (PHP ${{ matrix.php-version }})
+
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
@@ -23,7 +31,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          extensions: intl, curl, dom, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          extensions: intl, curl, dom, mbstring, zip, pcntl, pdo, sqlite3, pdo_sqlite
           coverage: none
 
       - name: Get composer cache directory
@@ -31,7 +39,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache composer dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -46,18 +54,34 @@ jobs:
           mkdir -p build/logs
           php spark migrate --all || echo "No migrations to run"
 
-      - name: Run code style checks
-        run: composer run cs
+      - name: Run CI checks
+        run: composer run ci
 
-      - name: Run static analysis
-        run: composer run stan
-        continue-on-error: true
+  frontend:
+    runs-on: ubuntu-latest
+    name: Frontend (Node build)
 
-      - name: Run tests
-        run: composer run test:no-coverage
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build assets
+        run: npm run build
 
   deploy:
-    needs: test
+    needs: [backend, frontend]
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
