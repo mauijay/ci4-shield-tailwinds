@@ -1,5 +1,26 @@
 <?php declare(strict_types=1);
 
+if (!function_exists('vite_manifest_path')) {
+    /**
+     * Returns the first existing Vite manifest path.
+     */
+    function vite_manifest_path(): ?string
+    {
+        $paths = [
+            FCPATH . 'assets/manifest.json',
+            FCPATH . 'assets/.vite/manifest.json',
+        ];
+
+        foreach ($paths as $path) {
+            if (is_file($path)) {
+                return $path;
+            }
+        }
+
+        return null;
+    }
+}
+
 if (!function_exists('vite_assets')) {
     /**
      * Load assets intelligently based on available files and dev server
@@ -12,13 +33,45 @@ if (!function_exists('vite_assets')) {
         }
 
         // Check if Vite manifest exists (production build)
-        $manifestPath = FCPATH . 'assets/manifest.json';
-        if (file_exists($manifestPath)) {
+        if (vite_manifest_path() !== null) {
             return vite_production_assets($entry);
         }
 
-        // Fallback to CLI build assets
-        return vite_cli_assets($entry);
+        // Fallback: try to load hashed build outputs even if manifest wasn't uploaded
+        return vite_guess_assets($entry) ?: vite_cli_assets($entry);
+    }
+}
+
+if (!function_exists('vite_guess_assets')) {
+    /**
+     * Best-effort fallback for shared hosts where the manifest didn't upload.
+     * Tries to locate hashed Vite outputs under assets/css and assets/js.
+     */
+    function vite_guess_assets(string $entry): string
+    {
+        $html = '';
+
+        $cssCandidates = array_merge(
+            glob(FCPATH . "assets/css/{$entry}-*.css") ?: [],
+            glob(FCPATH . "assets/css/{$entry}.css") ?: [],
+        );
+
+        $jsCandidates = array_merge(
+            glob(FCPATH . "assets/js/{$entry}-*.js") ?: [],
+            glob(FCPATH . "assets/js/{$entry}.js") ?: [],
+        );
+
+        if ($cssCandidates !== []) {
+            $cssFile = basename($cssCandidates[0]);
+            $html .= '<link rel="stylesheet" href="' . base_url('assets/css/' . $cssFile) . "\">\n";
+        }
+
+        if ($jsCandidates !== []) {
+            $jsFile = basename($jsCandidates[0]);
+            $html .= '<script type="module" src="' . base_url('assets/js/' . $jsFile) . '"></script>';
+        }
+
+        return $html;
     }
 }
 
@@ -80,17 +133,21 @@ if (!function_exists('vite_production_assets')) {
      */
     function vite_production_assets(string $entry): string
     {
-        $manifestPath = FCPATH . 'assets/manifest.json';
+        $manifestPath = vite_manifest_path();
+        if ($manifestPath === null) {
+            return vite_guess_assets($entry) ?: vite_cli_assets($entry);
+        }
+
         $manifest = json_decode(file_get_contents($manifestPath), true);
 
         if (!$manifest) {
-            return vite_cli_assets($entry);
+            return vite_guess_assets($entry) ?: vite_cli_assets($entry);
         }
 
         $entryFile = "src/assets/js/{$entry}.js";
 
         if (!isset($manifest[$entryFile])) {
-            return vite_cli_assets($entry);
+            return vite_guess_assets($entry) ?: vite_cli_assets($entry);
         }
 
         $entryData = $manifest[$entryFile];

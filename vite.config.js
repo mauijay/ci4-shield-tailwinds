@@ -15,7 +15,7 @@ export default defineConfig(() => {
 
     build: {
       emptyOutDir: true,
-      manifest: true,
+      manifest: 'manifest.json',
       rollupOptions: {
         input: {
           // CSS files

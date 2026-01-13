@@ -14,7 +14,7 @@ On the server, you want something like:
 - `~/public_html/oahusb/`
   - `index.php`
   - `.htaccess`
-  - `assets/` (Vite build output + manifest.json)
+  - `assets/` (Vite build output + manifest)
   - `robots.txt`, `favicon.ico`, etc
 - `~/ci4/oahusb/`
   - `app/`
@@ -45,7 +45,7 @@ Notes:
 - You can build assets locally and upload `public/assets/` (recommended), or
   build on-server if Node is available.
 
-## 3) Fix the bootstrap path in public_html/oahusb/index.php
+## 3) Fix the bootstrap path in public_html/oahusb/index.php and spark
 
 Your `index.php` currently expects `../app/Config/Paths.php`.
 
@@ -71,7 +71,7 @@ require FCPATH . '../../ci4/oahusb/app/Config/Paths.php';
 Create `ci4/oahusb/.env` (copy from the repo’s `env` file) and set at least:
 
 - `CI_ENVIRONMENT = production`
-- `app.baseURL = 'https://yourdomain.com/oahusb/'`
+- `app.baseURL = 'https://oahusb.com/'`
 - Your database settings (`database.default.*`)
 - `encryption.key` (strong random string)
 
@@ -104,6 +104,14 @@ npm run build
 Then upload:
 
 - `public/assets/` → `public_html/oahusb/assets/`
+
+Important:
+
+- Vite uses a manifest to know the hashed filenames to load.
+- If your FTP client skips hidden folders/files, you may accidentally miss the manifest.
+- This repo now supports both manifest locations:
+  - `assets/manifest.json` (preferred)
+  - `assets/.vite/manifest.json` (older Vite default)
 
 ### Option B: build on the server (if Node is available)
 

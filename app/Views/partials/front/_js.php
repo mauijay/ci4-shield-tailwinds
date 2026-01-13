@@ -1,9 +1,8 @@
 <?php
 
-/**
- * The goal of this file is to add content later
- * 
- */
+declare(strict_types=1);
 
-echo
-'<script src="assets/js/app.js?v=<?= asset_version() ?>"></script>';
+// Frontend assets are loaded via Vite in the <head> using vite_assets('app').
+// Keep this partial for page-specific scripts.
+
+echo $this->renderSection('custom-bottom-js');
