@@ -108,7 +108,8 @@ Then upload:
 Important:
 
 - Vite uses a manifest to know the hashed filenames to load.
-- If your FTP client skips hidden folders/files, you may accidentally miss the manifest.
+- If your FTP client skips hidden folders/files, you may accidentally miss the
+  manifest.
 - This repo now supports both manifest locations:
   - `assets/manifest.json` (preferred)
   - `assets/.vite/manifest.json` (older Vite default)
