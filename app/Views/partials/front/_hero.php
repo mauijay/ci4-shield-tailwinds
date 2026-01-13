@@ -1,4 +1,4 @@
-<header class=" w-full h-[40vh] bg-[url('assets/images/background_home.jpg')] bg-center bg-cover bg-no-repeat
+<header class=" w-full h-[40vh] bg-[url('/assets/images/background_home.jpg')] bg-center bg-cover bg-no-repeat
 flex flex-col justify-center items-center">
   <span class=" font-extrabold text-4xl text-zinc-100"><?= isset($title) ? esc($title) : 'Default Title' ?> - 808biz</span>
   <span class=" text-zinc-100 mt-2"><?= esc($heading) ?? env('app.name'); ?></span>
