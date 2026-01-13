@@ -32,13 +32,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
-
-
-            
           </div>
         </div>
-
-
       </div>
       <div class="relative hidden lg:ml-32 lg:block lg:w-1/2">
         <svg xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +69,6 @@
     </svg>
   </div>
   <div class=" absolute top-10 left-3/4 z-0  opacity-10 ">
-
     <svg fill="#000000" width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"
       class="w-96 z-0  h-full    object-fill fill-blue-300 text-blue-300">
       <path
@@ -82,9 +76,7 @@
         fill-rule="evenodd"></path>
     </svg>
   </div>
-
 </div>
-
 <section class="bg-gray-200 dark:bg-gray-900">
   <div class="container mx-auto px-6 py-10">
     <h2 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">Services
@@ -141,7 +133,7 @@
       <span class="mx-1 inline-block h-1 w-3 rounded-full bg-blue-500"></span>
       <span class="inline-block h-1 w-1 rounded-full bg-blue-500"></span>
     </div>
-    <p class="mt-4 text-center text-gray-500 dark:text-gray-300">Save time managing your business Advertising &amp; Content.</p>    
+    <p class="mt-4 text-center text-gray-500 dark:text-gray-300">Save time managing your business Advertising &amp; Content.</p>
     <!-- row -->
     <div class="flex flex-wrap flex-row -mx-4 text-center">
       <div class="shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s"

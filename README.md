@@ -17,7 +17,7 @@ CSS, and Vite build system.
 
 ## Requirements
 
-- PHP 8.2 or higher
+- PHP 8.4 or higher
 - Composer
 - Node.js 18+ and npm
 - MySQL/MariaDB

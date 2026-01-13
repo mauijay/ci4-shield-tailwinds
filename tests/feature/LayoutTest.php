@@ -31,8 +31,8 @@ final class LayoutTest extends CIUnitTestCase
         $response->assertOK();
 
         $body = $response->getBody();
-        $this->assertStringContainsString('808 BIZ', $body); // Navbar brand
         $this->assertStringContainsString('<nav', $body);
+        $this->assertStringContainsString('Get started', $body);
     }
 
     public function testLayoutIncludesFooter(): void

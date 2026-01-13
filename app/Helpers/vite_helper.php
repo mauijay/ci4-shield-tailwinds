@@ -7,7 +7,7 @@ if (!function_exists('vite_assets')) {
     function vite_assets(string $entry = 'app'): string
     {
         // Check if Vite dev server is running
-        if (vite_dev_server_running()) {
+        if (ENVIRONMENT !== 'production' && vite_dev_server_running()) {
             return vite_dev_assets($entry);
         }
 
@@ -99,12 +99,12 @@ if (!function_exists('vite_production_assets')) {
         // Add CSS files
         if (isset($entryData['css'])) {
             foreach ($entryData['css'] as $css) {
-                $html .= "<link rel=\"stylesheet\" href=\"/assets/{$css}\">\n";
+                $html .= "<link rel=\"stylesheet\" href=\"" . base_url("assets/{$css}") . "\">\n";
             }
         }
 
         // Add JS file
-        $html .= "<script type=\"module\" src=\"/assets/{$entryData['file']}\"></script>";
+        $html .= "<script type=\"module\" src=\"" . base_url("assets/{$entryData['file']}") . "\"></script>";
 
         return $html;
     }

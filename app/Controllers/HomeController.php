@@ -13,10 +13,10 @@ class HomeController extends BaseController
     public function index(): string
     {
         $data = [
-            'title'   => 'Home Title',
+            'title'   => 'Oahu Small Business Development',
             'heading' => 'Hawaii Business Development',
             'keyword' => 'business development',
-            'desc'    => '808 Business Solutions small business development.',
+            'desc'    => '808 Business Solutions in Oahu, Hawaii small business development.',
         ];
 
         // session()->remove('step');
@@ -29,7 +29,7 @@ class HomeController extends BaseController
             'title'   => 'ABOUT US',
             'heading' => 'About Us Hawaii Business Development',
             'keyword' => 'about us',
-            'desc'    => 'about us small business development.',
+            'desc'    => 'About us small business development in Oahu, Hawaii.',
         ];
 
         // session()->remove('step');
@@ -43,7 +43,7 @@ class HomeController extends BaseController
             'title'   => 'SERVICES',
             'heading' => 'Services for Hawaii Business Development',
             'keyword' => 'products and services',
-            'desc'    => 'our services for small business development.',
+            'desc'    => 'Our services for small business development in Oahu, Hawaii.',
             'services' => $this->serviceModel->orderBy('created_at', 'DESC')->findAll(),
         ];
 
@@ -57,7 +57,7 @@ class HomeController extends BaseController
             'title'   => 'CONTACT US',
             'heading' => 'CONTACT US Hawaii Business Development',
             'keyword' => 'contact',
-            'desc'    => 'CONTACT US ci4 template.',
+            'desc'    => 'Contact us small business development in Oahu, Hawaii.',
         ];
 
         // session()->remove('step');

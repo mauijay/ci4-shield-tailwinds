@@ -67,10 +67,10 @@
     <hr class="my-6 border-gray-200 dark:border-gray-700 md:my-10" />
     <div class="flex flex-col items-center justify-between sm:flex-row">
       <a href="<?= site_url('/') ?>"
-        class="text-2xl font-bold text-gray-800 transition-colors duration-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"><?= config('App')->siteName ?>
+        class="text-2xl text-gray-800 transition-colors duration-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"><?= config('App')->siteName ?> - v<?= env('app.version') ?? '0.0.0' ?>
       </a>
       <p class="mt-4 text-sm text-gray-500 dark:text-gray-300 sm:mt-0">
-        © <?php if (! empty(config('App')->copyrightHolder)) : ?> Copyright <?= date('Y') ?> <?= config('App')->copyrightHolder ?> - v<?= app_version() ?> - All Rights Reserved <?php endif ?>
+        © <?php if (! empty(config('App')->copyrightHolder)) : ?> Copyright <?= date('Y') ?> <?= config('App')->copyrightHolder ?> - All Rights Reserved <?php endif ?>
       </p>
     </div>
   </div>
