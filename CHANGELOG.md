@@ -1,3 +1,15 @@
+# [0.4.0](https://github.com/mauijay/ci4-shield-tailwinds/compare/v0.3.10...v0.4.0) (2026-01-13)
+
+
+* chore!: update tooling and require PHP 8.4 ([f4e50bc](https://github.com/mauijay/ci4-shield-tailwinds/commit/f4e50bc560365820aca0bdad1da675e1a8c2f1a5))
+
+
+### BREAKING CHANGES
+
+* Minimum supported PHP version is now 8.4.
+
+
+
 ## [0.3.9](https://github.com/mauijay/ci4-shield-tailwinds/compare/v0.3.8...v0.3.9) (2025-10-06)
 
 
