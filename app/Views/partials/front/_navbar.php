@@ -34,6 +34,6 @@
         href="/contact">Contact</a>
     </div>
     <a class="mt-4 block rounded-lg bg-blue-600 px-6 py-2.5 text-center font-medium capitalize leading-5 text-white hover:bg-blue-500 lg:mt-0 lg:w-auto"
-      href="/login"> Get started </a>
+      href="/login">Get started</a>
   </div>
 </nav>

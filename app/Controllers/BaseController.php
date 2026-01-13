@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace App\Controllers;
 
@@ -13,14 +11,15 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Class BaseController
- *
  * BaseController provides a convenient place for loading components
  * and performing functions that are needed by all your controllers.
- * Extend this class in any new controllers:
- *     class Home extends BaseController
  *
- * For security be sure to declare any new methods as protected or private.
+ * Extend this class in any new controllers:
+ * ```
+ *     class Home extends BaseController
+ * ```
+ *
+ * For security, be sure to declare any new methods as protected or private.
  */
 abstract class BaseController extends Controller
 {
@@ -56,6 +55,7 @@ abstract class BaseController extends Controller
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
      */
+
     // protected $session;
 
     /**
@@ -65,7 +65,7 @@ abstract class BaseController extends Controller
     {
         $this->helpers = [...$this->helpers, 'alerts', 'cookie', 'form'];
 
-        // Do Not Edit This Line
+        // Caution: Do not edit this line.
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.

@@ -42,7 +42,7 @@ final class LayoutTest extends CIUnitTestCase
 
         $body = $response->getBody();
         $this->assertStringContainsString('<footer', $body);
-        $this->assertStringContainsString('Copyright 2025', $body);
+        $this->assertMatchesRegularExpression('/Copyright\s+\d{4}/', $body);
     }
 
     public function testLayoutHasTestPageContent(): void

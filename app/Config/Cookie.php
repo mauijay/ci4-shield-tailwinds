@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Config;
 
@@ -87,7 +85,7 @@ class Cookie extends BaseConfig
      * (empty string) means default SameSite attribute set by browsers (`Lax`)
      * will be set on cookies. If set to `None`, `$secure` must also be set.
      *
-     * @phpstan-var 'None'|'Lax'|'Strict'|''
+     * @var ''|'Lax'|'None'|'Strict'
      */
     public string $samesite = 'Lax';
 

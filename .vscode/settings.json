@@ -1,4 +1,8 @@
 {
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass"]
+  },
   "tailwindCSS.includeLanguages": {
     "php": "html"
   },
