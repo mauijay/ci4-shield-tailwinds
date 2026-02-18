@@ -12,7 +12,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/postcss": "^4.2.0",
     "autoprefixer": "^10.4.22",
     "commitizen": "^4.3.1",
     "conventional-changelog-cli": "^5.0.0",
