@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Config;
 
@@ -8,8 +6,8 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    public string $fromEmail  = 'solutions@808businesssolutions.com';
-    public string $fromName   = 'General Manager';
+    public string $fromEmail  = '';
+    public string $fromName   = '';
     public string $recipients = '';
 
     /**
@@ -31,6 +29,11 @@ class Email extends BaseConfig
      * SMTP Server Hostname
      */
     public string $SMTPHost = '';
+
+    /**
+     * Which SMTP authentication method to use: login, plain
+     */
+    public string $SMTPAuthMethod = 'login';
 
     /**
      * SMTP Username
@@ -79,7 +82,7 @@ class Email extends BaseConfig
     /**
      * Type of mail, either 'text' or 'html'
      */
-    public string $mailType = 'html';
+    public string $mailType = 'text';
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)

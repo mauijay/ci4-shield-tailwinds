@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Config;
 
@@ -16,6 +14,7 @@ class Session extends BaseConfig
      * --------------------------------------------------------------------------
      *
      * The session storage driver to use:
+     * - `CodeIgniter\Session\Handlers\ArrayHandler` (for testing)
      * - `CodeIgniter\Session\Handlers\FileHandler`
      * - `CodeIgniter\Session\Handlers\DatabaseHandler`
      * - `CodeIgniter\Session\Handlers\MemcachedHandler`
